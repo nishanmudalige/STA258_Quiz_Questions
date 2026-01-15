@@ -101,12 +101,6 @@ gradethis::grade_this({
 Use exactly one of these numeric columns and nothing else:
 len or dose
 
-<figure style="text-align:center">
-  <img src="./images/toothgrowth.jpg" style="width:75%">
-  <figcaption> Photo by <a href="https://unsplash.com/@thehumbleco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">The Humble Co.</a> on <a href="https://unsplash.com/photos/blue-and-white-toothbrush-in-clear-glass-jar-cADflhZzgyo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  </figcaption>
-</figure>
-
 Find a preview of the ToothGrowth dataset here:
 ```{webr}
 #| echo: true
