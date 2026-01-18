@@ -1,0 +1,174 @@
+---
+title: "Quiz 1b"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources: 
+  - height_weight.csv
+  - sales2.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+## Q1 — Create a vector {#q1}
+
+Make a vector called `my_vec` that contains the numbers updates **-5, 15, -2, 3**.
+
+```{webr}
+my_vec <- NULL
+my_vec
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+my_vec <- c(-5, 15, -2, 3)
+my_vec
+```
+:::
+
+
+## Q2 — Find the average {#q2}
+
+Compute the mean of the vector `c(2,9,9,17,33)`.\
+Your answer should be stored in a variable called `avg_val`.
+
+```{webr}
+avg_val <- NULL
+avg_val
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+avg_val <- mean(c(2,9,9,17,33))
+avg_val
+```
+:::
+
+## Q3 — Draw a histogram from Height-Weight dataset {#q3}
+```{webr}
+#| echo: false
+my_data <- read.csv('height_weight.csv')
+```
+
+::: {.callout-note title="Preview"}
+Find a preview of the Height-Weight dataset here:
+```{webr}
+#| echo: true
+head(my_data, 8)
+```
+:::
+
+Draw a histogram from `my_data` dataset using the `weight` column:
+```{webr}
+#| echo: true
+# Type your answer on the next line (one command only):
+
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+hist(my_data$weight)
+```
+:::
+
+## Q4 — Draw a boxplot from Height-Weight dataset
+
+::: {.callout-note title="Preview"}
+Find a preview of the Height-Weight dataset here:
+```{webr}
+#| echo: true
+head(my_data, 8)
+
+```
+:::
+Draw a boxplot from `my_data` dataset using the `weight` column:
+```{webr}
+# Type your answer on the next line (one command only):
+
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+boxplot(my_data$weight)
+```
+:::
+
+## Q5 — Load a CSV as a DataFrame
+
+Load 'sales2.csv' into a dataframe named df.
+
+```{webr}
+df <- NULL
+head(df)
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+#| exercise: ex_csv_load
+#| solution: true
+df <- read.csv("sales2.csv")
+head(df)
+```
+:::
+
+
+## Q6 — Count rows in 'df'
+```{webr}
+#| echo: false
+df <- read.csv('sales2.csv')
+```
+
+Count the number of rows in 'df' and store them in the variable 'rows'
+
+```{webr}
+rows <- NULL
+rows
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+rows <- nrow(df)
+```
+:::
+
+## Q7 — Show column names
+
+Print the column names from 'df'
+
+```{webr}
+# Read the CSV and print the column names
+cols <- NULL
+cols
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+df   <- read.csv("sales2.csv")
+cols <- names(df)
+cols
+```
+:::
+## Q8 — Calculate the mean of units sold
+
+::: {.callout-note title="Preview"}
+Find a preview of the 'sales2.csv' dataset here:
+```{webr}
+#| echo: true
+df <- read.csv('sales2.csv')
+head(df, 8)
+```
+:::
+
+Determine the average units sold.
+```{webr}
+avg_sold <- NULL
+avg_sold
+```
+
+::: {.callout-tip collapse="true" title="Solution"}
+```{webr}
+avg_sold <- mean(df$Units_Sold)
+avg_sold
+```
+:::
