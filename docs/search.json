@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "Quiz 1/quiz1b.html#q1",
+    "href": "Quiz 1/quiz1b.html#q1",
+    "title": "Quiz 1b",
+    "section": "Q1 — Create a vector",
+    "text": "Q1 — Create a vector\nMake a vector called my_vec that contains the numbers updates -5, 15, -2, 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q2",
+    "href": "Quiz 1/quiz1b.html#q2",
+    "title": "Quiz 1b",
+    "section": "Q2 — Find the average",
+    "text": "Q2 — Find the average\nCompute the mean of the vector c(2,9,9,17,33).\nYour answer should be stored in a variable called avg_val.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q3",
+    "href": "Quiz 1/quiz1b.html#q3",
+    "title": "Quiz 1b",
+    "section": "Q3 — Draw a histogram from Height-Weight dataset",
+    "text": "Q3 — Draw a histogram from Height-Weight dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a histogram from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "href": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "title": "Quiz 1b",
+    "section": "Q4 — Draw a boxplot from Height-Weight dataset",
+    "text": "Q4 — Draw a boxplot from Height-Weight dataset\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q5-load-a-csv-as-a-dataframe",
+    "href": "Quiz 1/quiz1b.html#q5-load-a-csv-as-a-dataframe",
+    "title": "Quiz 1b",
+    "section": "Q5 — Load a CSV as a DataFrame",
+    "text": "Q5 — Load a CSV as a DataFrame\nLoad ‘sales2.csv’ into a dataframe named df.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n\ndf &lt;- read.csv(\"sales2.csv\")\nhead(df)\ndf &lt;- read.csv(\"sales2.csv\")\nhead(df)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q6-count-rows-in-df",
+    "href": "Quiz 1/quiz1b.html#q6-count-rows-in-df",
+    "title": "Quiz 1b",
+    "section": "Q6 — Count rows in ‘df’",
+    "text": "Q6 — Count rows in ‘df’\n\n\n\n\n\n\n\n\nCount the number of rows in ‘df’ and store them in the variable ‘rows’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q7-show-column-names",
+    "href": "Quiz 1/quiz1b.html#q7-show-column-names",
+    "title": "Quiz 1b",
+    "section": "Q7 — Show column names",
+    "text": "Q7 — Show column names\nPrint the column names from ‘df’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q8-calculate-the-mean-of-units-sold",
+    "href": "Quiz 1/quiz1b.html#q8-calculate-the-mean-of-units-sold",
+    "title": "Quiz 1b",
+    "section": "Q8 — Calculate the mean of units sold",
+    "text": "Q8 — Calculate the mean of units sold\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ‘sales2.csv’ dataset here:\n\n\n\n\n\n\n\n\n\n\nDetermine the average units sold.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  }
+]

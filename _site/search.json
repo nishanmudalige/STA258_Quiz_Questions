@@ -257,5 +257,222 @@
     "title": "Quiz 1 Template: Same as Tutorial 1",
     "section": "Q13 — Write a function using division",
     "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q1",
+    "href": "Quiz 1/quiz1_template.html#q1",
+    "title": "Quiz 1a",
+    "section": "Q1 — Make the sum equal 10",
+    "text": "Q1 — Make the sum equal 10\nReplace ＿ with a number so the expression evaluates to 10.\n\n\n\n\n\n\n\n\n\n\n\n\nReplace the two ＿ with 2 numbers that add up to 7.\n\n\n\n\n1 + 2 + 3 + 4\n1 + 2 + 3 + 4"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q2-create-a-vector",
+    "href": "Quiz 1/quiz1_template.html#q2-create-a-vector",
+    "title": "Quiz 1a",
+    "section": "Q2 — Create a vector",
+    "text": "Q2 — Create a vector\nMake a vector called my_vec that contains the numbers 5, 10, 15, 20.\n\n\n\n\n\n\n\n\n\nUse the c() function to combine numbers: c(1, 2, 3)\n\n\n\n\nmy_vec &lt;- c(5, 10, 15, 20)\nmy_vec &lt;- c(5, 10, 15, 20)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q3-find-the-average",
+    "href": "Quiz 1/quiz1_template.html#q3-find-the-average",
+    "title": "Quiz 1a",
+    "section": "Q3 — Find the average",
+    "text": "Q3 — Find the average\nCompute the mean of the vector c(2, 4, 6, 8, 10).\nYour answer should be stored in a variable called avg_val.\n\n\n\n\n\n\n\n\n\nUse the mean() function: mean(c(…))\n\n\n\n\navg_val &lt;- mean(c(2, 4, 6, 8, 10))\navg_val &lt;- mean(c(2, 4, 6, 8, 10))"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
+    "href": "Quiz 1/quiz1_template.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
+    "title": "Quiz 1a",
+    "section": "Q4 — Draw a histogram from ToothGrowth (type the full call)",
+    "text": "Q4 — Draw a histogram from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\nPhoto by The Humble Co. on Unsplash\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the hist command.\n\n\n\n\nhist(ToothGrowth$len)\nhist(ToothGrowth$len)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "href": "Quiz 1/quiz1_template.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "title": "Quiz 1a",
+    "section": "Q5 — Draw a boxplot from ToothGrowth (type the full call)",
+    "text": "Q5 — Draw a boxplot from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the boxplot command.\n\n\n\n\nboxplot(ToothGrowth$len)\nboxplot(ToothGrowth$len)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q6-add-a-color-to-the-histogram",
+    "href": "Quiz 1/quiz1_template.html#q6-add-a-color-to-the-histogram",
+    "title": "Quiz 1a",
+    "section": "Q6 — Add a color to the histogram",
+    "text": "Q6 — Add a color to the histogram\nRe-draw a histogram of ToothGrowth$len and set any bar color using the col= argument.\n\n\n\n\n\n\n\n\n\nadd col as an additional argument here and give it a color of your choice.\n\n\n\n\nhist(ToothGrowth$len, col = \"steelblue\")\nhist(ToothGrowth$len, col = \"steelblue\")"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q7-boxplot-make-it-horizontal",
+    "href": "Quiz 1/quiz1_template.html#q7-boxplot-make-it-horizontal",
+    "title": "Quiz 1a",
+    "section": "Q7 — Boxplot (make it horizontal)",
+    "text": "Q7 — Boxplot (make it horizontal)\nDraw a boxplot of ToothGrowth$dose and make it horizontal using horizontal = TRUE as an argument.\n\n\n\n\n\n\n\n\n\nadd horizontal as an argument just like col from the previous question\n\n\n\n\nboxplot(ToothGrowth$dose, horizontal = TRUE)\nboxplot(ToothGrowth$dose, horizontal = TRUE)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q8-load-a-csv-as-a-dataframe",
+    "href": "Quiz 1/quiz1_template.html#q8-load-a-csv-as-a-dataframe",
+    "title": "Quiz 1a",
+    "section": "Q8 — Load a CSV as a DataFrame",
+    "text": "Q8 — Load a CSV as a DataFrame\nLoad iris.csv into a dataframe named df.\n\n\n\nPhoto by Andrew Small on Unsplash\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse read.csv here.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\ndf &lt;- read.csv(\"iris.csv\")"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q9-count-rows-in-iris.csv",
+    "href": "Quiz 1/quiz1_template.html#q9-count-rows-in-iris.csv",
+    "title": "Quiz 1a",
+    "section": "Q9 — Count rows in iris.csv",
+    "text": "Q9 — Count rows in iris.csv\nCount the number of rows in iris.csv and store them in the variable rows\n\n\n\n\n\n\n\n\n\n\n\n\nUse nrow.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q10-show-column-names",
+    "href": "Quiz 1/quiz1_template.html#q10-show-column-names",
+    "title": "Quiz 1a",
+    "section": "Q10 — Show column names",
+    "text": "Q10 — Show column names\nPrint the column names from iris.csv\n\n\n\n\n\n\n\n\n\n\n\n\nUse names.\n\n\n\n\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q11-print-some-of-the-data",
+    "href": "Quiz 1/quiz1_template.html#q11-print-some-of-the-data",
+    "title": "Quiz 1a",
+    "section": "Q11 — Print some of the data",
+    "text": "Q11 — Print some of the data\nPrint the first 5 rows from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse head.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q12-make-a-histogram-from-iris.csv",
+    "href": "Quiz 1/quiz1_template.html#q12-make-a-histogram-from-iris.csv",
+    "title": "Quiz 1a",
+    "section": "Q12 — Make a histogram from iris.csv",
+    "text": "Q12 — Make a histogram from iris.csv\nMake a histogram of the column Sepal.Length from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse hist (see Q5).\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\") \ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\")"
+  },
+  {
+    "objectID": "Quiz 1/quiz1_template.html#q2",
+    "href": "Quiz 1/quiz1_template.html#q2",
+    "title": "Quiz 1a",
+    "section": "Q13 — Write a function using division",
+    "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q1",
+    "href": "Quiz 1/quiz1b.html#q1",
+    "title": "Quiz 1b",
+    "section": "Q1 — Create a vector",
+    "text": "Q1 — Create a vector\nMake a vector called my_vec that contains the numbers updates -5, 15, -2, 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q2",
+    "href": "Quiz 1/quiz1b.html#q2",
+    "title": "Quiz 1b",
+    "section": "Q2 — Find the average",
+    "text": "Q2 — Find the average\nCompute the mean of the vector c(2,9,9,17,33).\nYour answer should be stored in a variable called avg_val.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q3",
+    "href": "Quiz 1/quiz1b.html#q3",
+    "title": "Quiz 1b",
+    "section": "Q3 — Draw a histogram from Height-Weight dataset",
+    "text": "Q3 — Draw a histogram from Height-Weight dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a histogram from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "href": "Quiz 1/quiz1b.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "title": "Quiz 1b",
+    "section": "Q5 — Draw a boxplot from ToothGrowth (type the full call)",
+    "text": "Q5 — Draw a boxplot from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the boxplot command.\n\n\n\n\nboxplot(ToothGrowth$len)\nboxplot(ToothGrowth$len)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q6-add-a-color-to-the-histogram",
+    "href": "Quiz 1/quiz1b.html#q6-add-a-color-to-the-histogram",
+    "title": "Quiz 1b",
+    "section": "Q6 — Add a color to the histogram",
+    "text": "Q6 — Add a color to the histogram\nRe-draw a histogram of ToothGrowth$len and set any bar color using the col= argument.\n\n\n\n\n\n\n\n\n\nadd col as an additional argument here and give it a color of your choice.\n\n\n\n\nhist(ToothGrowth$len, col = \"steelblue\")\nhist(ToothGrowth$len, col = \"steelblue\")"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q7-boxplot-make-it-horizontal",
+    "href": "Quiz 1/quiz1b.html#q7-boxplot-make-it-horizontal",
+    "title": "Quiz 1b",
+    "section": "Q7 — Boxplot (make it horizontal)",
+    "text": "Q7 — Boxplot (make it horizontal)\nDraw a boxplot of ToothGrowth$dose and make it horizontal using horizontal = TRUE as an argument.\n\n\n\n\n\n\n\n\n\nadd horizontal as an argument just like col from the previous question\n\n\n\n\nboxplot(ToothGrowth$dose, horizontal = TRUE)\nboxplot(ToothGrowth$dose, horizontal = TRUE)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q8-load-a-csv-as-a-dataframe",
+    "href": "Quiz 1/quiz1b.html#q8-load-a-csv-as-a-dataframe",
+    "title": "Quiz 1b",
+    "section": "Q8 — Load a CSV as a DataFrame",
+    "text": "Q8 — Load a CSV as a DataFrame\nLoad iris.csv into a dataframe named df.\n\n\n\nPhoto by Andrew Small on Unsplash\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse read.csv here.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\ndf &lt;- read.csv(\"iris.csv\")"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q9-count-rows-in-iris.csv",
+    "href": "Quiz 1/quiz1b.html#q9-count-rows-in-iris.csv",
+    "title": "Quiz 1b",
+    "section": "Q9 — Count rows in iris.csv",
+    "text": "Q9 — Count rows in iris.csv\nCount the number of rows in iris.csv and store them in the variable rows\n\n\n\n\n\n\n\n\n\n\n\n\nUse nrow.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q10-show-column-names",
+    "href": "Quiz 1/quiz1b.html#q10-show-column-names",
+    "title": "Quiz 1b",
+    "section": "Q10 — Show column names",
+    "text": "Q10 — Show column names\nPrint the column names from iris.csv\n\n\n\n\n\n\n\n\n\n\n\n\nUse names.\n\n\n\n\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q11-print-some-of-the-data",
+    "href": "Quiz 1/quiz1b.html#q11-print-some-of-the-data",
+    "title": "Quiz 1b",
+    "section": "Q11 — Print some of the data",
+    "text": "Q11 — Print some of the data\nPrint the first 5 rows from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse head.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q12-make-a-histogram-from-iris.csv",
+    "href": "Quiz 1/quiz1b.html#q12-make-a-histogram-from-iris.csv",
+    "title": "Quiz 1b",
+    "section": "Q12 — Make a histogram from iris.csv",
+    "text": "Q12 — Make a histogram from iris.csv\nMake a histogram of the column Sepal.Length from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse hist (see Q5).\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\") \ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\")"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html",
+    "href": "Quiz 1/quiz1b.html",
+    "title": "Quiz 1b",
+    "section": "",
+    "text": "#| context: setup"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset-type-the-full-call",
+    "href": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset-type-the-full-call",
+    "title": "Quiz 1b",
+    "section": "Q4 — Draw a boxplot from Height-Weight dataset (type the full call)",
+    "text": "Q4 — Draw a boxplot from Height-Weight dataset (type the full call)\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q5-load-a-csv-as-a-dataframe",
+    "href": "Quiz 1/quiz1b.html#q5-load-a-csv-as-a-dataframe",
+    "title": "Quiz 1b",
+    "section": "Q5 — Load a CSV as a DataFrame",
+    "text": "Q5 — Load a CSV as a DataFrame\nLoad ‘sales2.csv’ into a dataframe named df.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n\n\ndf &lt;- read.csv(\"sales2.csv\")\nhead(df)\ndf &lt;- read.csv(\"sales2.csv\")\nhead(df)"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q6-count-rows-in-df",
+    "href": "Quiz 1/quiz1b.html#q6-count-rows-in-df",
+    "title": "Quiz 1b",
+    "section": "Q6 — Count rows in ‘df’",
+    "text": "Q6 — Count rows in ‘df’\n\n\n\n\n\n\n\n\nCount the number of rows in ‘df’ and store them in the variable ‘rows’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q7-show-column-names",
+    "href": "Quiz 1/quiz1b.html#q7-show-column-names",
+    "title": "Quiz 1b",
+    "section": "Q7 — Show column names",
+    "text": "Q7 — Show column names\nPrint the column names from ‘df’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q8-calculate-the-mean-of-units-sold",
+    "href": "Quiz 1/quiz1b.html#q8-calculate-the-mean-of-units-sold",
+    "title": "Quiz 1b",
+    "section": "Q8 — Calculate the mean of units sold",
+    "text": "Q8 — Calculate the mean of units sold\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ‘sales2.csv’ dataset here:\n\n\n\n\n\n\n\n\n\n\nDetermine the average units sold.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "href": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "title": "Quiz 1b",
+    "section": "Q4 — Draw a boxplot from Height-Weight dataset",
+    "text": "Q4 — Draw a boxplot from Height-Weight dataset\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
   }
 ]
