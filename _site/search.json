@@ -259,6 +259,11 @@
     "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
   },
   {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> c1c5d6f (changes after meeting)
     "objectID": "Quiz 1/quiz1_template.html#q1",
     "href": "Quiz 1/quiz1_template.html#q1",
     "title": "Quiz 1a",
@@ -350,6 +355,10 @@
     "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
   },
   {
+<<<<<<< HEAD
+=======
+>>>>>>> ea36d71eddf69b8c6070185e9fe28c990c0fbc53
+>>>>>>> c1c5d6f (changes after meeting)
     "objectID": "Quiz 1/quiz1b.html#q1",
     "href": "Quiz 1/quiz1b.html#q1",
     "title": "Quiz 1b",
@@ -371,9 +380,22 @@
     "text": "Q3 — Draw a histogram from Height-Weight dataset\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a histogram from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
   },
   {
+<<<<<<< HEAD
     "objectID": "Quiz 1/quiz1b.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
     "href": "Quiz 1/quiz1b.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
     "title": "Quiz 1b",
+=======
+<<<<<<< HEAD
+    "objectID": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "href": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "title": "Quiz 1b",
+    "section": "Q4 — Draw a boxplot from Height-Weight dataset",
+    "text": "Q4 — Draw a boxplot from Height-Weight dataset\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+=======
+    "objectID": "Quiz 1/quiz1b.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "href": "Quiz 1/quiz1b.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "title": "Quiz 1b",
+>>>>>>> c1c5d6f (changes after meeting)
     "section": "Q5 — Draw a boxplot from ToothGrowth (type the full call)",
     "text": "Q5 — Draw a boxplot from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the boxplot command.\n\n\n\n\nboxplot(ToothGrowth$len)\nboxplot(ToothGrowth$len)"
   },
@@ -439,6 +461,10 @@
     "title": "Quiz 1b",
     "section": "Q4 — Draw a boxplot from Height-Weight dataset (type the full call)",
     "text": "Q4 — Draw a boxplot from Height-Weight dataset (type the full call)\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+<<<<<<< HEAD
+=======
+>>>>>>> ea36d71eddf69b8c6070185e9fe28c990c0fbc53
+>>>>>>> c1c5d6f (changes after meeting)
   },
   {
     "objectID": "Quiz 1/quiz1b.html#q5-load-a-csv-as-a-dataframe",
@@ -469,10 +495,89 @@
     "text": "Q8 — Calculate the mean of units sold\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ‘sales2.csv’ dataset here:\n\n\n\n\n\n\n\n\n\n\nDetermine the average units sold.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
   },
   {
+<<<<<<< HEAD
     "objectID": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
     "href": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
     "title": "Quiz 1b",
     "section": "Q4 — Draw a boxplot from Height-Weight dataset",
     "text": "Q4 — Draw a boxplot from Height-Weight dataset\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+=======
+<<<<<<< HEAD
+    "objectID": "Quiz 1/quiz1a.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "href": "Quiz 1/quiz1a.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "title": "Quiz 1a",
+    "section": "Q4 — Draw a boxplot from Height-Weight dataset",
+    "text": "Q4 — Draw a boxplot from Height-Weight dataset\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the height column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q5-load-a-csv-as-a-dataframe",
+    "href": "Quiz 1/quiz1a.html#q5-load-a-csv-as-a-dataframe",
+    "title": "Quiz 1a",
+    "section": "Q5 — Load a CSV as a DataFrame",
+    "text": "Q5 — Load a CSV as a DataFrame\nLoad ‘visits.csv’ into a dataframe named df.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q6-count-rows-in-df",
+    "href": "Quiz 1/quiz1a.html#q6-count-rows-in-df",
+    "title": "Quiz 1a",
+    "section": "Q6 — Count rows in ‘df’",
+    "text": "Q6 — Count rows in ‘df’\nCount the number of rows in ‘df’ and store them in the variable ‘rows’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q7-show-column-names",
+    "href": "Quiz 1/quiz1a.html#q7-show-column-names",
+    "title": "Quiz 1a",
+    "section": "Q7 — Show column names",
+    "text": "Q7 — Show column names\nPrint the column names from ‘df’\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q8-calculate-the-mean-of-website-visits-per-day",
+    "href": "Quiz 1/quiz1a.html#q8-calculate-the-mean-of-website-visits-per-day",
+    "title": "Quiz 1a",
+    "section": "Q8 — Calculate the mean of website visits per day",
+    "text": "Q8 — Calculate the mean of website visits per day\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ‘visits.csv’ dataset here:\n\n\n\n\n\n\n\n\n\n\nDetermine the average website visits per day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q8-calculate-the-mean-number-of-visits-per-day",
+    "href": "Quiz 1/quiz1a.html#q8-calculate-the-mean-number-of-visits-per-day",
+    "title": "Quiz 1a",
+    "section": "Q8 — Calculate the mean number of visits per day",
+    "text": "Q8 — Calculate the mean number of visits per day\nDetermine the average number of visits per day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q9-calculate-the-sample-variance-of-number-of-visits-per-day",
+    "href": "Quiz 1/quiz1a.html#q9-calculate-the-sample-variance-of-number-of-visits-per-day",
+    "title": "Quiz 1a",
+    "section": "Q9 — Calculate the sample variance of number of visits per day",
+    "text": "Q9 — Calculate the sample variance of number of visits per day\nDetermine the sample variance of the number of visits per day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q9-calculate-the-sample-variance-of-number-of-visits-per-day-1",
+    "href": "Quiz 1/quiz1a.html#q9-calculate-the-sample-variance-of-number-of-visits-per-day-1",
+    "title": "Quiz 1a",
+    "section": "Q9 — Calculate the sample variance of number of visits per day",
+    "text": "Q9 — Calculate the sample variance of number of visits per day\nDetermine the average number of visits per day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q10-calculate-the-maximum-of-number-of-visits-per-day",
+    "href": "Quiz 1/quiz1a.html#q10-calculate-the-maximum-of-number-of-visits-per-day",
+    "title": "Quiz 1a",
+    "section": "Q10 — Calculate the maximum of number of visits per day",
+    "text": "Q10 — Calculate the maximum of number of visits per day\nDetermine the maximum number of visits per day.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+  },
+  {
+    "objectID": "Quiz 1/quiz1a.html#q10-calculate-the-maximum-number-of-visits-per-day",
+    "href": "Quiz 1/quiz1a.html#q10-calculate-the-maximum-number-of-visits-per-day",
+    "title": "Quiz 1a",
+    "section": "Q10 — Calculate the maximum number of visits per day",
+    "text": "Q10 — Calculate the maximum number of visits per day\nDetermine the maximum number of visits per day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+=======
+    "objectID": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "href": "Quiz 1/quiz1b.html#q4-draw-a-boxplot-from-height-weight-dataset",
+    "title": "Quiz 1b",
+    "section": "Q4 — Draw a boxplot from Height-Weight dataset",
+    "text": "Q4 — Draw a boxplot from Height-Weight dataset\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the Height-Weight dataset here:\n\n\n\n\n\n\n\n\n\n\nDraw a boxplot from my_data dataset using the weight column:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution"
+>>>>>>> ea36d71eddf69b8c6070185e9fe28c990c0fbc53
+>>>>>>> c1c5d6f (changes after meeting)
   }
 ]

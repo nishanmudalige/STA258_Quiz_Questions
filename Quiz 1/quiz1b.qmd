@@ -99,27 +99,27 @@ boxplot(my_data$weight)
 Load 'sales2.csv' into a dataframe named df.
 
 ```{webr}
-df <- NULL
-head(df)
+q5_df <- NULL
+head(q5_df)
 ```
 
-::: {.callout-tip collapse="true" title="Solution"}
-```{webr}
-#| exercise: ex_csv_load
-#| solution: true
-df <- read.csv("sales2.csv")
-head(df)
-```
-:::
+<!-- ::: {.callout-tip collapse="true" title="Solution"} -->
+<!-- ```{webr} -->
+<!-- #| exercise: ex_csv_load -->
+<!-- #| solution: true -->
+<!-- df <- read.csv("sales2.csv") -->
+<!-- head(df) -->
+<!-- ``` -->
+<!-- ::: -->
 
 
 ## Q6 — Count rows in 'df'
 ```{webr}
 #| echo: false
-df <- read.csv('sales2.csv')
+q6_df <- read.csv('sales2.csv')
 ```
 
-Count the number of rows in 'df' and store them in the variable 'rows'
+Count the number of rows in 'q6_df' and store them in the variable 'rows'
 
 ```{webr}
 rows <- NULL
@@ -128,7 +128,7 @@ rows
 
 ::: {.callout-tip collapse="true" title="Solution"}
 ```{webr}
-rows <- nrow(df)
+rows <- nrow(q6_df)
 ```
 :::
 

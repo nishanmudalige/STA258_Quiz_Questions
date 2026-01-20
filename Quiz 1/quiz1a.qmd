@@ -10,6 +10,7 @@ sidebar:
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 ## Q1 — Create a vector {#q1}
 
+<<<<<<< HEAD
 Make a vector called `my_vec` that contains the numbers **-10, 24, -45, 12**.
 
 ```{webr}
@@ -18,6 +19,14 @@ Make a vector called `my_vec` that contains the numbers **-10, 24, -45, 12**.
 #| echo: false
 my_vec <- NULL
 
+=======
+What is the element in index 200 of 'my_vec'.
+
+```{webr}
+set.seed(1)
+my_vec <- rnorm(1000, mean = 100, sd = 10)
+my_vec
+>>>>>>> c1c5d6f (changes after meeting)
 ```
 
 ::: {.hint exercise="ex_vec"}
@@ -291,6 +300,7 @@ boxplot(ToothGrowth$dose, horizontal = TRUE)
 :::
 
 ```{webr}
+<<<<<<< HEAD
 #| exercise: ex_box_h
 #| check: true
 gradethis::grade_this({
@@ -322,6 +332,10 @@ pass("OK (note: ensure you're using base boxplot())")
 pass("OK")
 }
 })
+=======
+# data is stored in an object called df
+# use the nrow() function to count the number of rows
+>>>>>>> c1c5d6f (changes after meeting)
 
 ```
 
@@ -418,6 +432,7 @@ rows <- nrow(df)
 :::
 
 ```{webr}
+<<<<<<< HEAD
 #| exercise: ex_csv_nrows
 #| check: true
 gradethis::grade_this({
@@ -426,6 +441,10 @@ gradethis::grade_this({
   if (!is.numeric(x) || length(x)!=1) fail("`rows` must be a single number.")
   if (x==150) pass("✅ 150 rows.") else pass("ℹ️ Count recorded.")
 })
+=======
+# data is stored in an object called df
+# use the colnames() or names() function to find the column names
+>>>>>>> c1c5d6f (changes after meeting)
 
 ```
 
