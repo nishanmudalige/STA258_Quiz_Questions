@@ -23,6 +23,7 @@ my_vec <- NULL
 What is the element in index 200 of 'my_vec'.
 
 ```{webr}
+#Do not change the set.seed(1) to any different
 set.seed(1)
 my_vec <- rnorm(1000, mean = 100, sd = 10)
 my_vec
