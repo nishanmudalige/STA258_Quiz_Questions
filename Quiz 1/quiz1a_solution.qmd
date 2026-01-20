@@ -38,7 +38,7 @@ mean(c(1,7,9,16,32))
 
 ## Q3 — Draw a histogram {#q3}
 
-Draw a histogram of the Height column from height_weight.csv to answer the following question.
+Draw a histogram of the height column from height_weight.csv to answer the following question.
 
 Based on the histogram, which statement best describes the distribution of heights?
 ```{webr}
@@ -49,7 +49,7 @@ hist(hw$height)
 
 ## Q4 — Draw a boxplot {#q4}
 
-Draw a boxplot of the Height column from height_weight.csv to answer the following question.
+Draw a boxplot of the height column from height_weight.csv to answer the following question.
 
 What is the median height in the dataset?
 ```{webr}
@@ -59,7 +59,7 @@ boxplot(hw$height)
 
 ## Q5 — Outliers Existence {#q5}
 
-Draw a boxplot of the Height column from height_weight.csv to answer the following question.
+Draw a boxplot of the height column from height_weight.csv to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
 ```{webr}
