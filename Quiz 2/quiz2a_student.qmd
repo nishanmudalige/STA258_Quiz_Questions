@@ -1,0 +1,81 @@
+---
+title: "Quiz 2a"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - study_hours_by_month.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const showQ = params.get("q");
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!showQ) return;
+  document.querySelectorAll("section[id]").forEach(section => {
+    if (section.id !== showQ) section.style.display = "none";
+  });
+});
+</script>
+
+## Q1 — Five-number Summary {#q1}
+
+Using the dataset study_hours_by_month.csv, obtain the five-number summary of the variable study_hours using the summary() function.
+
+What is the median value of study_hours?
+```{webr}
+study_data <- read.csv("study_hours_by_month.csv")
+
+```
+
+## Q2 — Interquartile Range {#q2}
+
+Using the dataset study_hours_by_month.csv, compute the interquartile range (IQR) of the variable study_hours.
+
+```{webr}
+
+```
+
+## Q3 - Sample standard deviation {#q3}
+
+Using the dataset study_hours_by_month.csv, compute the sample standard deviation of the variable study_hours.
+
+```{webr}
+
+```
+
+## Q4 - Grouped mean by month {#q4}
+
+Using the dataset study_hours_by_month.csv, compute the mean study hours for each month.
+
+What is the mean study hours in April?
+
+Hint: You may find the tapply() function helpful.
+```{webr}
+
+```
+
+## Q5 - Boxplot ordered by median {#q5}
+Using the dataset study_hours_by_month.csv, create a boxplot of study_hours grouped by month, with the months reordered by the median study hours.
+
+After reordering months by their median study hours, what is the median study hours corresponding to the 3rd smallest median? (Answers within ±0.1 will be considered correct.)
+
+Hint: You may find the reorder() function and geom_boxplot() helpful.
+```{webr}
+library(ggplot2)
+
+```
+
+## Q6 - Histogram and distribution shape {#q6}
+Using the dataset study_hours_by_month.csv, create a histogram of study_hours with approximately 12 bins.
+
+Based on the histogram of study_hours, which best describes the shape of the distribution?
+
+```{webr}
+
+```
