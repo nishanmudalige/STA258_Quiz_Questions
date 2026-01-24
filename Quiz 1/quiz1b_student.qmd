@@ -1,0 +1,107 @@
+---
+title: "Quiz 1b"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - height_weight2.csv
+  - sales.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const showQ = params.get("q");
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!showQ) return;
+  document.querySelectorAll("section[id]").forEach(section => {
+    if (section.id !== showQ) section.style.display = "none";
+  });
+});
+</script>
+
+## Q1 — Getting an Element of a Vector by Index {#q1}
+
+What is the element at index 100 of `my_vec`?
+
+```{webr}
+#| echo: false
+set.seed(1)
+my_vec <- rnorm(1000, mean = 100, sd = 10)
+```
+
+```{webr}
+
+```
+
+## Q2 — Find the Sample Variance {#q2}
+
+Compute the sample variance of c(5,10,12,15,19).
+
+```{webr}
+
+```
+
+## Q3 — Draw a Histogram {#q3}
+The 'height_weight2.csv' dataset contains measurements of individuals' heights (cm) and weights (kgs). 
+
+Draw a histogram of the 'weight' column from 'height_weight2.csv' to answer the following question:
+Based on the histogram, which statement best describes the distribution of weights?
+```{webr}
+
+```
+
+## Q4 — Draw a Boxplot {#q4}
+
+Draw a boxplot of the 'weight' column from 'height_weight2.csv' to answer the following question.
+
+What is the mean weight in the dataset?
+```{webr}
+
+```
+
+## Q5 — Outliers Existence {#q5}
+
+Draw a boxplot of the 'weight' column from 'height_weight2.csv' to answer the following question.
+
+Does the boxplot suggest the presence of any outliers?
+```{webr}
+
+```
+
+## Q6 — Count rows {#q6}
+The 'sales.csv' dataset consists of the number of units sold for each day. 
+
+How many rows are in 'sales.csv'?
+```{webr}
+
+```
+
+## Q7 — Count Columns {#q7}
+How many columns are in 'sales.csv'?
+```{webr}
+
+
+```
+
+## Q8 — Standard Deviation of Units Sold {#q8}
+What is the standard deviation of the 'Units_Sold' column in 'sales.csv'?
+```{webr}
+
+```
+
+## Q9 — Sum of Sales {#q9}
+What is the sum of the 'Units_Sold' column in 'sales.csv'?
+```{webr}
+
+```
+
+## Q10 — Minimum Sales {#q10}
+What is the minimum number of sales in a single day in 'sales.csv'?
+```{webr}
+
+```
