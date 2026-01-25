@@ -15,19 +15,25 @@ resources:
 <script>
 function showOnly(id) {
   if (!id) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    section.style.display = (section.id === id ? "" : "none");
+
+  const targetEl = document.getElementById(id);
+  if (!targetEl) return;
+
+  // Quarto usually wraps each heading in a <section>
+  const targetSection = targetEl.closest("section");
+  if (!targetSection) return;
+
+  document.querySelectorAll("section").forEach(sec => {
+    sec.style.display = (sec === targetSection ? "" : "none");
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // initial view
-  const id = location.hash?.replace("#", "");
+  const id = location.hash.replace("#", "");
   showOnly(id);
 
-  // when hash changes (no reload)
   window.addEventListener("hashchange", () => {
-    const id2 = location.hash?.replace("#", "");
+    const id2 = location.hash.replace("#", "");
     showOnly(id2);
   });
 });
