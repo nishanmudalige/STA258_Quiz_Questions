@@ -38,36 +38,40 @@ mean(c(1,7,9,16,32))
 
 ## Q3 — Draw a histogram {#q3}
 
-Draw a histogram of the height column from height_weight.csv to answer the following question.
+height_weight1.csv contains simulated adult height (in meters) and weight (in kilograms) data.
+
+Draw a histogram of the height column from height_weight1.csv to answer the following question.
 
 Based on the histogram, which statement best describes the distribution of heights?
 ```{webr}
-hw = read.csv("height_weight.csv")
+hw = read.csv("height_weight1.csv")
 hist(hw$height)
 # Approximately symmetric and unimodal
 ```
 
 ## Q4 — Draw a boxplot {#q4}
 
-Draw a boxplot of the height column from height_weight.csv to answer the following question.
+Draw a boxplot of the height column from height_weight1.csv to answer the following question.
 
-What is the median height in the dataset?
+What is the median height in the dataset? (Answers within ±0.03 will be considered correct.)
 ```{webr}
 boxplot(hw$height)
-# 68
+# 1.73
 ```
 
 ## Q5 — Outliers Existence {#q5}
 
-Draw a boxplot of the height column from height_weight.csv to answer the following question.
+Draw a boxplot of the height column from height_weight1.csv to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
 ```{webr}
 boxplot(hw$height)
-# Outliers on the right only
+# Outliers on the both sides
 ```
 
 ## Q6 — Count rows {#q6}
+visits.csv contains the number of website visits recorded for each day in the dataset.
+
 How many rows are in visits.csv?
 ```{webr}
 df_visits = read.csv("visits.csv")
