@@ -116,13 +116,28 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjp0cnVlLCJvdXRwdXQiOmZhbHNlfSwiY29kZSI6Indl
 </div>
 </div>
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
+function showOnly(id) {
+  if (!id) return;
+
+  const targetEl = document.getElementById(id);
+  if (!targetEl) return;
+
+  // Quarto usually wraps each heading in a <section>
+  const targetSection = targetEl.closest("section");
+  if (!targetSection) return;
+
+  document.querySelectorAll("section").forEach(sec => {
+    sec.style.display = (sec === targetSection ? "" : "none");
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
+  const id = location.hash.replace("#", "");
+  showOnly(id);
+
+  window.addEventListener("hashchange", () => {
+    const id2 = location.hash.replace("#", "");
+    showOnly(id2);
   });
 });
 </script>
