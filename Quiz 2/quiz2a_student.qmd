@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 ## Q1 — Five-number Summary {#q1}
+The study_hours_by_month.csv dataset consists of recorded study hours (in hours) from individual study sessions across different months of the year.
 
 Using the dataset study_hours_by_month.csv, obtain the five-number summary of the variable study_hours using the summary() function.
 
