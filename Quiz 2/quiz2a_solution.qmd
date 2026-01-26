@@ -69,8 +69,23 @@ ggplot(
 # 3
 ```
 
+## Q6 - Boxplot and Outliers {#q6}
+Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by `month`.
 
-## Q6 - Histogram and distribution shape {#q6}
+Which month has the lowest observed hours of study?
+```{webr}
+library(ggplot2)
+study_data <- read.csv("study_hours_by_month.csv")
+ggplot(study_data, aes(x = month, y = study_hours)) +
+  geom_boxplot() +
+  labs(
+    x = "Month",
+    y = "Study Hours"
+  )
+#Jan
+```
+
+## Q7 - Histogram and distribution shape {#q7}
 Using the dataset study_hours_by_month.csv, create a histogram of study_hours with approximately 12 bins.
 
 Based on the histogram of study_hours, which best describes the shape of the distribution?
@@ -79,4 +94,23 @@ Based on the histogram of study_hours, which best describes the shape of the dis
 ggplot(study_data, aes(study_hours)) + geom_histogram(bins = 12)
 # Correct Answer: Symmetric
 # Wrong answers: Left-skewed, Right-skewed, Uniform
+```
+
+## Q8 - Scatterplot {#q8}
+
+Using the dataset study_hours_by_month.csv, build a scatterplot mapping `month_num` as the x-axis and `study_hours` as the y-axis.
+
+Which of the following best describes the relationship between `month_num` and `study_hours`?
+
+```{webr}
+study_data$month_num <- as.numeric(
+  factor(study_data$month,
+         levels = c("Jan","Feb","Mar","Apr","May","Jun",
+                    "Jul","Aug","Sep","Oct","Nov","Dec"))
+)
+
+ggplot(study_data, aes(x = month_num, y = study_hours)) +
+  geom_point() +
+  geom_smooth(se = FALSE)
+# There is a strong positive linear relationship between month number and study hours.
 ```
