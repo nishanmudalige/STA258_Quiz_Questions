@@ -13,9 +13,7 @@ resources:
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 
 ## Q1 — Getting an element of a vector by index {#q1}
-
 What is the element at index 200 of `my_vec`?
-
 ```{webr}
 #| echo: false
 set.seed(1)
@@ -28,19 +26,16 @@ my_vec[200]
 ```
 
 ## Q2 — Find the average {#q2}
-
-Compute the mean of c(1,7,9,16,32).
-
+Compute the mean of `c(1,7,9,16,32)`.
 ```{webr}
 mean(c(1,7,9,16,32))
 # 13
 ```
 
 ## Q3 — Draw a histogram {#q3}
+`height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
 
-height_weight1.csv contains simulated adult height (in meters) and weight (in kilograms) data.
-
-Draw a histogram of the height column from height_weight1.csv to answer the following question.
+Draw a histogram of the `height` column from `height_weight1.csv` to answer the following question.
 
 Based on the histogram, which statement best describes the distribution of heights?
 ```{webr}
@@ -50,18 +45,16 @@ hist(hw$height)
 ```
 
 ## Q4 — Draw a boxplot {#q4}
+Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
-Draw a boxplot of the height column from height_weight1.csv to answer the following question.
-
-What is the median height in the dataset? (Answers within ±0.03 will be considered correct.)
+What is the median `height` in the dataset? *(Answers within ±0.03 will be considered correct.)*
 ```{webr}
 boxplot(hw$height)
 # 1.73
 ```
 
 ## Q5 — Outliers Existence {#q5}
-
-Draw a boxplot of the height column from height_weight1.csv to answer the following question.
+Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
 ```{webr}
@@ -70,9 +63,9 @@ boxplot(hw$height)
 ```
 
 ## Q6 — Count rows {#q6}
-visits.csv contains the number of website visits recorded for each day in the dataset.
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
 
-How many rows are in visits.csv?
+How many rows are in `visits.csv`?
 ```{webr}
 df_visits = read.csv("visits.csv")
 nrow(df_visits)
@@ -80,28 +73,28 @@ nrow(df_visits)
 ```
 
 ## Q7 — Count Columns {#q7}
-How many columns are in visits.csv?
+How many columns are in `visits.csv`?
 ```{webr}
 ncol(df_visits)
 # 2
 ```
 
 ## Q8 — Mean visits {#q8}
-What is the mean of the Visits column in visits.csv?
+What is the mean of the `Visits` column in `visits.csv`?
 ```{webr}
 mean(df_visits)
 # 40.9
 ```
 
 ## Q9 — Sample variance {#q9}
-What is the sample variance of the Visits column in visits.csv?
+What is the sample variance of the `Visits` column in `visits.csv`?
 ```{webr}
 var(df_visits)
 # 58.62105
 ```
 
 ## Q10 — Maximum visits {#q10}
-What is the maximum number of visits in a single day in visits.csv?
+What is the maximum number of visits in a single day in `visits.csv`?
 ```{webr}
 max(df_visits)
 # 53

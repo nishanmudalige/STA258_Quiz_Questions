@@ -29,9 +29,7 @@ console.log("Loaded at", new Date().toISOString(), "hash=", location.hash);
 </script>
 
 ## Q1 — Getting an element of a vector by index {#q1}
-
 What is the element at index 200 of `my_vec`?
-
 ```{webr}
 #| echo: false
 set.seed(1)
@@ -43,18 +41,15 @@ my_vec <- rnorm(1000, mean = 100, sd = 10)
 ```
 
 ## Q2 — Find the average {#q2}
-
-Compute the mean of c(1,7,9,16,32).
-
+Compute the mean of `c(1,7,9,16,32)`.
 ```{webr}
 
 ```
 
 ## Q3 — Draw a histogram {#q3}
+`height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
 
-height_weight1.csv contains simulated adult height (in meters) and weight (in kilograms) data.
-
-Draw a histogram of the height column from height_weight1.csv to answer the following question.
+Draw a histogram of the `height` column from `height_weight1.csv` to answer the following question.
 
 Based on the histogram, which statement best describes the distribution of heights?
 ```{webr}
@@ -62,17 +57,15 @@ Based on the histogram, which statement best describes the distribution of heigh
 ```
 
 ## Q4 — Draw a boxplot {#q4}
+Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
-Draw a boxplot of the height column from height_weight1.csv to answer the following question.
-
-What is the median height in the dataset? (Answers within ±0.03 will be considered correct.)
+What is the median `height` in the dataset? *(Answers within ±0.03 will be considered correct.)*
 ```{webr}
 
 ```
 
 ## Q5 — Outliers Existence {#q5}
-
-Draw a boxplot of the height column from height_weight1.csv to answer the following question.
+Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
 ```{webr}
@@ -80,34 +73,34 @@ Does the boxplot suggest the presence of any outliers?
 ```
 
 ## Q6 — Count rows {#q6}
-visits.csv contains the number of website visits recorded for each day in the dataset.
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
 
-How many rows are in visits.csv?
+How many rows are in `visits.csv`?
 ```{webr}
 
 ```
 
 ## Q7 — Count Columns {#q7}
-How many columns are in visits.csv?
+How many columns are in `visits.csv`?
 ```{webr}
 
 
 ```
 
 ## Q8 — Mean visits {#q8}
-What is the mean of the Visits column in visits.csv?
+What is the mean of the `Visits` column in `visits.csv`?
 ```{webr}
 
 ```
 
 ## Q9 — Sample variance {#q9}
-What is the sample variance of the Visits column in visits.csv?
+What is the sample variance of the `Visits` column in `visits.csv`?
 ```{webr}
 
 ```
 
 ## Q10 — Maximum visits {#q10}
-What is the maximum number of visits in a single day in visits.csv?
+What is the maximum number of visits in a single day in `visits.csv`?
 ```{webr}
 
 ```
