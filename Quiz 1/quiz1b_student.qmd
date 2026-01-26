@@ -47,9 +47,9 @@ Compute the sample variance of c(5,10,12,15,19).
 ```
 
 ## Q3 — Draw a Histogram {#q3}
-The 'height_weight2.csv' dataset contains measurements of individuals' heights (cm) and weights (kgs). 
+The `height_weight2.csv` dataset contains measurements of individuals' heights (cm) and weights (kgs). 
 
-Draw a histogram of the 'weight' column from 'height_weight2.csv' to answer the following question:
+Draw a histogram of the `weight` column from `height_weight2.csv` to answer the following question:
 Based on the histogram, which statement best describes the distribution of weights?
 ```{webr}
 
@@ -57,16 +57,16 @@ Based on the histogram, which statement best describes the distribution of weigh
 
 ## Q4 — Draw a Boxplot {#q4}
 
-Draw a boxplot of the 'weight' column from 'height_weight2.csv' to answer the following question.
+Draw a boxplot of the `weight` column from `height_weight2.csv` to answer the following question.
 
-What is the mean weight in the dataset?
+What is the mean `weight` in the dataset?
 ```{webr}
 
 ```
 
 ## Q5 — Outliers Existence {#q5}
 
-Draw a boxplot of the 'weight' column from 'height_weight2.csv' to answer the following question.
+Draw a boxplot of the `weight` column from `height_weight2.csv` to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
 ```{webr}
@@ -74,34 +74,34 @@ Does the boxplot suggest the presence of any outliers?
 ```
 
 ## Q6 — Count rows {#q6}
-The 'sales.csv' dataset consists of the number of units sold for each day. 
+The `sales.csv` dataset consists of the number of units sold for each day. 
 
-How many rows are in 'sales.csv'?
+How many rows are in `sales.csv`?
 ```{webr}
 
 ```
 
 ## Q7 — Count Columns {#q7}
-How many columns are in 'sales.csv'?
+How many columns are in `sales.csv`?
 ```{webr}
 
 
 ```
 
 ## Q8 — Standard Deviation of Units Sold {#q8}
-What is the standard deviation of the 'Units_Sold' column in 'sales.csv'?
+What is the standard deviation of the `Units_Sold` column in `sales.csv`?
 ```{webr}
 
 ```
 
 ## Q9 — Sum of Sales {#q9}
-What is the sum of the 'Units_Sold' column in 'sales.csv'?
+What is the sum of the `Units_Sold` column in `sales.csv`?
 ```{webr}
 
 ```
 
 ## Q10 — Minimum Sales {#q10}
-What is the minimum number of sales in a single day in 'sales.csv'?
+What is the minimum number of sales in a single day in `sales.csv`?
 ```{webr}
 
 ```
