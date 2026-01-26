@@ -29,7 +29,7 @@ The `load_time.csv` dataset consists of the monthly average website page load ti
 
 Using the dataset `load_time.csv`, obtain the five-number summary of the variable `page_load_time` using the `summary()` function.
 
-What is the maximum value of `reaction_time`?
+What is the maximum value of `page_load_time`?
 ```{webr}
 load_data <- read.csv("load_time.csv")
 
@@ -66,7 +66,7 @@ load_data <- read.csv("load_time.csv")
 
 Using the dataset `load_time.csv`, find the maximum load time for each month.
 
-What is the maximum load time in September?
+What is the maximum load time on the 9th month?
 
 Hint: You may find the tapply() function helpful.
 ```{webr}
@@ -77,7 +77,7 @@ load_data <- read.csv("load_time.csv")
 ## Q5 - Boxplot Ordered by Mean {#q5}
 Using the dataset `load_time.csv`, create a boxplot of `page_load_time` grouped by `month`, with the months reordered by the mean load times.
 
-After reordering months by their mean load times, what is the mean load time corresponding to the 5th smallest mean? (Answers within ±0.001 will be considered correct.)
+After reordering months by their mean load times, what is the mean load time corresponding to the 5th smallest mean?
 
 Hint: You may find the reorder() function and geom_boxplot() helpful.
 ```{webr}
@@ -103,15 +103,24 @@ Using the dataset `load_time.csv`, create a histogram of `page_load_time` with a
 Based on the histogram of `page_load_time`, which best describes the shape of the distribution?
 
 ```{webr}
+library(ggplot2)
 load_data <- read.csv("load_time.csv")
 
 ```
 
 ## Q8 - Scatterplot {#q8}
-Using the dataset `load_time.csv`, build a scatterplot of mapping `month` as x and `page_load_time` as y.
+Using the dataset `load_time.csv`, build a scatterplot of mapping `month_num` as x and `page_load_time` as y.
 
-Which of the following best describes the relationship between `month` and `page_load_time`?
+Which of the following best describes the relationship between `month_num` and `page_load_time`?
 ```{webr}
+library(ggplot2)
 load_data <- read.csv("load_time.csv")
+# Fill in the blanks
+ggplot(___, aes(___, ___)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  labs(title = "Page Load Time by Month",
+       x = "Month Number",
+       y = "Page Load Time")
 
 ```

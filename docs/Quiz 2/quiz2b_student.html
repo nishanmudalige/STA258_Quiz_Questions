@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <h2 class="anchored" data-anchor-id="q1">Q1 — Five-number Summary</h2>
 <p>The <code>load_time.csv</code> dataset consists of the monthly average website page load times (in milliseconds) over a year.</p>
 <p>Using the dataset <code>load_time.csv</code>, obtain the five-number summary of the variable <code>page_load_time</code> using the <code>summary()</code> function.</p>
-<p>What is the maximum value of <code>reaction_time</code>?</p>
+<p>What is the maximum value of <code>page_load_time</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -183,7 +183,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibG9hZF9kYXRhIDwtIHJlYWQu
 <section id="q4" class="level2">
 <h2 class="anchored" data-anchor-id="q4">Q4 - Grouped Summary by Month</h2>
 <p>Using the dataset <code>load_time.csv</code>, find the maximum load time for each month.</p>
-<p>What is the maximum load time in September?</p>
+<p>What is the maximum load time on the 9th month?</p>
 <p>Hint: You may find the tapply() function helpful.</p>
 <div class="cell">
 <div>
@@ -199,7 +199,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibG9hZF9kYXRhIDwtIHJlYWQu
 <section id="q5" class="level2">
 <h2 class="anchored" data-anchor-id="q5">Q5 - Boxplot Ordered by Mean</h2>
 <p>Using the dataset <code>load_time.csv</code>, create a boxplot of <code>page_load_time</code> grouped by <code>month</code>, with the months reordered by the mean load times.</p>
-<p>After reordering months by their mean load times, what is the mean load time corresponding to the 5th smallest mean? (Answers within ±0.001 will be considered correct.)</p>
+<p>After reordering months by their mean load times, what is the mean load time corresponding to the 5th smallest mean?</p>
 <p>Hint: You may find the reorder() function and geom_boxplot() helpful.</p>
 <div class="cell">
 <div>
@@ -237,22 +237,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGlicmFyeShnZ3Bsb3QyKVxu
 
 </div>
 <script type="webr-9-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibG9hZF9kYXRhIDwtIHJlYWQuY3N2KFwibG9hZF90aW1lLmNzdlwiKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGlicmFyeShnZ3Bsb3QyKVxubG9hZF9kYXRhIDwtIHJlYWQuY3N2KFwibG9hZF90aW1lLmNzdlwiKSJ9
 </script>
 </div>
 </div>
 </section>
 <section id="q8" class="level2">
 <h2 class="anchored" data-anchor-id="q8">Q8 - Scatterplot</h2>
-<p>Using the dataset <code>load_time.csv</code>, build a scatterplot of mapping <code>month</code> as x and <code>page_load_time</code> as y.</p>
-<p>Which of the following best describes the relationship between <code>month</code> and <code>page_load_time</code>?</p>
+<p>Using the dataset <code>load_time.csv</code>, build a scatterplot of mapping <code>month_num</code> as x and <code>page_load_time</code> as y.</p>
+<p>Which of the following best describes the relationship between <code>month_num</code> and <code>page_load_time</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-10" class="exercise-cell">
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibG9hZF9kYXRhIDwtIHJlYWQuY3N2KFwibG9hZF90aW1lLmNzdlwiKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGlicmFyeShnZ3Bsb3QyKVxubG9hZF9kYXRhIDwtIHJlYWQuY3N2KFwibG9hZF90aW1lLmNzdlwiKVxuIyBGaWxsIGluIHRoZSBibGFua3NcbmdncGxvdChfX18sIGFlcyhfX18sIF9fXykpICtcbiAgZ2VvbV9wb2ludCgpICtcbiAgZ2VvbV9zbW9vdGgoc2UgPSBGQUxTRSkgK1xuICBsYWJzKHRpdGxlID0gXCJQYWdlIExvYWQgVGltZSBieSBNb250aFwiLFxuICAgICAgIHggPSBcIk1vbnRoIE51bWJlclwiLFxuICAgICAgIHkgPSBcIlBhZ2UgTG9hZCBUaW1lXCIpIn0=
 </script>
 </div>
 </div>
