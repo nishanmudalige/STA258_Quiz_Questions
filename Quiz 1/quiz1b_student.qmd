@@ -13,14 +13,20 @@ resources:
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
-
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
-  });
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Hide all sections except the requested one
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide Quarto title block
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
 });
 </script>
 

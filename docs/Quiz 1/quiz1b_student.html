@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -116,14 +116,20 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjp0cnVlLCJvdXRwdXQiOmZhbHNlfSwiY29kZSI6Indl
 </div>
 </div>
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
-
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
-  });
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Hide all sections except the requested one
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide Quarto title block
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
 });
 </script>
 <section id="q1" class="level2">
@@ -166,8 +172,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q3" class="level2">
 <h2 class="anchored" data-anchor-id="q3">Q3 — Draw a Histogram</h2>
-<p>The ‘height_weight2.csv’ dataset contains measurements of individuals’ heights (cm) and weights (kgs).</p>
-<p>Draw a histogram of the ‘weight’ column from ‘height_weight2.csv’ to answer the following question: Based on the histogram, which statement best describes the distribution of weights?</p>
+<p>The <code>height_weight2.csv</code> dataset contains measurements of individuals’ heights (cm) and weights (kgs).</p>
+<p>Draw a histogram of the <code>weight</code> column from <code>height_weight2.csv</code> to answer the following question: Based on the histogram, which statement best describes the distribution of weights?</p>
 <div class="cell">
 <div>
 <div id="webr-5" class="exercise-cell">
@@ -181,8 +187,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q4" class="level2">
 <h2 class="anchored" data-anchor-id="q4">Q4 — Draw a Boxplot</h2>
-<p>Draw a boxplot of the ‘weight’ column from ‘height_weight2.csv’ to answer the following question.</p>
-<p>What is the mean weight in the dataset?</p>
+<p>Draw a boxplot of the <code>weight</code> column from <code>height_weight2.csv</code> to answer the following question.</p>
+<p>What is the mean <code>weight</code> in the dataset?</p>
 <div class="cell">
 <div>
 <div id="webr-6" class="exercise-cell">
@@ -196,7 +202,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q5" class="level2">
 <h2 class="anchored" data-anchor-id="q5">Q5 — Outliers Existence</h2>
-<p>Draw a boxplot of the ‘weight’ column from ‘height_weight2.csv’ to answer the following question.</p>
+<p>Draw a boxplot of the <code>weight</code> column from <code>height_weight2.csv</code> to answer the following question.</p>
 <p>Does the boxplot suggest the presence of any outliers?</p>
 <div class="cell">
 <div>
@@ -211,8 +217,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q6" class="level2">
 <h2 class="anchored" data-anchor-id="q6">Q6 — Count rows</h2>
-<p>The ‘sales.csv’ dataset consists of the number of units sold for each day.</p>
-<p>How many rows are in ‘sales.csv’?</p>
+<p>The <code>sales.csv</code> dataset consists of the number of units sold for each day.</p>
+<p>How many rows are in <code>sales.csv</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-8" class="exercise-cell">
@@ -226,7 +232,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q7" class="level2">
 <h2 class="anchored" data-anchor-id="q7">Q7 — Count Columns</h2>
-<p>How many columns are in ‘sales.csv’?</p>
+<p>How many columns are in <code>sales.csv</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-9" class="exercise-cell">
@@ -240,7 +246,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q8" class="level2">
 <h2 class="anchored" data-anchor-id="q8">Q8 — Standard Deviation of Units Sold</h2>
-<p>What is the standard deviation of the ‘Units_Sold’ column in ‘sales.csv’?</p>
+<p>What is the standard deviation of the <code>Units_Sold</code> column in <code>sales.csv</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-10" class="exercise-cell">
@@ -254,7 +260,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q9" class="level2">
 <h2 class="anchored" data-anchor-id="q9">Q9 — Sum of Sales</h2>
-<p>What is the sum of the ‘Units_Sold’ column in ‘sales.csv’?</p>
+<p>What is the sum of the <code>Units_Sold</code> column in <code>sales.csv</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-11" class="exercise-cell">
@@ -268,7 +274,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 </section>
 <section id="q10" class="level2">
 <h2 class="anchored" data-anchor-id="q10">Q10 — Minimum Sales</h2>
-<p>What is the minimum number of sales in a single day in ‘sales.csv’?</p>
+<p>What is the minimum number of sales in a single day in <code>sales.csv</code>?</p>
 <div class="cell">
 <div>
 <div id="webr-12" class="exercise-cell">

@@ -116,18 +116,21 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjp0cnVlLCJvdXRwdXQiOmZhbHNlfSwiY29kZSI6Indl
 </div>
 </div>
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
-
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
-  });
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Hide all sections except the requested one
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide Quarto title block
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
 });
-</script>
-<script>
-console.log("Loaded at", new Date().toISOString(), "hash=", location.hash);
 </script>
 <section id="q1" class="level2">
 <h2 class="anchored" data-anchor-id="q1">Q1 — Getting an element of a vector by index</h2>

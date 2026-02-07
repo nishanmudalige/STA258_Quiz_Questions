@@ -1,5 +1,6 @@
 ---
 title: "Quiz 1a"
+title-block-style: none
 format: live-html
 engine: knitr
 sidebar:
@@ -13,20 +14,23 @@ resources:
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
-
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
-  });
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Hide all sections except the requested one
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide Quarto title block
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
 });
 </script>
 
-<script>
-console.log("Loaded at", new Date().toISOString(), "hash=", location.hash);
-</script>
 
 ## Q1 — Getting an element of a vector by index {#q1}
 What is the element at index 200 of `my_vec`?
