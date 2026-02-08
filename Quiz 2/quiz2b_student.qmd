@@ -58,7 +58,6 @@ The `load_time.csv` dataset consists of the monthly average website page load ti
 Using the dataset `load_time.csv`, compute the interquartile range (IQR) of the variable `page_load_time`.
 
 ```{webr}
-load_data <- read.csv("load_time.csv")
 
 ```
 
@@ -69,7 +68,6 @@ The `load_time.csv` dataset consists of the monthly average website page load ti
 Using the dataset `load_time.csv`, compute the sample variance of the variable `page_load_time`.
 
 ```{webr}
-load_data <- read.csv("load_time.csv")
 
 ```
 
@@ -83,7 +81,6 @@ What is the maximum load time on the 9th month (September)?
 
 Hint: You may find the tapply() function helpful.
 ```{webr}
-load_data <- read.csv("load_time.csv")
 
 ```
 
@@ -97,8 +94,6 @@ After reordering months by their mean load times, what is the mean load time cor
 
 Hint: You may find the `reorder()` function and `geom_boxplot()` helpful.
 ```{webr}
-library(ggplot2)
-load_data <- read.csv("load_time.csv")
 
 ```
 
@@ -111,8 +106,6 @@ Using the dataset `load_time.csv`, create a boxplot of `page_load_time` grouped 
 Which month has the highest maximum page load time?
 
 ```{webr}
-library(ggplot2)
-load_data <- read.csv("load_time.csv")
 
 ```
 
@@ -125,8 +118,6 @@ Using the dataset `load_time.csv`, create a histogram of `page_load_time` with a
 Based on the histogram of `page_load_time`, which best describes the shape of the distribution?
 
 ```{webr}
-library(ggplot2)
-load_data <- read.csv("load_time.csv")
 
 ```
 
@@ -138,7 +129,6 @@ Using the dataset `load_time.csv`, build a scatterplot of mapping `month_num` as
 
 Which of the following best describes the relationship between `month_num` and `page_load_time`?
 ```{webr}
-library(ggplot2)
 load_data <- read.csv("load_time.csv")
 # Fill in the blanks
 ggplot(___, aes(___, ___)) +

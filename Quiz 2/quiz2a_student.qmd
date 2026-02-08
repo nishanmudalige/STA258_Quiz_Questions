@@ -56,7 +56,6 @@ The `study_hours_by_month.csv` dataset consists of recorded study hours from ind
 Using the dataset `study_hours_by_month.csv`, compute the interquartile range (IQR) of the variable `study_hours`.
 
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
@@ -67,7 +66,6 @@ The `study_hours_by_month.csv` dataset consists of recorded study hours from ind
 Using the dataset `study_hours_by_month.csv`, compute the sample standard deviation of the variable `study_hours`.
 
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
@@ -81,7 +79,6 @@ What is the mean study hours in April?
 
 Hint: You may find the `tapply()` function helpful.
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
@@ -95,7 +92,6 @@ After reordering months by their median study hours, what is the median study ho
 
 Hint: You may find the `reorder()` function and `geom_boxplot()` helpful.
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
@@ -107,7 +103,6 @@ Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` 
 
 Which month has the lowest observed hours of study?
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
@@ -120,7 +115,6 @@ Using the dataset `study_hours_by_month.csv`, create a histogram of `study_hours
 Based on the histogram of `study_hours`, which best describes the shape of the distribution?
 
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
