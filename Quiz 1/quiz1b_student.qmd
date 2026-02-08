@@ -71,7 +71,7 @@ The `height_weight2.csv` dataset contains measurements of individuals' heights (
 
 Draw a boxplot of the `weight` column from `height_weight2.csv` to answer the following question.
 
-What is the median `weight` in the dataset? *(Answers within ±0.03 will be considered correct.)*
+What is the median `weight` in the dataset? *(Answers within ±3 will be considered correct.)*
 ```{webr}
 
 ```
