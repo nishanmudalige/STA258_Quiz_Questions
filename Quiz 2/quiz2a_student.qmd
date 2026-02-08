@@ -12,14 +12,24 @@ resources:
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
-
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
-  });
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
 });
 </script>
 ```{webr}
@@ -28,7 +38,8 @@ library(ggplot2)
 study_data <- read.csv("study_hours_by_month.csv")
 ```
 ## Q1 — Five-number Summary {#q1}
-The `study_hours_by_month.csv` dataset consists of recorded study hours (in hours) from individual study sessions across different months of the year.
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, obtain the five-number summary of the variable `study_hours` using the `summary()` function.
 
@@ -40,6 +51,8 @@ study_data <- read.csv("study_hours_by_month.csv")
 
 ## Q2 — Interquartile Range {#q2}
 
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
+
 Using the dataset `study_hours_by_month.csv`, compute the interquartile range (IQR) of the variable `study_hours`.
 
 ```{webr}
@@ -47,7 +60,9 @@ study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
-## Q3 - Sample standard deviation {#q3}
+## Q3 - Sample Standard Deviation {#q3}
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, compute the sample standard deviation of the variable `study_hours`.
 
@@ -56,7 +71,9 @@ study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
-## Q4 - Grouped mean by month {#q4}
+## Q4 - Grouped Summary by Month {#q4}
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, compute the mean study hours for each month.
 
@@ -69,6 +86,9 @@ study_data <- read.csv("study_hours_by_month.csv")
 ```
 
 ## Q5 - Boxplot ordered by median {#q5}
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
+
 Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by month, with the months reordered by the median study hours.
 
 After reordering months by their median study hours, what is the median study hours corresponding to the 3rd smallest median? *(Answers within ±0.1 will be considered correct.)*
@@ -80,6 +100,9 @@ study_data <- read.csv("study_hours_by_month.csv")
 ```
 
 ## Q6 - Boxplot and Outliers {#q6}
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
+
 Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by `month`.
 
 Which month has the lowest observed hours of study?
@@ -88,7 +111,10 @@ study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
-## Q7 - Histogram and distribution shape {#q7}
+## Q7 - Histogram and Distribution Shape {#q7}
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
+
 Using the dataset `study_hours_by_month.csv`, create a histogram of `study_hours` with approximately 12 bins.
 
 Based on the histogram of `study_hours`, which best describes the shape of the distribution?
@@ -99,6 +125,8 @@ study_data <- read.csv("study_hours_by_month.csv")
 ```
 
 ## Q8 - Scatterplot {#q8}
+
+The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, build a scatterplot mapping `month_num` as the x-axis and `study_hours` as the y-axis.
 

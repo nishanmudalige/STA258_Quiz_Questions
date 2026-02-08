@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -116,14 +116,24 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjp0cnVlLCJvdXRwdXQiOmZhbHNlfSwiY29kZSI6Indl
 </div>
 </div>
 <script>
-const params = new URLSearchParams(window.location.search);
-const showQ = params.get("q");
-
 document.addEventListener("DOMContentLoaded", () => {
-  if (!showQ) return;
-  document.querySelectorAll("section[id]").forEach(section => {
-    if (section.id !== showQ) section.style.display = "none";
-  });
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
 });
 </script>
 <div class="cell">
@@ -138,7 +148,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJsaWJy
 </div>
 <section id="q1" class="level2">
 <h2 class="anchored" data-anchor-id="q1">Q1 — Five-number Summary</h2>
-<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours (in hours) from individual study sessions across different months of the year.</p>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, obtain the five-number summary of the variable <code>study_hours</code> using the <code>summary()</code> function.</p>
 <p>What is the median value of <code>study_hours</code>?</p>
 <div class="cell">
@@ -154,6 +164,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </section>
 <section id="q2" class="level2">
 <h2 class="anchored" data-anchor-id="q2">Q2 — Interquartile Range</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, compute the interquartile range (IQR) of the variable <code>study_hours</code>.</p>
 <div class="cell">
 <div>
@@ -167,7 +178,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </div>
 </section>
 <section id="q3" class="level2">
-<h2 class="anchored" data-anchor-id="q3">Q3 - Sample standard deviation</h2>
+<h2 class="anchored" data-anchor-id="q3">Q3 - Sample Standard Deviation</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, compute the sample standard deviation of the variable <code>study_hours</code>.</p>
 <div class="cell">
 <div>
@@ -181,7 +193,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </div>
 </section>
 <section id="q4" class="level2">
-<h2 class="anchored" data-anchor-id="q4">Q4 - Grouped mean by month</h2>
+<h2 class="anchored" data-anchor-id="q4">Q4 - Grouped Summary by Month</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, compute the mean study hours for each month.</p>
 <p>What is the mean study hours in April?</p>
 <p>Hint: You may find the <code>tapply()</code> function helpful.</p>
@@ -198,6 +211,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </section>
 <section id="q5" class="level2">
 <h2 class="anchored" data-anchor-id="q5">Q5 - Boxplot ordered by median</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, create a boxplot of <code>study_hours</code> grouped by month, with the months reordered by the median study hours.</p>
 <p>After reordering months by their median study hours, what is the median study hours corresponding to the 3rd smallest median? <em>(Answers within ±0.1 will be considered correct.)</em></p>
 <p>Hint: You may find the <code>reorder()</code> function and <code>geom_boxplot()</code> helpful.</p>
@@ -214,6 +228,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </section>
 <section id="q6" class="level2">
 <h2 class="anchored" data-anchor-id="q6">Q6 - Boxplot and Outliers</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, create a boxplot of <code>study_hours</code> grouped by <code>month</code>.</p>
 <p>Which month has the lowest observed hours of study?</p>
 <div class="cell">
@@ -228,7 +243,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </div>
 </section>
 <section id="q7" class="level2">
-<h2 class="anchored" data-anchor-id="q7">Q7 - Histogram and distribution shape</h2>
+<h2 class="anchored" data-anchor-id="q7">Q7 - Histogram and Distribution Shape</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, create a histogram of <code>study_hours</code> with approximately 12 bins.</p>
 <p>Based on the histogram of <code>study_hours</code>, which best describes the shape of the distribution?</p>
 <div class="cell">
@@ -244,6 +260,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic3R1ZHlfZGF0YSA8LSByZWFk
 </section>
 <section id="q8" class="level2">
 <h2 class="anchored" data-anchor-id="q8">Q8 - Scatterplot</h2>
+<p>The <code>study_hours_by_month.csv</code> dataset consists of recorded study hours from individual study sessions across different months of the year.</p>
 <p>Using the dataset <code>study_hours_by_month.csv</code>, build a scatterplot mapping <code>month_num</code> as the x-axis and <code>study_hours</code> as the y-axis.</p>
 <p>Which of the following best describes the relationship between <code>month_num</code> and <code>study_hours</code>?</p>
 <div class="cell">
