@@ -41,7 +41,7 @@ Based on the histogram, which statement best describes the distribution of heigh
 ```{webr}
 hw = read.csv("height_weight1.csv")
 hist(hw$height)
-# Approximately symmetric and unimodal
+# Approximately symmetric and bell-shaped
 ```
 
 ## Q4 — Draw a boxplot {#q4}
