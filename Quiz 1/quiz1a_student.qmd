@@ -18,16 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const showQ = params.get("q");
 
-  // Hide all sections except the requested one
+  // Show only the requested section
   if (showQ) {
     document.querySelectorAll("section[id]").forEach(section => {
       if (section.id !== showQ) section.style.display = "none";
     });
   }
 
-  // Hide Quarto title block
+  // Hide page title
   document.querySelectorAll(".quarto-title-block")
     .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
 });
 </script>
 
