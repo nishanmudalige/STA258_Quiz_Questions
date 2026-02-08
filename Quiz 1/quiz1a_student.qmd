@@ -65,6 +65,8 @@ Based on the histogram, which statement best describes the distribution of heigh
 ```
 
 ## Q4 — Draw a boxplot {#q4}
+`height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
+
 Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
 What is the median `height` in the dataset? *(Answers within ±0.03 will be considered correct.)*
@@ -73,6 +75,8 @@ What is the median `height` in the dataset? *(Answers within ±0.03 will be cons
 ```
 
 ## Q5 — Outliers Existence {#q5}
+`height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
+
 Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
@@ -89,6 +93,8 @@ How many rows are in `visits.csv`?
 ```
 
 ## Q7 — Count Columns {#q7}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 How many columns are in `visits.csv`?
 ```{webr}
 
@@ -96,18 +102,24 @@ How many columns are in `visits.csv`?
 ```
 
 ## Q8 — Mean visits {#q8}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 What is the mean of the `Visits` column in `visits.csv`?
 ```{webr}
 
 ```
 
 ## Q9 — Sample variance {#q9}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 What is the sample variance of the `Visits` column in `visits.csv`?
 ```{webr}
 
 ```
 
 ## Q10 — Maximum visits {#q10}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 What is the maximum number of visits in a single day in `visits.csv`?
 ```{webr}
 

@@ -45,6 +45,8 @@ hist(hw$height)
 ```
 
 ## Q4 — Draw a boxplot {#q4}
+`height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
+
 Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
 What is the median `height` in the dataset? *(Answers within ±0.03 will be considered correct.)*
@@ -54,6 +56,8 @@ boxplot(hw$height)
 ```
 
 ## Q5 — Outliers Existence {#q5}
+`height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
+
 Draw a boxplot of the `height` column from `height_weight1.csv` to answer the following question.
 
 Does the boxplot suggest the presence of any outliers?
@@ -73,6 +77,8 @@ nrow(df_visits)
 ```
 
 ## Q7 — Count Columns {#q7}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 How many columns are in `visits.csv`?
 ```{webr}
 ncol(df_visits)
@@ -80,6 +86,8 @@ ncol(df_visits)
 ```
 
 ## Q8 — Mean visits {#q8}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 What is the mean of the `Visits` column in `visits.csv`?
 ```{webr}
 mean(df_visits)
@@ -87,6 +95,8 @@ mean(df_visits)
 ```
 
 ## Q9 — Sample variance {#q9}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 What is the sample variance of the `Visits` column in `visits.csv`?
 ```{webr}
 var(df_visits)
@@ -94,6 +104,8 @@ var(df_visits)
 ```
 
 ## Q10 — Maximum visits {#q10}
+`visits.csv` contains the number of website visits recorded for each day in the dataset.
+
 What is the maximum number of visits in a single day in `visits.csv`?
 ```{webr}
 max(df_visits)

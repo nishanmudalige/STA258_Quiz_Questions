@@ -67,6 +67,7 @@ Based on the histogram, which statement best describes the distribution of weigh
 ```
 
 ## Q4 — Draw a Boxplot {#q4}
+The `height_weight2.csv` dataset contains measurements of individuals' heights (cm) and weights (kgs). 
 
 Draw a boxplot of the `weight` column from `height_weight2.csv` to answer the following question.
 
@@ -76,6 +77,7 @@ What is the mean `weight` in the dataset?
 ```
 
 ## Q5 — Outliers Existence {#q5}
+The `height_weight2.csv` dataset contains measurements of individuals' heights (cm) and weights (kgs). 
 
 Draw a boxplot of the `weight` column from `height_weight2.csv` to answer the following question.
 
@@ -93,6 +95,8 @@ How many rows are in `sales.csv`?
 ```
 
 ## Q7 — Count Columns {#q7}
+The `sales.csv` dataset consists of the number of units sold for each day. 
+
 How many columns are in `sales.csv`?
 ```{webr}
 
@@ -100,18 +104,24 @@ How many columns are in `sales.csv`?
 ```
 
 ## Q8 — Standard Deviation of Units Sold {#q8}
+The `sales.csv` dataset consists of the number of units sold for each day. 
+
 What is the standard deviation of the `Units_Sold` column in `sales.csv`?
 ```{webr}
 
 ```
 
 ## Q9 — Sum of Sales {#q9}
+The `sales.csv` dataset consists of the number of units sold for each day. 
+
 What is the sum of the `Units_Sold` column in `sales.csv`?
 ```{webr}
 
 ```
 
 ## Q10 — Minimum Sales {#q10}
+The `sales.csv` dataset consists of the number of units sold for each day. 
+
 What is the minimum number of sales in a single day in `sales.csv`?
 ```{webr}
 
