@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ```{webr}
 #| echo: false
-library(ggplot2)
+invisible(capture.output({
+  suppressMessages(library(ggplot2))
+  suppressMessages(library(mosaic))
+}))
 load_data <- read.csv("load_time.csv")
 ```
 
@@ -44,12 +47,18 @@ load_data <- read.csv("load_time.csv")
 The `load_time.csv` dataset consists of the monthly average website page load times (in milliseconds) over a year. 
 
 Using the dataset `load_time.csv`, obtain the five-number summary of the variable `page_load_time` using the `summary()` function.
-
 What is the maximum value of `page_load_time`?
+
 ```{webr}
 load_data <- read.csv("load_time.csv")
 
 ```
+
+```{webr}
+#| echo: false
+# summary(load_data$page_load_time)
+```
+
 
 ## Q2 — Interquartile Range {#q2}
 
@@ -59,6 +68,11 @@ Using the dataset `load_time.csv`, compute the interquartile range (IQR) of the 
 
 ```{webr}
 
+```
+
+```{webr}
+#| echo: false
+# IQR(load_data$page_load_time)
 ```
 
 ## Q3 - Sample Variance {#q3}
@@ -71,12 +85,16 @@ Using the dataset `load_time.csv`, compute the sample variance of the variable `
 
 ```
 
+```{webr}
+#| echo: false
+# var(load_data$page_load_time)
+```
+
 ## Q4 - Grouped Summary by Month {#q4}
 
 The `load_time.csv` dataset consists of the monthly average website page load times (in milliseconds) over a year.
 
 Using the dataset `load_time.csv`, find the maximum load time for each month.
-
 What is the maximum load time on the 9th month (September)?
 
 Hint: You may find the tapply() function helpful.
@@ -84,17 +102,35 @@ Hint: You may find the tapply() function helpful.
 
 ```
 
+```{webr}
+#| echo: false
+# tapply(load_data$page_load_time, load_data$month, max)
+```
+
 ## Q5 - Boxplot Ordered by Mean {#q5}
 
 The `load_time.csv` dataset consists of the monthly average website page load times (in milliseconds) over a year.
 
 Using the dataset `load_time.csv`, create a boxplot of `page_load_time` grouped by `month`, with the months reordered by the mean load times.
-
 After reordering months by their mean load times, what is the mean load time corresponding to the 5th smallest mean? *(Answers within ±0.1 will be considered correct.)*
 
-Hint: You may find the `reorder()` function and `geom_boxplot()` helpful.
 ```{webr}
+# Fill in the blanks
+ggplot(___, aes(x = reorder(___, ___, FUN = ___), y = ___)
+) + geom_boxplot()
+```
 
+```{webr}
+#| echo: false
+# load_data <- read.csv("load_time.csv")
+# ggplot(
+# load_data,
+# aes(
+# x = reorder(factor(month), page_load_time, FUN = mean),
+# y = page_load_time
+# )
+# ) +
+# geom_boxplot()
 ```
 
 ## Q6 - Boxplot and Outliers {#q6}
@@ -102,11 +138,27 @@ Hint: You may find the `reorder()` function and `geom_boxplot()` helpful.
 The `load_time.csv` dataset consists of the monthly average website page load times (in milliseconds) over a year.
 
 Using the dataset `load_time.csv`, create a boxplot of `page_load_time` grouped by `month`.
-
 Which month has the highest maximum page load time?
 
 ```{webr}
+# Fill in the blanks
+ggplot(___, aes(x = ___, y = ___)) +
+geom_boxplot() +
+labs(
+x = "Month",
+y = "Page Load Time (ms)"
+)
+```
 
+```{webr}
+#| echo: false
+#load_data <- read.csv("load_time.csv")
+#ggplot(load_data, aes(x = month, y = page_load_time)) +
+#geom_boxplot() +
+#labs(
+#x = "Month",
+#y = "Page Load Time (ms)"
+#)
 ```
 
 ## Q7 - Histogram and Distribution Shape {#q7}
@@ -114,28 +166,32 @@ Which month has the highest maximum page load time?
 The `load_time.csv` dataset consists of the monthly average website page load times (in milliseconds) over a year.
 
 Using the dataset `load_time.csv`, create a histogram of `page_load_time` with approximately 12 bins.
-
 Based on the histogram of `page_load_time`, which best describes the shape of the distribution?
 
 ```{webr}
-
+# Fill in the blanks
+ggplot(___, aes(___)) + geom_histogram(___)
 ```
 
-## Q8 - Scatterplot {#q8}
+```{webr}
+#| echo: false
+# load_data <- read.csv("load_time.csv")
+# ggplot(load_data, aes(page_load_time)) + geom_histogram(bins = 12)
+```
+
+## Q8 - Mosaic Statistics {#q8}
 
 The `load_time.csv` dataset consists of the monthly average website page load times (in milliseconds) over a year.
 
-Using the dataset `load_time.csv`, build a scatterplot of mapping `month_num` as x and `page_load_time` as y.
+Using the dataset `load_time.csv` and the mosaic library, find the standard deviation of `page_load_time` and sample size. 
 
-Which of the following best describes the relationship between `month_num` and `page_load_time`?
+Report your answer in the format: *standard_deviation, sample size*
 ```{webr}
-load_data <- read.csv("load_time.csv")
 # Fill in the blanks
-ggplot(___, aes(___, ___)) +
-  geom_point() +
-  geom_smooth(se = FALSE) +
-  labs(title = "Page Load Time by Month",
-       x = "Month Number",
-       y = "Page Load Time")
+favstats(~ ___, data = ___)
+```
 
+```{webr}
+#| echo: false
+# favstats(~ page_load_time, data = load_data)
 ```

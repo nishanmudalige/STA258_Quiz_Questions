@@ -34,7 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 ```{webr}
 #| echo: false
-library(ggplot2)
+invisible(capture.output({
+  suppressMessages(library(ggplot2))
+  suppressMessages(library(mosaic))
+}))
 study_data <- read.csv("study_hours_by_month.csv")
 ```
 ## Q1 — Five-number Summary {#q1}
@@ -42,31 +45,47 @@ study_data <- read.csv("study_hours_by_month.csv")
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, obtain the five-number summary of the variable `study_hours` using the `summary()` function.
-
 What is the median value of `study_hours`?
+
 ```{webr}
 study_data <- read.csv("study_hours_by_month.csv")
 
 ```
 
+```{webr}
+#| echo: false
+# summary(study_data$study_hours)
+# 3.901
+```
+
 ## Q2 — Interquartile Range {#q2}
 
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
-
 Using the dataset `study_hours_by_month.csv`, compute the interquartile range (IQR) of the variable `study_hours`.
 
 ```{webr}
 
 ```
 
+```{webr}
+#| echo: false
+# IQR(study_data$study_hours)
+# 1.5539
+```
+
 ## Q3 - Sample Standard Deviation {#q3}
 
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
-
 Using the dataset `study_hours_by_month.csv`, compute the sample standard deviation of the variable `study_hours`.
 
 ```{webr}
 
+```
+
+```{webr}
+#| echo: false
+# sd(study_data$study_hours)
+# 1.0554
 ```
 
 ## Q4 - Grouped Summary by Month {#q4}
@@ -74,7 +93,6 @@ Using the dataset `study_hours_by_month.csv`, compute the sample standard deviat
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, compute the mean study hours for each month.
-
 What is the mean study hours in April?
 
 Hint: You may find the `tapply()` function helpful.
@@ -82,17 +100,37 @@ Hint: You may find the `tapply()` function helpful.
 
 ```
 
+```{webr}
+#| echo: false
+# tapply(study_data$study_hours, study_data$month, mean)
+# 3.243667 
+```
+
 ## Q5 - Boxplot ordered by median {#q5}
 
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by month, with the months reordered by the median study hours.
-
 After reordering months by their median study hours, what is the median study hours corresponding to the 3rd smallest median? *(Answers within ±0.1 will be considered correct.)*
 
 Hint: You may find the `reorder()` function and `geom_boxplot()` helpful.
 ```{webr}
+# Fill in the blanks
+ggplot(___, aes(x = reorder(___, ___, FUN = ___), y = ___)
+) + geom_boxplot()
+```
 
+```{webr}
+#| echo: false
+#ggplot(
+#  study_data,
+#  aes(
+#    x = reorder(factor(month), study_hours, FUN = median),
+#    y = study_hours
+#  )
+#) +
+#  geom_boxplot()
+# 3
 ```
 
 ## Q6 - Boxplot and Outliers {#q6}
@@ -100,10 +138,23 @@ Hint: You may find the `reorder()` function and `geom_boxplot()` helpful.
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by `month`.
-
 Which month has the lowest observed hours of study?
 ```{webr}
+# Fill in the blanks
+ggplot(___, aes(x = ___, y = ___)) +
+geom_boxplot() +
+labs(x = "Month", y = "Study Hours")
+```
 
+```{webr}
+#| echo: false
+#ggplot(study_data, aes(x = month, y = study_hours)) +
+#  geom_boxplot() +
+#  labs(
+#    x = "Month",
+#    y = "Study Hours"
+#  )
+#Jan
 ```
 
 ## Q7 - Histogram and Distribution Shape {#q7}
@@ -111,30 +162,31 @@ Which month has the lowest observed hours of study?
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, create a histogram of `study_hours` with approximately 12 bins.
-
 Based on the histogram of `study_hours`, which best describes the shape of the distribution?
 
 ```{webr}
-
+# Fill in the blanks
+ggplot(___, aes(___)) + geom_histogram(___)
 ```
 
-## Q8 - Scatterplot {#q8}
+```{webr}
+#| echo: false
+# ggplot(study_data, aes(study_hours)) + geom_histogram(bins = 12)
+```
+
+## Q8 - Mosaic Statistics {#q8}
 
 The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
-Using the dataset `study_hours_by_month.csv`, build a scatterplot mapping `month_num` as the x-axis and `study_hours` as the y-axis.
+Using the dataset `study_hours_by_month.csv`, and the mosaic library, find the standard deviation of `study_hours` and sample size. 
 
-Which of the following best describes the relationship between `month_num` and `study_hours`?
+Report your answer in the format: *standard_deviation, sample size*
+```{webr}
+# Fill in the blanks
+favstats(~ ___, data = ___)
+```
 
 ```{webr}
-study_data <- read.csv("study_hours_by_month.csv")
-study_data$month_num <- as.numeric(
-  factor(study_data$month,
-         levels = c("Jan","Feb","Mar","Apr","May","Jun",
-                    "Jul","Aug","Sep","Oct","Nov","Dec"))
-)
-# Fill in the blanks
-ggplot(___, aes(___, ___)) +
-  geom_point() +
-  geom_smooth(se = FALSE)
+#| echo: false
+# favstats(~ study_hours, data = study_data)
 ```
