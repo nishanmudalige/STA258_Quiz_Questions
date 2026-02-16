@@ -1,0 +1,218 @@
+---
+title: "Quiz 3a"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - scores.csv
+  - task_times.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+```{webr}
+#| echo: false
+invisible(capture.output({
+  suppressMessages(library(ggplot2))
+  suppressMessages(library(skimr))
+}))
+```
+## Q1 — Standard Normal One-sided Probabilities {#q1a}
+The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
+
+Compute the probability that a random student scored below 70 in Calculus. 
+Hint: Use `mean()` and `sd()` to find the mean and standard deviation, and then use `pnorm`. 
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# scores <- read.csv('scores.csv')
+# mean <- mean(scores$calculus)
+# sd <- sd(scores$calculus)
+# pnorm(70, mean, sd)
+
+```
+
+## Q1 — Standard Normal One-sided Probabilities {#q1b}
+The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
+
+Compute the probability that a random student scored above 80 in English. 
+Hint: Use `mean()` and `sd()` to find the mean and standard deviation, and then use `pnorm`. Also recall that `pnorm` gives the area to the left; what do we need to do to get the area to the right?
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# scores <- read.csv('scores.csv')
+# mean <- mean(scores$english)
+# sd <- sd(scores$english)
+# 1 - pnorm(70, mean, sd)
+
+```
+
+## Q2: Using skimr package {#q2a}
+The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
+
+Make a skim summary of the scores. Which subject has the highest mean and the lowest mean? Report your answer in the format: *highest_mean_subject, lowest_mean_subject*
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# scores <- read.csv('scores.csv')
+# skim(scores)
+```
+
+
+## Q2: Using skimr package {#q2b}
+The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
+
+Make a skim summary of the scores. Which subject has the highest standard deviation and the lowest standard deviation? Report your answer in the format: *highest_sd_subject, lowest_sd_subject*
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# scores <- read.csv('scores.csv')
+# skim(scores)
+```
+
+## Q3 - T-distributions {#q3a}
+The dataset `task_times.csv` contains the completion times (in minutes) for two tasks performed by 25 participants, with columns `id`, `task1`, and `task2`. 
+
+Calculate the probability that the average time for task1 is less than 49.5 minutes using the T-distribution.
+Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviation. Use `pt` after calculating the t-statistic. 
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# df <- read.csv('task_times.csv')
+# mean <- mean(df$task1)
+# sd <- sd(df$task1)
+# n <- 25
+# t <- (49.5 - mean) / (sd / sqrt(n))
+# pt(t, n-1)
+
+```
+
+## Q3 - T-distribution {#q3b}
+The dataset `task_times.csv` contains the completion times (in minutes) for two tasks performed by 25 participants, with columns `id`, `task1`, and `task2`. 
+
+Calculate the probability that the average time for task2 is less than 42 minutes using the T-distribution.
+Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviation. Use `pt` after calculating the t-statistic. 
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# df <- read.csv('task_times.csv')
+# mean <- mean(df$task2)
+# sd <- sd(df$task2)
+# n <- 25
+# t <- (42 - mean) / (sd / sqrt(n))
+# pt(t, n-1)
+
+```
+
+## Q4 - Chi-Square {#q4a}
+Let $X$ be a Chi-Square random variable with df = 10. Calculate $P(X \ge 15)$.
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# prob <- 1 - pchisq(15, 10)
+# prob
+```
+
+## Q4 - Chi-Square {#q4b}
+Let $X$ be a Chi-Square random variable with df = 8. Find $x^*$ such that $P(X \ge x^*) = 0.90$.
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# qchisq(0.10, 8)
+```
+
+## Q5: F-distribution {#q5a}
+Let $X$ be an F random variable with numerator df = 5 and denominator df = 10. Find $P(X \ge 3.0)$.
+
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# 1 - pf(3.0, df1 = 5, df2 = 10)
+```
+
+## Q5: F-distribution {#q5b}
+Let $X$ be an F random variable with numerator df = 3 and denominator df = 7. Find $x^*$ such that $P(X \ge x^*) = 0.05$.
+```{webr}
+
+
+```
+
+```{webr}
+#| echo: false
+# solution
+# qf(0.95, df1 = 3, df2 = 7)
+```
