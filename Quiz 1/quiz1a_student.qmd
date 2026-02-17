@@ -48,12 +48,24 @@ my_vec <- rnorm(1000, mean = 100, sd = 10)
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+my_vec[200]
+# 96.1892
+```
 ## Q2 — Find the average {#q2}
 Compute the mean of `c(1,7,9,16,32)`.
 ```{webr}
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+mean(c(1,7,9,16,32))
+# 13
+```
 ## Q3 — Draw a histogram {#q3}
 `height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
 
@@ -64,6 +76,13 @@ Based on the histogram, which statement best describes the distribution of heigh
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+hw = read.csv("height_weight1.csv")
+hist(hw$height)
+# Approximately symmetric and bell-shaped
+```
 ## Q4 — Draw a boxplot {#q4}
 `height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
 
@@ -74,6 +93,12 @@ What is the median `height` in the dataset? *(Answers within ±0.03 will be cons
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+boxplot(hw$height)
+# 1.73
+```
 ## Q5 — Outliers Existence {#q5}
 `height_weight1.csv` contains simulated adult `height` (in meters) and `weight` (in kilograms) data.
 
@@ -84,6 +109,12 @@ Does the boxplot suggest the presence of any outliers?
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+boxplot(hw$height)
+# Outliers on the both sides
+```
 ## Q6 — Count rows {#q6}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
@@ -92,15 +123,27 @@ How many rows are in `visits.csv`?
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+df_visits = read.csv("visits.csv")
+nrow(df_visits)
+# 20
+```
 ## Q7 — Count Columns {#q7}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
 How many columns are in `visits.csv`?
 ```{webr}
 
-
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+ncol(df_visits)
+# 2
+```
 ## Q8 — Mean visits {#q8}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
@@ -109,6 +152,12 @@ What is the mean of the `visits` column in `visits.csv`?
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+mean(df_visits)
+# 40.9
+```
 ## Q9 — Sample variance {#q9}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
@@ -117,10 +166,24 @@ What is the sample variance of the `visits` column in `visits.csv`?
 
 ```
 
+```{webr}
+#| echo: false
+#| output: false
+var(df_visits)
+# 58.6210
+```
+
 ## Q10 — Maximum visits {#q10}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
 What is the maximum number of visits in a single day in `visits.csv`?
 ```{webr}
 
+```
+
+```{webr}
+#| echo: false
+#| output: false
+max(df_visits)
+# 53
 ```
