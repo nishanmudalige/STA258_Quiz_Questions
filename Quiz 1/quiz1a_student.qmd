@@ -104,7 +104,7 @@ How many columns are in `visits.csv`?
 ## Q8 — Mean visits {#q8}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
-What is the mean of the `Visits` column in `visits.csv`?
+What is the mean of the `visits` column in `visits.csv`?
 ```{webr}
 
 ```
@@ -112,7 +112,7 @@ What is the mean of the `Visits` column in `visits.csv`?
 ## Q9 — Sample variance {#q9}
 `visits.csv` contains the number of website visits recorded for each day in the dataset.
 
-What is the sample variance of the `Visits` column in `visits.csv`?
+What is the sample variance of the `visits` column in `visits.csv`?
 ```{webr}
 
 ```
