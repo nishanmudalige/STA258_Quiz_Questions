@@ -51,6 +51,7 @@ Draw a boxplot of the `height` column from `height_weight1.csv` to answer the fo
 
 What is the median `height` in the dataset? *(Answers within ±0.03 will be considered correct.)*
 ```{webr}
+hw = read.csv("height_weight1.csv")
 boxplot(hw$height)
 # 1.73
 ```
