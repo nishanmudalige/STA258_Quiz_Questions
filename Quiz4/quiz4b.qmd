@@ -173,7 +173,7 @@ xbar + tstar*s/sqrt(n)
 ```
 
 ## Q7 — Proportion CI (Lower Bound){#q7}
-Construct a 90% Z confidence interval for the true admission proportion.
+Construct a 95% Z confidence interval for the true admission proportion.
 
 What is the lower bound of this interval?
 ```{webr}
@@ -198,7 +198,7 @@ phat - z*sqrt(phat*(1-phat)/n)
 ```
 
 ## Q8 — Proportion CI (Upper Bound){#q8}
-Construct a 90% Z confidence interval for the true admission proportion.
+Construct a 95% Z confidence interval for the true admission proportion.
 
 What is the upper bound of this interval?
 ```{webr}
