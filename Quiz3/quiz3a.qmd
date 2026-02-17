@@ -118,7 +118,7 @@ Make a skim summary of the scores. Which subject has the highest standard deviat
 ## Q3 - T-distributions {#q3a}
 The dataset `task_times.csv` contains the completion times (in minutes) for two tasks performed by 25 participants, with columns `id`, `task1`, and `task2`. 
 
-Calculate the probability that the average time for task1 is less than 49.5 minutes using the T-distribution.
+Calculate the probability that the average time for task1 is less than 42 minutes using the T-distribution.
 Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviation. Use `pt` after calculating the t-statistic. 
 
 ```{webr}
@@ -133,7 +133,7 @@ Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviat
 # mean <- mean(df$task1)
 # sd <- sd(df$task1)
 # n <- 25
-# t <- (49.5 - mean) / (sd / sqrt(n))
+# t <- (42 - mean) / (sd / sqrt(n))
 # pt(t, n-1)
 
 ```
@@ -141,7 +141,7 @@ Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviat
 ## Q3 - T-distribution {#q3b}
 The dataset `task_times.csv` contains the completion times (in minutes) for two tasks performed by 25 participants, with columns `id`, `task1`, and `task2`. 
 
-Calculate the probability that the average time for task2 is less than 42 minutes using the T-distribution.
+Calculate the probability that the average time for task2 is less than 49.5 minutes using the T-distribution.
 Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviation. Use `pt` after calculating the t-statistic. 
 
 ```{webr}
@@ -156,7 +156,7 @@ Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviat
 # mean <- mean(df$task2)
 # sd <- sd(df$task2)
 # n <- 25
-# t <- (42 - mean) / (sd / sqrt(n))
+# t <- (49.5 - mean) / (sd / sqrt(n))
 # pt(t, n-1)
 
 ```
