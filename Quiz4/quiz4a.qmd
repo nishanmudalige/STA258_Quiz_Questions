@@ -6,7 +6,7 @@ engine: knitr
 sidebar:
   style: docked
 resources:
-  - Academic_Performance_B.csv
+  - Academic_Performance_A.csv
 ---
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
