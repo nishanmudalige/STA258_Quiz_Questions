@@ -106,7 +106,7 @@ How many columns are in `sales.csv`?
 ## Q8 — Standard Deviation of Units Sold {#q8}
 The `sales.csv` dataset consists of the number of units sold for each day. 
 
-What is the sample standard deviation of the `Units_Sold` column in `sales.csv`?
+What is the sample standard deviation of the `units_sold` column in `sales.csv`?
 ```{webr}
 
 ```
@@ -114,7 +114,7 @@ What is the sample standard deviation of the `Units_Sold` column in `sales.csv`?
 ## Q9 — Sum of Sales {#q9}
 The `sales.csv` dataset consists of the number of units sold for each day. 
 
-What is the sum of the `Units_Sold` column in `sales.csv`?
+What is the sum of the `units_sold` column in `sales.csv`?
 ```{webr}
 
 ```
