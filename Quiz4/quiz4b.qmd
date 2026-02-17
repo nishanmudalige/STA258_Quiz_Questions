@@ -169,7 +169,7 @@ s <- sd(x)
 n <- length(x)
 tstar <- qt(0.975, df = n - 1)
 xbar + tstar*s/sqrt(n)
-#84.2412
+#84.2414
 ```
 
 ## Q7 — Proportion CI (Lower Bound){#q7}
