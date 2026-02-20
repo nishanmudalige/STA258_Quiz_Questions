@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 ## Q1 — Z Critical Value {#q1}
-What is the 95% two-sided $Z^*$ critical value?
+What is the 99% two-sided $Z^*$ critical value?
 ```{webr}
 
 ```
@@ -43,14 +43,11 @@ What is the 95% two-sided $Z^*$ critical value?
 ```{webr}
 #| echo: false
 #| output: false
-qnorm(0.975)
-# 1.9600
+qnorm(0.995)
+# 2.5758
 ```
 ## Q2 — Z Confidence Interval (Lower Bound) {#q2}
-Using `Exam_Score`, assume σ=12.
-
-Construct a 95% Z confidence interval for the true mean exam score.
-
+Using the dataset `Academic_Performance_B.csv`, consider the variable `Exam_Score`. Assume the population standard deviation is σ=12. Construct a 95% Z confidence interval for the true mean exam score. 
 What is the lower bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
@@ -72,13 +69,10 @@ n <- length(x)
 sigma <- 12
 z <- qnorm(0.975)
 xbar - z*sigma/sqrt(n)
-# 77.3330
+# 73.9409
 ```
 ## Q3 — Z Confidence Interval (Upper Bound) {#q3}
-Using `Exam_Score`, assume σ=12.
-
-Construct a 95% Z confidence interval for the true mean exam score.
-
+Using the dataset `Academic_Performance_B.csv`, consider the variable `Exam_Score`. Assume the population standard deviation is σ=12. Construct a 95% Z confidence interval for the true mean exam score. 
 What is the upper bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
@@ -100,12 +94,10 @@ n <- length(x)
 sigma <- 12
 z <- qnorm(0.975)
 xbar + z*sigma/sqrt(n)
-# 82.5921
+# 84.4591
 ```
 ## Q4 — t Critical Value {#q4}
-Using `Final_Exam_Score`:
-
-What is the 95% two-sided t* critical value?
+Using the dataset `Academic_Performance_A.csv` (n = 20), what is the 95% two-sided t* critical value?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
 n <- length(df$Final_Exam_Score)
@@ -118,11 +110,10 @@ n <- length(df$Final_Exam_Score)
 df <- read.csv("Academic_Performance_B.csv")
 n <- length(df$Final_Exam_Score)
 qt(0.975, df = n - 1)
-#1.9904
+# 2.0930
 ```
 ## Q5 — t Confidence Interval (Lower Bound) {#q5}
-Construct a 95% t confidence interval for the true mean `Final_Exam_Score`.
-
+Using the dataset `Academic_Performance_B.csv` (n = 20), construct a 95% t confidence interval for the true mean final exam score. Assume the population variance is unknown. 
 What is the lower bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
@@ -143,12 +134,11 @@ s <- sd(x)
 n <- length(x)
 tstar <- qt(0.975, df = n - 1)
 xbar - tstar*s/sqrt(n)
-#78.1086
+# 71.6810
 ```
 
 ## Q6 — t Confidence Interval (Upper Bound) {#q6}
-Construct a 95% t confidence interval for the true mean `Final_Exam_Score`.
-
+Using the dataset `Academic_Performance_B.csv` (n = 20), construct a 95% t confidence interval for the true mean final exam score. Assume the population variance is unknown. 
 What is the upper bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
@@ -169,12 +159,11 @@ s <- sd(x)
 n <- length(x)
 tstar <- qt(0.975, df = n - 1)
 xbar + tstar*s/sqrt(n)
-#84.2414
+# 87.8190
 ```
 
 ## Q7 — Proportion CI (Lower Bound){#q7}
-Construct a 95% Z confidence interval for the true admission proportion.
-
+Using the dataset `Academic_Performance_B.csv`, construct a 95% Z confidence interval for the true admission proportion.
 What is the lower bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
@@ -194,12 +183,11 @@ n <- length(x)
 phat <- mean(x)
 z <- qnorm(0.975)
 phat - z*sqrt(phat*(1-phat)/n)
-#0.5996
+# 0.2809
 ```
 
 ## Q8 — Proportion CI (Upper Bound){#q8}
-Construct a 95% Z confidence interval for the true admission proportion.
-
+Using the dataset `Academic_Performance_B.csv`, construct a 95% Z confidence interval for the true admission proportion.
 What is the upper bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
@@ -219,5 +207,5 @@ n <- length(x)
 phat <- mean(x)
 z <- qnorm(0.975)
 phat + z*sqrt(phat*(1-phat)/n)
-# 0.8004
+# 0.7191
 ```

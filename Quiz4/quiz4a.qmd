@@ -44,13 +44,10 @@ What is the 90% two-sided $Z^*$ critical value?
 #| echo: false
 #| output: false
 qnorm(0.95)
-#1.6449
+# 1.6449
 ```
 ## Q2 — Z Confidence Interval (Lower Bound) {#q2}
-Using `Exam_Score`, assume σ=10.
-
-Construct a 90% Z confidence interval for the true mean exam score.
-
+Using the dataset `Academic_Performance_A.csv`, consider the variable `Exam_Score`. Assume the population standard deviation is σ=10. Construct a 90% Z confidence interval for the true mean exam score. 
 What is the lower bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
@@ -72,13 +69,10 @@ n <- length(x)
 sigma <- 10
 z <- qnorm(0.95)
 xbar - z*sigma/sqrt(n)
-# 79.0485
+# 76.9220
 ```
 ## Q3 — Z Confidence Interval (Upper Bound) {#q3}
-Using `Exam_Score`, assume σ=10.
-
-Construct a 90% Z confidence interval for the true mean exam score.
-
+Using the dataset `Academic_Performance_A.csv`, consider the variable `Exam_Score`. Assume the population standard deviation is σ=10. Construct a 90% Z confidence interval for the true mean exam score. 
 What is the upper bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
@@ -100,12 +94,10 @@ n <- length(x)
 sigma <- 10
 z <- qnorm(0.95)
 xbar + z*sigma/sqrt(n)
-# 82.7265
+# 84.2780
 ```
 ## Q4 — t Critical Value {#q4}
-Using `Final_Exam_Score`:
-
-What is the 90% two-sided t* critical value?
+Using the dataset `Academic_Performance_A.csv` (n = 20), what is the 90% two-sided t* critical value?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
 n <- length(df$Final_Exam_Score)
@@ -117,11 +109,10 @@ n <- length(df$Final_Exam_Score)
 df <- read.csv("Academic_Performance_A.csv")
 n <- length(df$Final_Exam_Score)
 qt(0.95, df = n - 1)
-#1.6644
+# 1.7291
 ```
 ## Q5 — t Confidence Interval (Lower Bound) {#q5}
-Construct a 90% t confidence interval for the true mean `Final_Exam_Score`.
-
+Using the dataset `Academic_Performance_A.csv` (n = 20), construct a 90% t confidence interval for the true mean final exam score. Assume the population variance is unknown. 
 What is the lower bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
@@ -142,12 +133,11 @@ s <- sd(x)
 n <- length(x)
 tstar <- qt(0.95, df = n - 1)
 xbar - tstar*s/sqrt(n)
-#78.9316
+# 76.6164
 ```
 
 ## Q6 — t Confidence Interval (Upper Bound) {#q6}
-Construct a 90% t confidence interval for the true mean `Final_Exam_Score`.
-
+Using the dataset `Academic_Performance_A.csv` (n = 20), construct a 90% t confidence interval for the true mean final exam score. Assume the population variance is unknown. 
 What is the upper bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
@@ -168,12 +158,11 @@ s <- sd(x)
 n <- length(x)
 tstar <- qt(0.95, df = n - 1)
 xbar + tstar*s/sqrt(n)
-#83.9934
+# 82.1836
 ```
 
 ## Q7 — Proportion CI (Lower Bound){#q7}
-Construct a 90% Z confidence interval for the true admission proportion.
-
+Using the dataset `Academic_Performance_A.csv`, construct a 90% Z confidence interval for the true admission proportion.
 What is the lower bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
@@ -193,12 +182,11 @@ n <- length(x)
 phat <- mean(x)
 z <- qnorm(0.95)
 phat - z*sqrt(phat*(1-phat)/n)
-#0.6704
+# 0.7187
 ```
 
 ## Q8 — Proportion CI (Upper Bound){#q8}
-Construct a 90% Z confidence interval for the true admission proportion.
-
+Using the dataset `Academic_Performance_A.csv`, construct a 90% Z confidence interval for the true admission proportion.
 What is the upper bound of this interval?
 ```{webr}
 df <- read.csv("Academic_Performance_A.csv")
@@ -218,5 +206,5 @@ n <- length(x)
 phat <- mean(x)
 z <- qnorm(0.95)
 phat + z*sqrt(phat*(1-phat)/n)
-#0.8296
+# 0.9813
 ```
