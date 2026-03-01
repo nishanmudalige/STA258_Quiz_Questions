@@ -1,0 +1,245 @@
+---
+title: "Quiz 5"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources: 
+    - cars_safety.csv
+    - snacks.csv
+    - braking_dist.csv
+    - efficiency.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+```{webr}
+#| echo: false
+invisible(capture.output({
+  suppressMessages(library(ggplot2))
+  suppressMessages(library(skimr))
+}))
+```
+## Q1 — Two-sided Confidence Interval {#q1a}
+A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their yield was measured. The resulting data is as follows: \
+**Fertilizer A:** 12, 15, 14, 16, 13  \
+**Fertilizer B:** 17, 18, 16, 19, 17
+
+Compute a 99% two-sided confidence interval for $\mu_{A} - \mu_{B}$ for the yield using pooled variances. You may assume equal variances.
+Hint: Use the `t.test` command.
+```{webr}
+fertilizer_a <- c(12, 15, 14, 16, 13)
+fertilizer_b <- c(17, 18, 16, 19, 17)
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+fertilizer_a <- c(12, 15, 14, 16, 13)
+fertilizer_b <- c(17, 18, 16, 19, 17)
+t.test(fertilizer_a, fertilizer_b, var.equal = TRUE, conf.level = 0.99)
+```
+
+## Q1 — Two-sided Confidence Interval {#q1b}
+A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their growth (in cm) was measured. The resulting data is as follows: \
+**Fertilizer A:** 6.5, 7.0, 6.8, 7.2, 6.9 \
+**Fertilizer B:** 8.0, 7.5, 8.5, 9.0, 7.8
+
+Compute a 99% two-sided confidence interval for $\mu_{B} - \mu_{A}$ for the plant height using pooled variances. You may **not** assume they have equal variances.
+Hint: Use the `t.test` command.
+```{webr}
+fertilizer_a <- c(6.5, 7.0, 6.8, 7.2, 6.9)
+fertilizer_b <- c(8.0, 7.5, 8.5, 9.0, 7.8)
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+fertilizer_a <- c(6.5, 7.0, 6.8, 7.2, 6.9)
+fertilizer_b <- c(8.0, 7.5, 8.5, 9.0, 7.8)
+t.test(fertilizer_b, fertilizer_a, var.equal = FALSE, conf.level = 0.99)
+```
+
+## Q2 — Proportions {#q2a}
+The dataset `snacks.csv` contains customer responses to two new snacks, A and B. For each snack, customers recorded whether they liked it (Yes) or not (No).
+
+Using this dataset, compute a 85% two-sided confidence interval for $p_{B} - p_{A}$.
+```{webr}
+snacks_df <- read.csv('snacks.csv')
+x1 <- sum(snacks_df$snack == ___ , snacks_df$results == ___)
+x2 <- sum(___ , ___)
+n1 <- ___
+n2 <- ___
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+snacks_df <- read.csv('snacks.csv')
+x1 <- sum(snacks_df$snack == "A" & snacks_df$results == "Yes")
+x2 <- sum(snacks_df$snack == "B" & snacks_df$results == "Yes")
+n1 <- sum(snacks_df$snack == "A")
+n2 <- sum(snacks_df$snack == "B")
+prop.test(x = c(x1, x2), n = c(n1, n2), conf.level = 0.85, correct = FALSE)
+```
+
+## Q2 — Proportions {#q2b}
+The dataset `cars_safety.csv` contains the results of safety tests for two car models, X and Y. Each test either passed (True) or failed (False).
+
+Using this dataset, compute a 80% two-sided confidence interval for $p_{X} - p_{Y}$.
+```{webr}
+safety_df <- read.csv('cars_safety.csv')
+x1 <- sum(safety_df$model == ___ , safety_df$passed == ___)
+x2 <- sum(___ , ___)
+n1 <- ___
+n2 <- ___
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+safety_df <- read.csv('cars_safety.csv')
+x1 <- sum(safety_df$model == "X" & safety_df$passed == "True")
+x2 <- sum(safety_df$model == "Y" & safety_df$passed == "True")
+n1 <- sum(safety_df$model == "X")
+n2 <- sum(safety_df$model == "Y")
+prop.test(x = c(x1, x2), n = c(n1, n2), conf.level = 0.80, correct = FALSE)
+```
+
+## Q3 — Ratio of Variances {#q3a}
+The dataset `braking_dist.csv` contains the distances of two car models, X and Y, for their braking distances (in metres). 
+
+Using this dataset, compute a 90% confidence interval for the ratio of variances $\sigma_{X} / \sigma_{Y}$.
+```{webr}
+brake_df <- read.csv('braking_dist.csv')
+x <- brake_df$___[brake_df$___ == "X"]
+y <- brake_df$___[brake_df$___ == ___]
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+brake_df <- read.csv("braking_dist.csv")
+x <- brake_df$distance[brake_df$car == "X"]
+y <- brake_df$distance[brake_df$car == "Y"]
+var.test(x, y, conf.level = 0.90)
+```
+
+## Q3 — Ratio of Variances {#q3b}
+The dataset `efficiency.csv` contains the results of two car models, A and B, that are tested for their fuel efficiency (in km/litre). 
+
+Using this dataset, compute a 90% confidence interval for the ratio of variances $\sigma_{A} / \sigma_{B}$.
+```{webr}
+efficiency_df <- read.csv('efficiency.csv')
+a <- efficiency_df$___[efficiency_df$___ == "A"]
+b <- efficiency_df$___[efficiency_df$___ == ___]
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+efficiency_df <- read.csv("efficiency.csv")
+x <- efficiency_df$efficiency[efficiency_df$car == "A"]
+y <- efficiency_df$efficiency[efficiency_df$car == "B"]
+var.test(x, y, conf.level = 0.90)
+```
+
+## Q4 — Paired One-Sided CI {#q4a}
+A company wants to test their new energy drink to see if it increases alertness. Five participants try the drink, and their reaction time (ms) is recorded as such: \
+**Control (A):** 250, 265, 270, 260, 255 \
+**After Consumption (B):** 240, 255, 260, 250, 248
+
+Compute a one-sided 90% confidence interval for the mean decrease in reaction time $\mu_{A} - \mu_{B} > 0$.
+```{webr}
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+A <- c(250, 265, 270, 260, 255)  # Control
+B <- c(240, 255, 260, 250, 248)  # After consumption
+t.test(A, B, paired = TRUE, alternative = "greater", conf.level = 0.90)
+```
+
+## Q4 — Paired One-Sided CI {#q4b}
+A company wants to test their new energy drink to see if it increases alertness. Five participants try the drink, and their reaction time (ms) is recorded as such: \
+**Control (A):** 255, 260, 265, 258, 262 \
+**After Consumption (B):** 248, 253, 260, 252, 257
+
+Compute a one-sided 85% confidence interval for the mean decrease in reaction time $\mu_{A} - \mu_{B} > 0$.
+```{webr}
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+A <- c(255, 260, 265, 258, 262)  
+B <- c(248, 253, 260, 252, 257)
+t.test(A, B, paired = TRUE, alternative = "greater", conf.level = 0.85)
+```
+
+## Q5 — One-Sided CI {#q5a}
+A fitness study wants to compare the resting blood pressure (in mmHg) between those who regularly exercise and those who do not. \
+**No Exercise (A):** 130, 135, 128, 132, 136 \
+**Exercise (B):** 120, 125, 118, 122, 124
+
+Compute a one-sided 85% confidence interval for the mean difference in blood pressure ($\mu_{B} - \mu_{A}$) to test if exercise lowers blood pressure. You may assume equal variances.
+```{webr}
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+A <- c(130, 135, 128, 132, 136)
+B <- c(120, 125, 118, 122, 124) 
+t.test(B, A, paired = FALSE, alternative = "less", conf.level = 0.85, var.equal = TRUE)
+```
+
+## Q5 — One-Sided CI {#q5b}
+A fitness study wants to compare the resting blood pressure (in mmHg) between those who regularly exercise and those who do not. \
+**No Exercise (A):** 130, 145, 128, 138, 142 \
+**Exercise (B):** 118, 125, 120, 122, 127
+
+Compute a one-sided 90% confidence interval for the mean difference in blood pressure ($\mu_{B} - \mu_{A}$) to test if exercise lowers blood pressure. You may **not** assume equal variances.
+```{webr}
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+A <- c(130, 145, 128, 138, 142)
+B <- c(118, 125, 120, 122, 127) 
+t.test(B, A, paired = FALSE, alternative = "less", conf.level = 0.90, var.equal = FALSE)
+```
