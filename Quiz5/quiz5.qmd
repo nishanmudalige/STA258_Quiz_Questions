@@ -178,6 +178,7 @@ A company wants to test their new energy drink to see if it increases alertness.
 **After Consumption (B):** 240, 255, 260, 250, 248
 
 Compute a one-sided 90% confidence interval for the mean decrease in reaction time $\mu_{A} - \mu_{B} > 0$.
+Hint: Use a paired t-test.
 ```{webr}
 
 ```
@@ -185,8 +186,8 @@ Compute a one-sided 90% confidence interval for the mean decrease in reaction ti
 ```{webr}
 #| echo: false
 #| output: false
-A <- c(250, 265, 270, 260, 255)  # Control
-B <- c(240, 255, 260, 250, 248)  # After consumption
+A <- c(250, 265, 270, 260, 255) 
+B <- c(240, 255, 260, 250, 248)
 t.test(A, B, paired = TRUE, alternative = "greater", conf.level = 0.90)
 ```
 
@@ -196,6 +197,7 @@ A company wants to test their new energy drink to see if it increases alertness.
 **After Consumption (B):** 248, 253, 260, 252, 257
 
 Compute a one-sided 85% confidence interval for the mean decrease in reaction time $\mu_{A} - \mu_{B} > 0$.
+Hint: Use a paired t-test.
 ```{webr}
 
 ```
