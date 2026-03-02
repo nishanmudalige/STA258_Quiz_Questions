@@ -1,0 +1,232 @@
+---
+title: "quiz6b"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - soccer_spi.csv
+  - music_tracks.csv
+  - game_publishers.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+
+## Q1 — One-sample z-test on SPI (σ known, manual) {#q1}
+Using `soccer_spi.csv`, test whether the average SPI equals 72.
+
+- $H_0: \mu = 72$  
+- $H_1: \mu \ne 72$
+
+Assume the population standard deviation is known: $\sigma = 12$.  
+Use a **two-sided z-test**.
+
+**Compute the z statistic.**
+```{webr}
+df <- read.csv("soccer_spi.csv", stringsAsFactors = FALSE, check.names = FALSE)
+x <- df$spi
+
+mu_0 <- ___
+sigma <- ___
+n <- ___
+xbar <- ___
+
+z <- ___
+z
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("soccer_spi.csv", stringsAsFactors = FALSE, check.names = FALSE)
+x <- df$spi
+
+mu_0 <- 72
+sigma <- 12
+n <- length(x)
+xbar <- mean(x)
+
+z <- (xbar - mu_0) / (sigma / sqrt(n))
+z
+# -0.8149
+```
+
+## Q2 — One-sample z-test on SPI (σ known, using BSDA) {#q2}
+Using `soccer_spi.csv`, test whether the average SPI equals 72.
+
+- $H_0: \mu = 72$  
+- $H_1: \mu \ne 72$
+
+Assume the population standard deviation is known: $\sigma = 12$.  
+Use `BSDA::z.test()` with a two-sided alternative.
+
+**Compute the two-sided p-value.**
+```{webr}
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+library(BSDA)
+
+out <- BSDA::z.test(x,
+  mu = ___,
+  sigma.x = ___,
+  alternative = "two.sided"
+)
+
+out$p.value
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+suppressMessages(library(BSDA))
+
+out <- BSDA::z.test(x, mu = 72, sigma.x = 12, alternative = "two.sided")
+out$p.value
+# 0.4152
+```
+
+## Q3 — One-sample t-test on SPI (σ unknown, manual; n = 20) {#q3}
+Using `soccer_spi.csv`, test whether the average SPI equals 72.
+
+- $H_0: \mu = 72$  
+- $H_1: \mu \ne 72$
+
+Now assume **σ is unknown**. Use the sample standard deviation and perform a **two-sided one-sample t-test**.
+
+**Compute the t statistic.**
+```{webr}
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+mu_0 <- ___
+n <- ___
+xbar <- ___(x)
+s <- ___(x)
+
+t_stat <- ___
+t_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+mu_0 <- 72
+n <- length(x)
+xbar <- mean(x)
+s <- sd(x)
+
+t_stat <- (xbar - mu_0) / (s / sqrt(n))
+t_stat
+# -0.9712
+```
+
+## Q4 — One-sample t-test on Track.Score (σ unknown, built-in) {#q4}
+Using `music_tracks.csv`, test whether the average track score equals 47.
+
+- $H_0: \mu = 47$  
+- $H_1: \mu \ne 47$
+
+Assume **σ is unknown**. Use `t.test()` with a two-sided alternative.
+
+**Compute the two-sided p-value.**
+```{webr}
+df <- read.csv("music_tracks.csv")
+x <- df$Track.Score
+
+out <- t.test(x,
+  mu = ___,
+  alternative = "two.sided"
+)
+
+out$p.value
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("music_tracks.csv")
+x <- df$Track.Score
+
+out <- t.test(x, mu = 47, alternative = "two.sided")
+out$p.value
+
+# 0.1532
+```
+
+## Q5 — Proportion test: chi-square to z (prop.test) {#q5}
+Using `game_publishers.csv`, test whether the proportion of games published by Nintendo equals 0.061.
+
+- $H_0: p = 0.061$  
+- $H_1: p \ne 0.061$
+
+Use a two-sided `prop.test()`.
+
+`prop.test()` reports a chi-square statistic with 1 degree of freedom.  
+For a 1-df test, $\chi^2 = z^2$.
+
+**Compute $z = \sqrt{\chi^2}$.**
+```{webr}
+vg <- read.csv("game_publishers.csv")
+
+x <- sum(vg$Publisher == "Nintendo")
+n <- nrow(vg)
+
+out <- prop.test(x = x,
+  n = n,
+  p = ___,
+  alternative = "two.sided",
+  correct = FALSE
+)
+
+chisq_val <- ___
+z_val <- ___
+
+z_val
+```
+
+```{webr}
+#| echo: false
+#| output: false
+vg <- read.csv("game_publishers.csv")
+x <- sum(vg$Publisher == "Nintendo")
+n <- nrow(vg)
+
+out <- prop.test(x = x, n = n, p = 0.061, alternative = "two.sided", correct = FALSE)
+
+chisq_val <- as.numeric(out$statistic)
+z_val <- sqrt(chisq_val)
+
+z_val
+# 1.3246
+```
