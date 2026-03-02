@@ -108,7 +108,12 @@ df <- read.csv("soccer_spi.csv")
 x <- df$spi
 suppressMessages(library(BSDA))
 
-out <- BSDA::z.test(x, mu = 72, sigma.x = 12, alternative = "two.sided")
+out <- BSDA::z.test(x,
+  mu = 72,
+  sigma.x = 12, 
+  alternative = "two.sided"
+)
+
 out$p.value
 # 0.4152
 ```
@@ -178,7 +183,11 @@ out$p.value
 df <- read.csv("music_tracks.csv")
 x <- df$Track.Score
 
-out <- t.test(x, mu = 47, alternative = "two.sided")
+out <- t.test(x,
+  mu = 47,
+  alternative = "two.sided"
+)
+
 out$p.value
 
 # 0.1532
@@ -222,7 +231,12 @@ vg <- read.csv("game_publishers.csv")
 x <- sum(vg$Publisher == "Nintendo")
 n <- nrow(vg)
 
-out <- prop.test(x = x, n = n, p = 0.061, alternative = "two.sided", correct = FALSE)
+out <- prop.test(x = x,
+  n = n, 
+  p = 0.061, 
+  alternative = "two.sided", 
+  correct = FALSE
+)
 
 chisq_val <- as.numeric(out$statistic)
 z_val <- sqrt(chisq_val)
