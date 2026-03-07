@@ -1,4 +1,92 @@
 ---
 title: "Documentation"
-output: html_document
+format: html
+author:
+  - Giodanno Limin
+  - Rithika Yerra
 ---
+
+# Introduction
+
+We use `.qmd` files to create the quizzes. Each quiz is written in a Quarto (`.qmd`) file that contains the quiz questions, code chunks, and required datasets. The `.qmd` file is then rendered into an HTML page. The generated HTML file is embedded into Quercus using an iframe so students can access the quiz directly from the course page.
+
+# Folder Structure
+
+Each quiz is stored in its own folder. The folder contains the `.qmd` file and the dataset CSV files used in the quiz.
+
+Example structure:
+
+```text
+Quiz6/
+  quiz6.qmd
+  soccer_spi.csv
+  music_tracks.csv
+  game_publishers.csv
+  training_scores.csv
+```
+
+This structure keeps the quiz file and its datasets organized in one location.
+
+# Quiz File Structure
+
+Each `.qmd` quiz file contains several components.
+
+The `.qmd` file includes the required dataset files and the JavaScript code used for the HTML implementation. For each question, the file contains a question description, a `webr` code chunk that students interact with, and another `webr` chunk that is hidden from students and contains the solution and the final answer.
+
+
+# Embedding in Quercus
+
+After rendering the `.qmd` file into HTML, the quiz page is embedded into Quercus using an iframe.
+
+Example HTML:
+
+```html
+<p>
+<iframe
+title="embedded content"
+src="https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q4a"
+width="100%"
+height="650px"
+loading="lazy">
+</iframe>
+</p>
+```
+
+This allows students to access the interactive quiz directly inside Quercus.
+
+# Displaying a Specific Question
+
+Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.
+
+Example URL:
+
+quiz6.html?q=q4a
+
+The `q` parameter indicates which question should be displayed.
+
+# JavaScript for Question Display
+
+The `.qmd` file includes a JavaScript script that reads the URL parameter and hides the other questions.
+
+```html
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+```
+
+This script reads the `q` parameter from the URL, displays only the requested question, and hides the page title and section titles.
