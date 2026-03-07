@@ -1,0 +1,426 @@
+---
+title: "quiz6a"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - soccer_spi.csv
+  - training_scores.csv
+  - music_tracks.csv
+  - game_publishers.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+
+## Q1 — One-sample z-test on SPI (σ known, manual) {#q1a}
+Using `soccer_spi.csv`, test whether the average SPI equals 70.
+
+- $H_0: \mu = 70$  
+- $H_1: \mu \ne 70$
+
+Assume the population standard deviation is known: $\sigma = 12$.  
+Use a **two-sided z-test**.
+
+**Compute the z statistic.**
+```{webr}
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+mu_0 <- ___
+sigma <- ___
+n <- ___
+xbar <- ___
+
+z <- ___
+z
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+mu_0 <- 70
+sigma <- 12
+n <- length(x)
+xbar <- mean(x)
+
+z <- (xbar - mu_0) / (sigma / sqrt(n))
+z
+# -0.8637
+```
+
+## Q1 — One-sample z-test on SPI (σ known, manual) {#q1b}
+Using `soccer_spi.csv`, test whether the average SPI equals 72.
+
+- $H_0: \mu = 72$  
+- $H_1: \mu \ne 72$
+
+Assume the population standard deviation is known: $\sigma = 12$.  
+Use a **two-sided z-test**.
+
+**Compute the z statistic.**
+```{webr}
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+mu_0 <- ___
+sigma <- ___
+n <- ___
+xbar <- ___
+
+z <- ___
+z
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+mu_0 <- 72
+sigma <- 12
+n <- length(x)
+xbar <- mean(x)
+
+z <- (xbar - mu_0) / (sigma / sqrt(n))
+z
+# -2.3544
+```
+
+## Q2 — One-sample z-test on SPI (σ known, using BSDA) {#q2a}
+Using `soccer_spi.csv`, test whether the average SPI equals 70.
+
+- $H_0: \mu = 70$  
+- $H_1: \mu \ne 70$
+
+Assume the population standard deviation is known: $\sigma = 12$.  
+Use `z.test()` with a two-sided alternative.
+
+**Compute the two-sided p-value.**
+```{webr}
+library(BSDA)
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+z.test(x,
+       mu = ___,
+       sigma.x = ___,
+       alternative = "two.sided"
+)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+library(BSDA)
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+z.test(x,
+  mu = 70, 
+  sigma.x = 12, 
+  alternative = "two.sided"
+)
+# 0.3878
+```
+## Q2 — One-sample z-test on SPI (σ known, using BSDA) {#q2b}
+Using `soccer_spi.csv`, test whether the average SPI equals 72.
+
+- $H_0: \mu = 72$  
+- $H_1: \mu \ne 72$
+
+Assume the population standard deviation is known: $\sigma = 12$.  
+Use `z.test()` with a two-sided alternative.
+
+**Compute the two-sided p-value.**
+```{webr}
+library(BSDA)
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+z.test(x,
+       mu = ___,
+       sigma.x = ___,
+       alternative = "two.sided"
+)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+library(BSDA)
+df <- read.csv("soccer_spi.csv")
+x <- df$spi
+
+z.test(x,
+  mu = 72, 
+  sigma.x = 12, 
+  alternative = "two.sided"
+)
+# 0.0186
+```
+
+## Q3 — One-sample t-test on SPI (σ unknown, manual; n = 20) {#q3a}
+Using `training_scores.csv`, test whether the average training performance score equals 75.
+
+- $H_0: \mu = 75$  
+- $H_1: \mu \ne 75$
+
+The population standard deviation is unknown. Use the sample standard deviation and perform a **two-sided one-sample t-test**.
+
+**Compute the t statistic.**
+```{webr}
+df <- read.csv("training_scores.csv")
+x <- df$Performance_Score
+
+mu_0 <- ___
+n <- ___
+xbar <- ___
+s <- ___
+
+t_stat <- ___
+t_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("training_scores.csv")
+x <- df$Performance_Score
+
+mu_0 <- 75
+n <- length(x)
+xbar <- mean(x)
+s <- sd(x)
+
+t_stat <- (xbar - mu_0) / (s / sqrt(n))
+t_stat
+# 0.4070
+```
+
+## Q3 — One-sample t-test on SPI (σ unknown, manual; n = 20) {#q3b}
+Using `training_scores.csv`, test whether the average training performance score equals 72.
+
+- $H_0: \mu = 72$  
+- $H_1: \mu \ne 72$
+
+The population standard deviation is unknown. Use the sample standard deviation and perform a **two-sided one-sample t-test**.
+
+**Compute the t statistic.**
+```{webr}
+df <- read.csv("training_scores.csv")
+x <- df$Performance_Score
+
+mu_0 <- ___
+n <- ___
+xbar <- ___
+s <- ___
+
+t_stat <- ___
+t_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("training_scores.csv")
+x <- df$Performance_Score
+
+mu_0 <- 72
+n <- length(x)
+xbar <- mean(x)
+s <- sd(x)
+
+t_stat <- (xbar - mu_0) / (s / sqrt(n))
+t_stat
+# 1.9312
+```
+
+## Q4 — One-sample t-test on Track.Score (σ unknown, built-in) {#q4a}
+Using `music_tracks.csv`, test whether the average track score equals 45.
+
+- $H_0: \mu = 45$  
+- $H_1: \mu \ne 45$
+
+Assume **σ is unknown**. Use `t.test()` with a two-sided alternative.
+
+**Compute the two-sided p-value.**
+```{webr}
+df <- read.csv("music_tracks.csv")
+x <- df$Track.Score
+
+t.test(x,
+       mu = ___,
+       alternative = ___
+)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("music_tracks.csv")
+x <- df$Track.Score
+
+t.test(x,
+       mu = 45, 
+       alternative = "two.sided"
+)
+# 0.1359
+```
+## Q4 — One-sample t-test on Track.Score (σ unknown, built-in) {#q4b}
+Using `music_tracks.csv`, test whether the average track score equals 47.
+
+- $H_0: \mu = 47$  
+- $H_1: \mu \ne 47$
+
+Assume **σ is unknown**. Use `t.test()` with a two-sided alternative.
+
+**Compute the two-sided p-value.**
+```{webr}
+df <- read.csv("music_tracks.csv")
+x <- df$Track.Score
+
+t.test(x,
+       mu = ___,
+       alternative = ___
+)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("music_tracks.csv")
+x <- df$Track.Score
+
+t.test(x,
+       mu = 47, 
+       alternative = "two.sided"
+)
+# 0.1532
+```
+## Q5 — Proportion test: chi-square to z (prop.test) {#q5a}
+Using `game_publishers.csv`, test whether the proportion of games published by Nintendo equals 0.023.
+
+- $H_0: p = 0.023$  
+- $H_1: p \ne 0.023$
+
+Use a two-sided `prop.test()`.
+
+`prop.test()` reports a chi-square statistic with 1 degree of freedom.  
+For a 1-df test, $\chi^2 = z^2$.
+
+**Compute $z = \sqrt{\chi^2}$.**
+```{webr}
+vg <- read.csv("game_publishers.csv")
+
+x <- sum(vg$Publisher == "Nintendo")
+n <- nrow(vg)
+
+prop.test(x = ___,
+          n = ___,
+          p = ___,
+          alternative = ___,
+          correct = FALSE
+)
+
+z = sqrt(___)
+z
+```
+
+```{webr}
+#| echo: false
+#| output: false
+vg <- read.csv("game_publishers.csv")
+
+x <- sum(vg$Publisher == "Nintendo")
+n <- nrow(vg)
+
+prop.test(x = x,
+          n = n,
+          p = 0.023,
+          alternative = "two.sided",
+          correct = FALSE
+)
+
+z = sqrt(7.9901)
+z
+# 2.8267
+```
+
+## Q5 — Proportion test: chi-square to z (prop.test) {#q5b}
+Using `game_publishers.csv`, test whether the proportion of games published by Nintendo equals 0.061.
+
+- $H_0: p = 0.061$  
+- $H_1: p \ne 0.061$
+
+Use a two-sided `prop.test()`.
+
+`prop.test()` reports a chi-square statistic with 1 degree of freedom.  
+For a 1-df test, $\chi^2 = z^2$.
+
+**Compute $z = \sqrt{\chi^2}$.**
+```{webr}
+vg <- read.csv("game_publishers.csv")
+
+x <- sum(vg$Publisher == "Nintendo")
+n <- nrow(vg)
+
+prop.test(x = ___,
+          n = ___,
+          p = ___,
+          alternative = ___,
+          correct = FALSE
+)
+
+z = sqrt(___)
+z
+```
+
+```{webr}
+#| echo: false
+#| output: false
+vg <- read.csv("game_publishers.csv")
+
+x <- sum(vg$Publisher == "Nintendo")
+n <- nrow(vg)
+
+prop.test(x = x,
+          n = n,
+          p = 0.061,
+          alternative = "two.sided",
+          correct = FALSE
+)
+
+z = sqrt(1.7547)
+z
+# 1.3247
+```
