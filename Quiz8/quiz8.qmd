@@ -1,0 +1,353 @@
+---
+title: "quiz8"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - crop_fertilizer_A.csv
+  - crop_fertilizer_B.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+## Q1 — One-way ANOVA (manual) {#q1a}
+Using the `crop_fertilizer_A.csv` dataset, we test
+
+$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+
+$H_a : \text{At least one population mean yield differs.}$
+
+Compute the F statistic.
+```{webr}
+# Read the data
+crop <- read.csv("crop_fertilizer_A.csv")
+
+# Grand mean
+grand_mean <- mean(___)
+
+# Group means and sizes
+group_means <- tapply(___, ___, ___)
+group_sizes <- tapply(___, ___, ___)
+
+# SSR (between-group sum of squares)
+SSR <- sum(___ * (___ - ___)^2)
+
+# SST (total sum of squares)
+SST <- sum((___ - ___)^2)
+
+# SSE (within-group sum of squares)
+SSE <- ___ - ___
+
+# Degrees of freedom
+k <- length(___)
+N <- nrow(___)
+
+df_reg <- ___
+df_err <- ___
+df_tot <- ___
+
+# Mean squares
+MSR <- ___ / ___
+MSE <- ___ / ___
+
+# F statistic
+F_stat <- ___ / ___
+
+F_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+
+# Read the data
+crop <- read.csv("crop_fertilizer_A.csv")
+
+# Grand mean
+grand_mean <- mean(crop$yield)
+
+# Group means and sizes
+group_means <- tapply(crop$yield, crop$fertilizer, mean)
+group_sizes <- tapply(crop$yield, crop$fertilizer, length)
+
+# SSR (between-group sum of squares)
+SSR <- sum(group_sizes * (group_means - grand_mean)^2)
+
+# SST (total sum of squares)
+SST <- sum((crop$yield - grand_mean)^2)
+
+# SSE (within-group sum of squares)
+SSE <- SST - SSR
+
+# Degrees of freedom
+k <- length(group_means)
+N <- nrow(crop)
+
+df_reg <- k - 1
+df_err <- N - k
+df_tot <- N - 1
+
+# Mean squares
+MSR <- SSR / df_reg
+MSE <- SSE / df_err
+
+# F statistic
+F_stat <- MSR / MSE
+
+F_stat
+# 72.5
+```
+
+## Q1 — One-way ANOVA (manual) {#q1b}
+Using the `crop_fertilizer_B.csv` dataset, we test
+
+$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+
+$H_a : \text{At least one population mean yield differs.}$
+
+Compute the F statistic.
+```{webr}
+# Read the data
+crop <- read.csv("crop_fertilizer_B.csv")
+
+# Grand mean
+grand_mean <- mean(___)
+
+# Group means and sizes
+group_means <- tapply(___, ___, ___)
+group_sizes <- tapply(___, ___, ___)
+
+# SSR (between-group sum of squares)
+SSR <- sum(___ * (___ - ___)^2)
+
+# SST (total sum of squares)
+SST <- sum((___ - ___)^2)
+
+# SSE (within-group sum of squares)
+SSE <- ___ - ___
+
+# Degrees of freedom
+k <- length(___)
+N <- nrow(___)
+
+df_reg <- ___
+df_err <- ___
+df_tot <- ___
+
+# Mean squares
+MSR <- ___ / ___
+MSE <- ___ / ___
+
+# F statistic
+F_stat <- ___ / ___
+
+F_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+
+# Read the data
+crop <- read.csv("crop_fertilizer_B.csv")
+
+# Grand mean
+grand_mean <- mean(crop$yield)
+
+# Group means and sizes
+group_means <- tapply(crop$yield, crop$fertilizer, mean)
+group_sizes <- tapply(crop$yield, crop$fertilizer, length)
+
+# SSR (between-group sum of squares)
+SSR <- sum(group_sizes * (group_means - grand_mean)^2)
+
+# SST (total sum of squares)
+SST <- sum((crop$yield - grand_mean)^2)
+
+# SSE (within-group sum of squares)
+SSE <- SST - SSR
+
+# Degrees of freedom
+k <- length(group_means)
+N <- nrow(crop)
+
+df_reg <- k - 1
+df_err <- N - k
+df_tot <- N - 1
+
+# Mean squares
+MSR <- SSR / df_reg
+MSE <- SSE / df_err
+
+# F statistic
+F_stat <- MSR / MSE
+
+F_stat
+# 48.5671
+```
+
+## Q2 — One-way ANOVA (built-in) {#q2a}
+Using the `crop_fertilizer_A.csv` dataset, we test
+
+$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+
+$H_a : \text{At least one population mean yield differs.}$
+
+
+Compute the p-value using the `aov()` function.
+```{webr}
+crop <- read.csv("crop_fertilizer_A.csv")
+
+fit = aov(___ ~ ___, data = ___)
+
+summary(___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+
+crop <- read.csv("crop_fertilizer_A.csv")
+
+fit = aov(yield ~ fertilizer, data = crop)
+
+summary(fit)
+```
+
+## Q2 — One-way ANOVA (built-in) {#q2b}
+Using the `crop_fertilizer_B.csv` dataset, we test
+
+$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+
+$H_a : \text{At least one population mean yield differs.}$
+
+
+Compute the p-value using the `aov()` function.
+```{webr}
+crop <- read.csv("crop_fertilizer_B.csv")
+
+fit = aov(___ ~ ___, data = ___)
+
+summary(___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+
+crop <- read.csv("crop_fertilizer_B.csv")
+
+fit = aov(yield ~ fertilizer, data = crop)
+
+summary(fit)
+```
+
+## Q3 — Fisher's LSD {#q3a}
+
+Using the `crop_fertilizer_A.csv` dataset, perform pairwise comparisons using the Fisher's LSD method.
+
+Compute the p-value for the comparison between fertilizers **B** and **D**.
+
+```{webr}
+crop <- read.csv("crop_fertilizer_A.csv")
+
+pairwise.t.test(___, ___, p.adjust.method = ___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+crop <- read.csv("crop_fertilizer_A.csv")
+
+pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
+# 0.0085  
+```
+
+## Q3 — Fisher's LSD {#q3b}
+
+Using the `crop_fertilizer_B.csv` dataset, perform pairwise comparisons using the Fisher's LSD method.
+
+Compute the p-value for the comparison between fertilizers **B** and **D**.
+
+```{webr}
+crop <- read.csv("crop_fertilizer_B.csv")
+
+pairwise.t.test(___, ___, p.adjust.method = ___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+crop <- read.csv("crop_fertilizer_B.csv")
+
+pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
+# 0.0202
+```
+
+## Q4 — Bonferroni Adjustment {#q4a}
+
+Using the `crop_fertilizer_A.csv` dataset, perform pairwise comparisons using the Bonferroni method.
+
+Compute the p-value for the comparison between fertilizers **B** and **D**.
+
+```{webr}
+crop <- read.csv("crop_fertilizer_A.csv")
+
+pairwise.t.test(___, ___, p.adjust.method = ___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+crop <- read.csv("crop_fertilizer_A.csv")
+
+pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
+# 0.0509
+```
+
+
+## Q4 — Bonferroni Adjustment {#q4b}
+
+Using the `crop_fertilizer_B.csv` dataset, perform pairwise comparisons using the Bonferroni method.
+
+Compute the p-value for the comparison between fertilizers **B** and **D**.
+
+```{webr}
+crop <- read.csv("crop_fertilizer_B.csv")
+
+pairwise.t.test(___, ___, p.adjust.method = ___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+crop <- read.csv("crop_fertilizer_B.csv")
+
+pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
+# 0.1212
+```

@@ -1,5 +1,5 @@
 ---
-title: "quiz6a"
+title: "quiz6"
 title-block-style: none
 format: live-html
 engine: knitr
