@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 ## Q1 — One-way ANOVA (manual) {#q1a}
-Using the `crop_fertilizer_A.csv` dataset, we test
+Using the `crop_fertilizer_A.csv` dataset, we test:
 
-$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+$H_0: \mu_A = \mu_B = \mu_C = \mu_D$
 
-$H_a : \text{At least one population mean yield differs.}$
+$H_a: \text{At least one population mean yield differs.}$
 
 Compute the F statistic.
 ```{webr}
@@ -124,11 +124,11 @@ F_stat
 ```
 
 ## Q1 — One-way ANOVA (manual) {#q1b}
-Using the `crop_fertilizer_B.csv` dataset, we test
+Using the `crop_fertilizer_B.csv` dataset, we test:
 
-$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+$H_0: \mu_A = \mu_B = \mu_C = \mu_D$
 
-$H_a : \text{At least one population mean yield differs.}$
+$H_a: \text{At least one population mean yield differs.}$
 
 Compute the F statistic.
 ```{webr}
@@ -212,11 +212,11 @@ F_stat
 ```
 
 ## Q2 — One-way ANOVA (built-in) {#q2a}
-Using the `crop_fertilizer_A.csv` dataset, we test
+Using the `crop_fertilizer_A.csv` dataset, we test:
 
-$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+$H_0: \mu_A = \mu_B = \mu_C = \mu_D$
 
-$H_a : \text{At least one population mean yield differs.}$
+$H_a: \text{At least one population mean yield differs.}$
 
 
 Compute the p-value using the `aov()` function.
@@ -240,11 +240,11 @@ summary(fit)
 ```
 
 ## Q2 — One-way ANOVA (built-in) {#q2b}
-Using the `crop_fertilizer_B.csv` dataset, we test
+Using the `crop_fertilizer_B.csv` dataset, we test:
 
-$H_0 : \mu_A = \mu_B = \mu_C = \mu_D$
+$H_0: \mu_A = \mu_B = \mu_C = \mu_D$
 
-$H_a : \text{At least one population mean yield differs.}$
+$H_a: \text{At least one population mean yield differs.}$
 
 
 Compute the p-value using the `aov()` function.
