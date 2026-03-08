@@ -90,3 +90,38 @@ document.addEventListener("DOMContentLoaded", () => {
 ```
 
 This script reads the `q` parameter from the URL, displays only the requested question, and hides the page title and section titles.
+
+# Adding files
+Files, such as csv files, are added on top of the qmd file, under `resouces`. For example, in `quiz3a.qmd`, we use two csv files, `task_times.csv` and `scores.csv`. We add these files under resources, as such:
+
+```html
+---
+title: "Quiz 3a"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - scores.csv
+  - task_times.csv
+---
+```
+
+# Supressing Library Import Output
+
+To hide/supress library imports, nest the libarry calls inside `suppressMessages`. For example in a webR block,
+
+```html
+#| echo: false
+invisible(capture.output({
+  suppressMessages(library(ggplot2))
+  suppressMessages(library(skimr))
+}))
+```
+
+# Solution
+
+The solutions are displayed on the same qmd file underneath where students enter their code, with `#| echo: false`.
+This command (`#| echo: false`) can be used for other code blocks to prevent the output from being shown.
+
+
