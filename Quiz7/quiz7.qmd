@@ -64,7 +64,7 @@ A researcher wants to determine whether mean PM2.5 levels differ between a resid
 
 Using the dataset `air_quality.csv`, construct a boxplot to determine whether equal variances can be assumed, and then conduct a two-sample hypothesis test at the 1% significance level. 
 
-Compute the p-value.
+Compute the t-statistic.
 
 ```{webr}
 air_df <- read.csv("air_quality.csv")
@@ -79,7 +79,7 @@ air_df <- read.csv("air_quality.csv")
 boxplot(air_df$residential_street, air_df$highway)
 t.test(air_df$residential_street, air_df$highway, var.equal = FALSE, conf.level = 0.99)
 
-# 4.895e-11
+# -8.2403
 ```
 
 ## Q2 — Known variances z-test {#q2a}
@@ -133,7 +133,7 @@ z <- (mean1 - mean2) / sqrt(var1/50 + var2/50)
 ## Q3 — Paired Test {#q3a}
 A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the Math scores, 
 
-- $H_0: \mu_{after} - \mu_{before} = 0$
+- $H_0: \mu_{after} - \mu_{before} = 0$ \
 - $H_1: \mu_{after} - \mu_{before} \ne 0$.
 
 Compute the p-value at 5% significance level and determine if there is sufficient evidence to reject the null.
@@ -152,9 +152,9 @@ t.test(tutoring_df$math_after, tutoring_df$math_before, paired = TRUE)
 ```
 
 ## Q3 — Paired Test {#q3b}
-A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the English scores, 
+A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the English scores,
 
-- $H_0: \mu_{after} - \mu_{before} = 0$
+- $H_0: \mu_{after} - \mu_{before} = 0$ \
 - $H_1: \mu_{after} - \mu_{before} \ne 0$.
 
 Compute the p-value at 1% significance level and determine if there is sufficient evidence to reject the null.
@@ -173,9 +173,9 @@ t.test(tutoring_df$english_after, tutoring_df$english_before, paired = TRUE)
 ```
 
 ## Q4 — Proportion {#q4a}
-A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the proportion of students who passed Math (`math_passed`) equal to the proportion who passed English after tutoring (`english_passed`),
+A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the proportion of students who passed Math (`math_passed`) equal to the proportion who passed English after tutoring (`english_passed`), 
 
-- $H_0: p_{math} - p_{english} = 0$
+- $H_0: p_{math} - p_{english} = 0$ \
 - $H_1: p_{math} - p_{english} \ne 0$.
 
 For these columns, 1 is denoted as a pass, while 0 is a fail. 
@@ -202,9 +202,9 @@ prop.test(c(x1, x2), c(n1, n2))
 ```
 
 ## Q4 — Proportion {#q4b}
-A researcher wants to determine whether the proportion of PM2.5 readings exceeding 15 µg/m³ differs between a park (`park_A`) and a highway (`highway`),
+A researcher wants to determine whether the proportion of PM2.5 readings exceeding 15 µg/m³ differs between a park (`park_A`) and a highway (`highway`), 
 
-- $H_0: p_{park_A} - p_{highway} = 0$
+- $H_0: p_{park_A} - p_{highway} = 0$ \
 - $H_1: p_{park_A} - p_{highway} \ne 0$.
 
 We have two columns `park_A_exceeds` and `highway_exceeds`, where 1 is denoted as exceeding the threshold, and 0 is not.
@@ -231,8 +231,9 @@ prop.test(c(x1, x2), c(n1, n2))
 ```
 
 ## Q5 - Ratio of Variances {#q5a}
-A researcher wants to determine whether the variance in PM2.5 levels differs between a park (`park_A`) and a highway (`highway`),
-- $H_0: \sigma_{park_A}^2 / \sigma_{highway}^2 = 1$
+A researcher wants to determine whether the variance in PM2.5 levels differs between a park (`park_A`) and a highway (`highway`), 
+
+- $H_0: \sigma_{park_A}^2 / \sigma_{highway}^2 = 1$ \
 - $H_1: \sigma_{park_A}^2 / \sigma_{highway}^2 \ne 1$.
 
 Using the dataset `air_quality.csv`, conduct an F-test at 3% significance level. Compute the p-value and determine if there is sufficient evidence to reject the null.
@@ -244,14 +245,14 @@ air_df <- read.csv("air_quality.csv")
 ```{webr}
 #| echo: false
 #| output: false
-air_df <- read.csv("air_quality.csv")
-var.test(air_df$park_A, air_df$highway)
+
 # p-value < 2.2e-16 , we reject the null.
 ```
 
 ## Q5 - Ratio of Variances {#q5b}
-A researcher wants to determine whether the variance in PM2.5 levels differs between two parks (`park_A` and `park_B`),
-- $H_0: \sigma_{park_A}^2 / \sigma_{park_B}^2 = 1$
+A researcher wants to determine whether the variance in PM2.5 levels differs between two parks (`park_A` and `park_B`), 
+
+- $H_0: \sigma_{park_A}^2 / \sigma_{park_B}^2 = 1$ \
 - $H_1: \sigma_{park_A}^2 / \sigma_{park_B}^2 \ne 1$.
 
 Using the dataset `air_quality.csv`, conduct an F-test at 5% significance level. Compute the p-value and determine if there is sufficient evidence to reject the null.

@@ -182,7 +182,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <h2 class="anchored" data-anchor-id="q1b">Q1 — Pooled Two-Sample p-value</h2>
 <p>A researcher wants to determine whether mean PM2.5 levels differ between a residential street (<code>residential_street</code>) and a highway (<code>highway</code>).</p>
 <p>Using the dataset <code>air_quality.csv</code>, construct a boxplot to determine whether equal variances can be assumed, and then conduct a two-sample hypothesis test at the 1% significance level.</p>
-<p>Compute the p-value.</p>
+<p>Compute the t-statistic.</p>
 <div class="cell">
 <div>
 <div id="webr-4" class="exercise-cell">
@@ -199,7 +199,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYWlyX2RmIDwtIHJlYWQuY3N2
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJhaXJfZGYgPC0gcmVhZC5jc3YoXCJhaXJfcXVhbGl0eS5jc3ZcIilcbmJveHBsb3QoYWlyX2RmJHJlc2lkZW50aWFsX3N0cmVldCwgYWlyX2RmJGhpZ2h3YXkpXG50LnRlc3QoYWlyX2RmJHJlc2lkZW50aWFsX3N0cmVldCwgYWlyX2RmJGhpZ2h3YXksIHZhci5lcXVhbCA9IEZBTFNFLCBjb25mLmxldmVsID0gMC45OSlcblxuIyA0Ljg5NWUtMTEifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJhaXJfZGYgPC0gcmVhZC5jc3YoXCJhaXJfcXVhbGl0eS5jc3ZcIilcbmJveHBsb3QoYWlyX2RmJHJlc2lkZW50aWFsX3N0cmVldCwgYWlyX2RmJGhpZ2h3YXkpXG50LnRlc3QoYWlyX2RmJHJlc2lkZW50aWFsX3N0cmVldCwgYWlyX2RmJGhpZ2h3YXksIHZhci5lcXVhbCA9IEZBTFNFLCBjb25mLmxldmVsID0gMC45OSlcblxuIyAtOC4yNDAzIn0=
 </script>
 </div>
 </div>
@@ -258,7 +258,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <h2 class="anchored" data-anchor-id="q3a">Q3 — Paired Test</h2>
 <p>A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the Math scores,</p>
 <ul>
-<li><span class="math inline">\(H_0: \mu_{after} - \mu_{before} = 0\)</span></li>
+<li><span class="math inline">\(H_0: \mu_{after} - \mu_{before} = 0\)</span><br>
+</li>
 <li><span class="math inline">\(H_1: \mu_{after} - \mu_{before} \ne 0\)</span>.</li>
 </ul>
 <p>Compute the p-value at 5% significance level and determine if there is sufficient evidence to reject the null.</p>
@@ -287,7 +288,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <h2 class="anchored" data-anchor-id="q3b">Q3 — Paired Test</h2>
 <p>A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the English scores,</p>
 <ul>
-<li><span class="math inline">\(H_0: \mu_{after} - \mu_{before} = 0\)</span></li>
+<li><span class="math inline">\(H_0: \mu_{after} - \mu_{before} = 0\)</span><br>
+</li>
 <li><span class="math inline">\(H_1: \mu_{after} - \mu_{before} \ne 0\)</span>.</li>
 </ul>
 <p>Compute the p-value at 1% significance level and determine if there is sufficient evidence to reject the null.</p>
@@ -316,7 +318,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <h2 class="anchored" data-anchor-id="q4a">Q4 — Proportion</h2>
 <p>A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the proportion of students who passed Math (<code>math_passed</code>) equal to the proportion who passed English after tutoring (<code>english_passed</code>),</p>
 <ul>
-<li><span class="math inline">\(H_0: p_{math} - p_{english} = 0\)</span></li>
+<li><span class="math inline">\(H_0: p_{math} - p_{english} = 0\)</span><br>
+</li>
 <li><span class="math inline">\(H_1: p_{math} - p_{english} \ne 0\)</span>.</li>
 </ul>
 <p>For these columns, 1 is denoted as a pass, while 0 is a fail. Using the dataset <code>tutoring.csv</code>, compute the p-value at 1% significance level and determine if there is sufficient evidence to reject the null.</p>
@@ -345,7 +348,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <h2 class="anchored" data-anchor-id="q4b">Q4 — Proportion</h2>
 <p>A researcher wants to determine whether the proportion of PM2.5 readings exceeding 15 µg/m³ differs between a park (<code>park_A</code>) and a highway (<code>highway</code>),</p>
 <ul>
-<li><span class="math inline">\(H_0: p_{park_A} - p_{highway} = 0\)</span></li>
+<li><span class="math inline">\(H_0: p_{park_A} - p_{highway} = 0\)</span><br>
+</li>
 <li><span class="math inline">\(H_1: p_{park_A} - p_{highway} \ne 0\)</span>.</li>
 </ul>
 <p>We have two columns <code>park_A_exceeds</code> and <code>highway_exceeds</code>, where 1 is denoted as exceeding the threshold, and 0 is not. Using the dataset <code>air_quality.csv</code>, compute the p-value at 2% significance level and determine if there is sufficient evidence to reject the null.</p>
@@ -372,7 +376,12 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 </section>
 <section id="q5a" class="level2">
 <h2 class="anchored" data-anchor-id="q5a">Q5 - Ratio of Variances</h2>
-<p>A researcher wants to determine whether the variance in PM2.5 levels differs between a park (<code>park_A</code>) and a highway (<code>highway</code>), - <span class="math inline">\(H_0: \sigma_{park_A}^2 / \sigma_{highway}^2 = 1\)</span> - <span class="math inline">\(H_1: \sigma_{park_A}^2 / \sigma_{highway}^2 \ne 1\)</span>.</p>
+<p>A researcher wants to determine whether the variance in PM2.5 levels differs between a park (<code>park_A</code>) and a highway (<code>highway</code>),</p>
+<ul>
+<li><span class="math inline">\(H_0: \sigma_{park_A}^2 / \sigma_{highway}^2 = 1\)</span><br>
+</li>
+<li><span class="math inline">\(H_1: \sigma_{park_A}^2 / \sigma_{highway}^2 \ne 1\)</span>.</li>
+</ul>
 <p>Using the dataset <code>air_quality.csv</code>, conduct an F-test at 3% significance level. Compute the p-value and determine if there is sufficient evidence to reject the null.</p>
 <div class="cell">
 <div>
@@ -390,14 +399,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiYWlyX2RmIDwtIHJlYWQuY3N2
 
 </div>
 <script type="webr-19-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJhaXJfZGYgPC0gcmVhZC5jc3YoXCJhaXJfcXVhbGl0eS5jc3ZcIilcbnZhci50ZXN0KGFpcl9kZiRwYXJrX0EsIGFpcl9kZiRoaWdod2F5KVxuIyBwLXZhbHVlIDwgMi4yZS0xNiAsIHdlIHJlamVjdCB0aGUgbnVsbC4ifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJcbiMgcC12YWx1ZSA8IDIuMmUtMTYgLCB3ZSByZWplY3QgdGhlIG51bGwuIn0=
 </script>
 </div>
 </div>
 </section>
 <section id="q5b" class="level2">
 <h2 class="anchored" data-anchor-id="q5b">Q5 - Ratio of Variances</h2>
-<p>A researcher wants to determine whether the variance in PM2.5 levels differs between two parks (<code>park_A</code> and <code>park_B</code>), - <span class="math inline">\(H_0: \sigma_{park_A}^2 / \sigma_{park_B}^2 = 1\)</span> - <span class="math inline">\(H_1: \sigma_{park_A}^2 / \sigma_{park_B}^2 \ne 1\)</span>.</p>
+<p>A researcher wants to determine whether the variance in PM2.5 levels differs between two parks (<code>park_A</code> and <code>park_B</code>),</p>
+<ul>
+<li><span class="math inline">\(H_0: \sigma_{park_A}^2 / \sigma_{park_B}^2 = 1\)</span><br>
+</li>
+<li><span class="math inline">\(H_1: \sigma_{park_A}^2 / \sigma_{park_B}^2 \ne 1\)</span>.</li>
+</ul>
 <p>Using the dataset <code>air_quality.csv</code>, conduct an F-test at 5% significance level. Compute the p-value and determine if there is sufficient evidence to reject the null.</p>
 <div class="cell">
 <div>
