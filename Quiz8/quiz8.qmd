@@ -237,6 +237,7 @@ crop <- read.csv("crop_fertilizer_A.csv")
 fit = aov(yield ~ fertilizer, data = crop)
 
 summary(fit)
+# 0.0000
 ```
 
 ## Q2 — One-way ANOVA (built-in) {#q2b}
@@ -265,6 +266,7 @@ crop <- read.csv("crop_fertilizer_B.csv")
 fit = aov(yield ~ fertilizer, data = crop)
 
 summary(fit)
+# 0.0000
 ```
 
 ## Q3 — Fisher's LSD {#q3a}
