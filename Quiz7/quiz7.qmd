@@ -1,0 +1,269 @@
+---
+title: "quiz7"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+    - air_quality.csv
+    - tutoring.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+
+## Q1 — Pooled Two-Sample p-value {#q1a}
+A researcher wants to determine whether mean PM2.5 levels differ between two parks (`park_A` and `park_B`).
+
+Using the dataset `air_quality.csv`, construct a boxplot to determine whether equal variances can be assumed, and then conduct a two-sample hypothesis test at the 5% significance level. 
+
+Compute the p-value.
+
+```{webr}
+air_df <- read.csv("air_quality.csv")
+boxplot(air_df$____, air_df$____)
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+boxplot(air_df$park_A, air_df$park_B)
+t.test(air_df$park_A, air_df$park_B, var.equal = TRUE, conf.level = 0.95)
+
+# 0.0124 
+```
+
+## Q1 — Pooled Two-Sample p-value {#q1b}
+A researcher wants to determine whether mean PM2.5 levels differ between a residential street (`residential_street`) and a highway (`highway`).
+
+Using the dataset `air_quality.csv`, construct a boxplot to determine whether equal variances can be assumed, and then conduct a two-sample hypothesis test at the 1% significance level. 
+
+Compute the p-value.
+
+```{webr}
+air_df <- read.csv("air_quality.csv")
+boxplot(air_df$____, air_df$____)
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+boxplot(air_df$residential_street, air_df$highway)
+t.test(air_df$residential_street, air_df$highway, var.equal = FALSE, conf.level = 0.99)
+
+# 4.895e-11
+```
+
+## Q2 — Known variances z-test {#q2a}
+A researcher wants to determine whether mean PM2.5 levels differ between two parks (`park_A` and `park_B`).
+Now assume the population variances are known to be $\sigma_{park_A}^2 = \sigma_{park_B}^2 = 9.25$.
+
+Using the dataset `air_quality.csv`, conduct a two-sample z-test at the 2% significance level. Compute the p-value and and determine if there is sufficient evidence to reject the null.
+
+```{webr}
+air_df <- read.csv("air_quality.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+mean1 <- mean(air_df$park_A)
+mean2 <- mean(air_df$park_B)
+var1 <- 9.25
+var2 <- 9.25
+z <- (mean1 - mean2) / sqrt(var1/50 + var2/50)
+2 * pnorm(-abs(z))
+# 0.02853914 , we do not reject.
+```
+
+## Q2 — Known variances z-test {#q2b}
+A researcher wants to determine whether mean PM2.5 levels differ between a residential street (`residential_street`) and a highway (`highway`).
+Now assume the population variances are known to be $\sigma_{residential}^2 = 6.0$ and $\sigma_{highway}^2 = 140$.
+
+Using the dataset `air_quality.csv`, conduct a two-sample z-test at the 3% significance level. Compute the p-value and and determine if there is sufficient evidence to reject the null.
+
+```{webr}
+air_df <- read.csv("air_quality.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+mean1 <- mean(air_df$residential_street)
+mean2 <- mean(air_df$highway)
+var1 <- 6.0
+var2 <- 140
+z <- (mean1 - mean2) / sqrt(var1/50 + var2/50)
+2 * pnorm(-abs(z))
+# 8.849572e-17 , we reject.
+```
+
+## Q3 — Paired Test {#q3a}
+A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the Math scores, 
+
+- $H_0: \mu_{after} - \mu_{before} = 0$
+- $H_1: \mu_{after} - \mu_{before} \ne 0$.
+
+Compute the p-value at 5% significance level and determine if there is sufficient evidence to reject the null.
+```{webr}
+tutoring_df <- read.csv("tutoring.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+tutoring_df <- read.csv("tutoring.csv")
+t.test(tutoring_df$math_after, tutoring_df$math_before, paired = TRUE)
+
+# 0.02168, reject the null.
+```
+
+## Q3 — Paired Test {#q3b}
+A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the tutoring program significantly affected the English scores, 
+
+- $H_0: \mu_{after} - \mu_{before} = 0$
+- $H_1: \mu_{after} - \mu_{before} \ne 0$.
+
+Compute the p-value at 1% significance level and determine if there is sufficient evidence to reject the null.
+```{webr}
+tutoring_df <- read.csv("tutoring.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+tutoring_df <- read.csv("tutoring.csv")
+t.test(tutoring_df$english_after, tutoring_df$english_before, paired = TRUE)
+
+# 0.3301, do not reject.
+```
+
+## Q4 — Proportion {#q4a}
+A group of students took a Math and English assessment before and after attending a tutoring program. Test whether the proportion of students who passed Math (`math_passed`) equal to the proportion who passed English after tutoring (`english_passed`),
+
+- $H_0: p_{math} - p_{english} = 0$
+- $H_1: p_{math} - p_{english} \ne 0$.
+
+For these columns, 1 is denoted as a pass, while 0 is a fail. 
+Using the dataset `tutoring.csv`, compute the p-value at 1% significance level and determine if there is sufficient evidence to reject the null.
+```{webr}
+tutoring_df <- read.csv("tutoring.csv")
+x1 <- sum(tutoring_df$math_passed == ____)
+x2 <- sum(tutoring_df$english_passed == ____)
+n1 <- ___
+n2 <- ___
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+tutoring_df <- read.csv("tutoring.csv")
+x1 <- sum(tutoring_df$math_passed == "1")
+x2 <- sum(tutoring_df$english_passed == "1")
+n1 <- 30
+n2 <- 30
+prop.test(c(x1, x2), c(n1, n2))
+# 0.6054, do not reject.
+```
+
+## Q4 — Proportion {#q4b}
+A researcher wants to determine whether the proportion of PM2.5 readings exceeding 15 µg/m³ differs between a park (`park_A`) and a highway (`highway`),
+
+- $H_0: p_{park_A} - p_{highway} = 0$
+- $H_1: p_{park_A} - p_{highway} \ne 0$.
+
+We have two columns `park_A_exceeds` and `highway_exceeds`, where 1 is denoted as exceeding the threshold, and 0 is not.
+Using the dataset `air_quality.csv`, compute the p-value at 2% significance level and determine if there is sufficient evidence to reject the null.
+```{webr}
+air_df <- read.csv("air_quality.csv")
+x1 <- sum(air_df$park_A_exceeds == ____)
+x2 <- sum(air_df$highway_exceeds == ____)
+n1 <- ___
+n2 <- ___
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+x1 <- sum(air_df$park_A_exceeds == "1")
+x2 <- sum(air_df$highway_exceeds == "1")
+n1 <- 50
+n2 <- 50
+prop.test(c(x1, x2), c(n1, n2))
+# 4.639e-05 , reject.
+```
+
+## Q5 - Ratio of Variances {#q5a}
+A researcher wants to determine whether the variance in PM2.5 levels differs between a park (`park_A`) and a highway (`highway`),
+- $H_0: \sigma_{park_A}^2 / \sigma_{highway}^2 = 1$
+- $H_1: \sigma_{park_A}^2 / \sigma_{highway}^2 \ne 1$.
+
+Using the dataset `air_quality.csv`, conduct an F-test at 3% significance level. Compute the p-value and determine if there is sufficient evidence to reject the null.
+```{webr}
+air_df <- read.csv("air_quality.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+var.test(air_df$park_A, air_df$highway)
+# p-value < 2.2e-16 , we reject the null.
+```
+
+## Q5 - Ratio of Variances {#q5b}
+A researcher wants to determine whether the variance in PM2.5 levels differs between two parks (`park_A` and `park_B`),
+- $H_0: \sigma_{park_A}^2 / \sigma_{park_B}^2 = 1$
+- $H_1: \sigma_{park_A}^2 / \sigma_{park_B}^2 \ne 1$.
+
+Using the dataset `air_quality.csv`, conduct an F-test at 5% significance level. Compute the p-value and determine if there is sufficient evidence to reject the null.
+```{webr}
+air_df <- read.csv("air_quality.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+air_df <- read.csv("air_quality.csv")
+var.test(air_df$park_A, air_df$park_B)
+# 0.6344 , we do not reject the null.
+```

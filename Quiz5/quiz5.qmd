@@ -170,12 +170,12 @@ y <- efficiency_df$efficiency[efficiency_df$car == "B"]
 var.test(x, y, conf.level = 0.90)
 ```
 
-## Q4 — Paired One-Sided CI {#q4a}
-A company wants to test their new energy drink to see if it increases alertness. Five participants try the drink, and their reaction time (ms) is recorded as such: \
+## Q4 — Paired CI {#q4a}
+A company wants to test their new energy drink to see if it there exists a difference in alertness. Five participants try the drink, and their reaction time (ms) is recorded as such: \
 **Control (A):** 250, 265, 270, 260, 255 \
 **After Consumption (B):** 240, 255, 260, 250, 248
 
-Compute a one-sided 90% confidence interval for the mean difference in reaction time $\mu_{A} - \mu_{B}$ using a paired t-test.
+Compute a two-sided 90% confidence interval for the mean difference in reaction time $\mu_{A} - \mu_{B}$ using a paired t-test.
 ```{webr}
 
 ```
@@ -188,12 +188,12 @@ B <- c(240, 255, 260, 250, 248)
 t.test(A, B, paired = TRUE, conf.level = 0.90)
 ```
 
-## Q4 — Paired One-Sided CI {#q4b}
-A company wants to test their new energy drink to see if it increases alertness. Five participants try the drink, and their reaction time (ms) is recorded as such: \
+## Q4 — Paired CI {#q4b}
+A company wants to test their new energy drink to see if it there exists a difference in alertness. Five participants try the drink, and their reaction time (ms) is recorded as such: \
 **Control (A):** 255, 260, 265, 258, 262 \
 **After Consumption (B):** 248, 253, 260, 252, 257
 
-Compute a one-sided 85% confidence interval for the mean difference in reaction time $\mu_{A} - \mu_{B}$ using a paired t-test.
+Compute a two-sided 85% confidence interval for the mean difference in reaction time $\mu_{A} - \mu_{B}$ using a paired t-test.
 ```{webr}
 
 ```
@@ -206,7 +206,7 @@ B <- c(248, 253, 260, 252, 257)
 t.test(A, B, paired = TRUE, conf.level = 0.85)
 ```
 
-## Q5 — One-Sided CI {#q5a}
+## Q5 — Two-Sided Z-test {#q5a}
 A fitness study wants to compare the resting blood pressure (in mmHg) between those who regularly exercise and those who do not. \
 **No Exercise (A):** 130, 135, 128, 132, 136 \
 **Exercise (B):** 120, 125, 118, 122, 124
