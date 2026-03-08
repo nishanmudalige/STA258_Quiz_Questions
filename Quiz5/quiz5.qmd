@@ -9,6 +9,8 @@ resources:
     - snacks.csv
     - braking_dist.csv
     - efficiency.csv
+    - plant_yield.csv
+    - plant_height.csv
 ---
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
@@ -43,45 +45,41 @@ invisible(capture.output({
 }))
 ```
 ## Q1 — Two-sided Confidence Interval {#q1a}
-A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their yield was measured. The resulting data is as follows: \
-**Fertilizer A:** 12, 15, 14, 16, 13  \
-**Fertilizer B:** 17, 18, 16, 19, 17
+A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their yield was measured. The resulting data is on the file `plant_yield.csv`.
 
-Compute a 99% two-sided confidence interval for $\mu_{A} - \mu_{B}$ for the yield using pooled variances. You may assume equal variances.
-Hint: Use the `t.test` command.
+Use the `boxplot` command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for $\mu_{A} - \mu_{B}$ for the yield. 
 ```{webr}
-fertilizer_a <- c(12, 15, 14, 16, 13)
-fertilizer_b <- c(17, 18, 16, 19, 17)
-
+yield_df <- read.csv("plant_yield.csv")
+boxplot(____, ____)
 ```
 
 ```{webr}
 #| echo: false
 #| output: false
-fertilizer_a <- c(12, 15, 14, 16, 13)
-fertilizer_b <- c(17, 18, 16, 19, 17)
-t.test(fertilizer_a, fertilizer_b, var.equal = TRUE, conf.level = 0.99)
+
+# not equal var
+yield_df <- read.csv("plant_yield.csv")
+boxplot(yield_df$fertilizer_a, yield_df$fertilizer_b)
+t.test(yield_df$fertilizer_a, yield_df$fertilizer_b, var.equal = FALSE, conf.level = 0.99)
 ```
 
 ## Q1 — Two-sided Confidence Interval {#q1b}
-A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their growth (in cm) was measured. The resulting data is as follows: \
-**Fertilizer A:** 6.5, 7.0, 6.8, 7.2, 6.9 \
-**Fertilizer B:** 8.0, 7.5, 8.5, 9.0, 7.8
+A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their growth (in cm) was measured. The resulting data is on the file `plant_height.csv`.
 
-Compute a 99% two-sided confidence interval for $\mu_{B} - \mu_{A}$ for the plant height using pooled variances. You may **not** assume they have equal variances.
-Hint: Use the `t.test` command.
+Use the `boxplot` command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for $\mu_{B} - \mu_{A}$ for the plant height.
 ```{webr}
-fertilizer_a <- c(6.5, 7.0, 6.8, 7.2, 6.9)
-fertilizer_b <- c(8.0, 7.5, 8.5, 9.0, 7.8)
-
+height_df <- read.csv("plant_height.csv")
+boxplot(____, ____)
 ```
 
 ```{webr}
 #| echo: false
 #| output: false
-fertilizer_a <- c(6.5, 7.0, 6.8, 7.2, 6.9)
-fertilizer_b <- c(8.0, 7.5, 8.5, 9.0, 7.8)
-t.test(fertilizer_b, fertilizer_a, var.equal = FALSE, conf.level = 0.99)
+
+# equal var
+height_df <- read.csv("plant_height.csv")
+boxplot(height_df$fertilizer_a, height_df$fertilizer_b)
+t.test(height_df$fertilizer_b, height_df$fertilizer_a, var.equal = TRUE, conf.level = 0.99)
 ```
 
 ## Q2 — Proportions {#q2a}
@@ -177,8 +175,7 @@ A company wants to test their new energy drink to see if it increases alertness.
 **Control (A):** 250, 265, 270, 260, 255 \
 **After Consumption (B):** 240, 255, 260, 250, 248
 
-Compute a one-sided 90% confidence interval for the mean decrease in reaction time $\mu_{A} - \mu_{B} > 0$.
-Hint: Use a paired t-test.
+Compute a one-sided 90% confidence interval for the mean difference in reaction time $\mu_{A} - \mu_{B}$ using a paired t-test.
 ```{webr}
 
 ```
@@ -188,7 +185,7 @@ Hint: Use a paired t-test.
 #| output: false
 A <- c(250, 265, 270, 260, 255) 
 B <- c(240, 255, 260, 250, 248)
-t.test(A, B, paired = TRUE, alternative = "greater", conf.level = 0.90)
+t.test(A, B, paired = TRUE, conf.level = 0.90)
 ```
 
 ## Q4 — Paired One-Sided CI {#q4b}
@@ -196,8 +193,7 @@ A company wants to test their new energy drink to see if it increases alertness.
 **Control (A):** 255, 260, 265, 258, 262 \
 **After Consumption (B):** 248, 253, 260, 252, 257
 
-Compute a one-sided 85% confidence interval for the mean decrease in reaction time $\mu_{A} - \mu_{B} > 0$.
-Hint: Use a paired t-test.
+Compute a one-sided 85% confidence interval for the mean difference in reaction time $\mu_{A} - \mu_{B}$ using a paired t-test.
 ```{webr}
 
 ```
@@ -207,7 +203,7 @@ Hint: Use a paired t-test.
 #| output: false
 A <- c(255, 260, 265, 258, 262)  
 B <- c(248, 253, 260, 252, 257)
-t.test(A, B, paired = TRUE, alternative = "greater", conf.level = 0.85)
+t.test(A, B, paired = TRUE, conf.level = 0.85)
 ```
 
 ## Q5 — One-Sided CI {#q5a}
@@ -215,8 +211,13 @@ A fitness study wants to compare the resting blood pressure (in mmHg) between th
 **No Exercise (A):** 130, 135, 128, 132, 136 \
 **Exercise (B):** 120, 125, 118, 122, 124
 
-Compute a one-sided 85% confidence interval for the mean difference in blood pressure ($\mu_{B} - \mu_{A}$) to test if exercise lowers blood pressure. You may assume equal variances.
+Assume the population standard variances are known to be: $\sigma_{A} = 4$ mmHg and $\sigma_{B} = 3$ mmHg.
+Compute a 85% confidence interval for the mean difference in blood pressure ($\mu_{B} - \mu_{A}$).
 ```{webr}
+A <- c(130, 135, 128, 132, 136)
+B <- c(120, 125, 118, 122, 124) 
+sd_A <- 4
+sd_B <- 3
 
 ```
 
@@ -225,16 +226,31 @@ Compute a one-sided 85% confidence interval for the mean difference in blood pre
 #| output: false
 A <- c(130, 135, 128, 132, 136)
 B <- c(120, 125, 118, 122, 124) 
-t.test(B, A, paired = FALSE, alternative = "less", conf.level = 0.85, var.equal = TRUE)
+sd_A <- 4
+sd_B <- 3
+diff_mean <- mean(B) - mean(A)
+se <- sqrt((sd_A^2 / 5) + (sd_B^2 / 5))
+
+z <- qnorm(0.925)
+
+lower <- diff_mean - z * se
+upper <- diff_mean + z * se
+
+c(lower, upper)
 ```
 
-## Q5 — One-Sided CI {#q5b}
+## Q5 — Two-Sided Z-test {#q5b}
 A fitness study wants to compare the resting blood pressure (in mmHg) between those who regularly exercise and those who do not. \
 **No Exercise (A):** 130, 145, 128, 138, 142 \
 **Exercise (B):** 118, 125, 120, 122, 127
 
-Compute a one-sided 90% confidence interval for the mean difference in blood pressure ($\mu_{B} - \mu_{A}$) to test if exercise lowers blood pressure. You may **not** assume equal variances.
+Assume the population standard variances are known to be: $\sigma_{A} = 7$ mmHg and $\sigma_{B} = 5$ mmHg.
+Compute a 90% confidence interval for the mean difference in blood pressure ($\mu_{B} - \mu_{A}$).
 ```{webr}
+A <- c(130, 145, 128, 138, 142)
+B <- c(118, 125, 120, 122, 127) 
+sd_A <- 7
+sd_B <- 5
 
 ```
 
@@ -243,5 +259,15 @@ Compute a one-sided 90% confidence interval for the mean difference in blood pre
 #| output: false
 A <- c(130, 145, 128, 138, 142)
 B <- c(118, 125, 120, 122, 127) 
-t.test(B, A, paired = FALSE, alternative = "less", conf.level = 0.90, var.equal = FALSE)
+sd_A <- 7
+sd_B <- 5
+diff_mean <- mean(B) - mean(A)
+se <- sqrt((sd_A^2 / 5) + (sd_B^2 / 5))
+
+z <- qnorm(0.85)
+
+lower <- diff_mean - z * se
+upper <- diff_mean + z * se
+
+c(lower, upper)
 ```

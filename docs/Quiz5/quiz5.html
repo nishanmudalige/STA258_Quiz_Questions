@@ -177,17 +177,15 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbnZp
 </div>
 <section id="q1a" class="level2">
 <h2 class="anchored" data-anchor-id="q1a">Q1 — Two-sided Confidence Interval</h2>
-<p>A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their yield was measured. The resulting data is as follows:<br>
-<strong>Fertilizer A:</strong> 12, 15, 14, 16, 13<br>
-<strong>Fertilizer B:</strong> 17, 18, 16, 19, 17</p>
-<p>Compute a 99% two-sided confidence interval for <span class="math inline">\(\mu_{A} - \mu_{B}\)</span> for the yield using pooled variances. You may assume equal variances. Hint: Use the <code>t.test</code> command.</p>
+<p>A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their yield was measured. The resulting data is on the file <code>plant_yield.csv</code>.</p>
+<p>Use the <code>boxplot</code> command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for <span class="math inline">\(\mu_{A} - \mu_{B}\)</span> for the yield.</p>
 <div class="cell">
 <div>
 <div id="webr-3" class="exercise-cell">
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmVydGlsaXplcl9hIDwtIGMoMTIsIDE1LCAxNCwgMTYsIDEzKVxuZmVydGlsaXplcl9iIDwtIGMoMTcsIDE4LCAxNiwgMTksIDE3KSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieWllbGRfZGYgPC0gcmVhZC5jc3YoXCJwbGFudF95aWVsZC5jc3ZcIilcbmJveHBsb3QoX19fXywgX19fXykifQ==
 </script>
 </div>
 </div>
@@ -197,24 +195,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmVydGlsaXplcl9hIDwtIGMo
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJmZXJ0aWxpemVyX2EgPC0gYygxMiwgMTUsIDE0LCAxNiwgMTMpXG5mZXJ0aWxpemVyX2IgPC0gYygxNywgMTgsIDE2LCAxOSwgMTcpXG50LnRlc3QoZmVydGlsaXplcl9hLCBmZXJ0aWxpemVyX2IsIHZhci5lcXVhbCA9IFRSVUUsIGNvbmYubGV2ZWwgPSAwLjk5KSJ9
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJcbiMgbm90IGVxdWFsIHZhclxueWllbGRfZGYgPC0gcmVhZC5jc3YoXCJwbGFudF95aWVsZC5jc3ZcIilcbmJveHBsb3QoeWllbGRfZGYkZmVydGlsaXplcl9hLCB5aWVsZF9kZiRmZXJ0aWxpemVyX2IpXG50LnRlc3QoeWllbGRfZGYkZmVydGlsaXplcl9hLCB5aWVsZF9kZiRmZXJ0aWxpemVyX2IsIHZhci5lcXVhbCA9IEZBTFNFLCBjb25mLmxldmVsID0gMC45OSkifQ==
 </script>
 </div>
 </div>
 </section>
 <section id="q1b" class="level2">
 <h2 class="anchored" data-anchor-id="q1b">Q1 — Two-sided Confidence Interval</h2>
-<p>A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their growth (in cm) was measured. The resulting data is as follows:<br>
-<strong>Fertilizer A:</strong> 6.5, 7.0, 6.8, 7.2, 6.9<br>
-<strong>Fertilizer B:</strong> 8.0, 7.5, 8.5, 9.0, 7.8</p>
-<p>Compute a 99% two-sided confidence interval for <span class="math inline">\(\mu_{B} - \mu_{A}\)</span> for the plant height using pooled variances. You may <strong>not</strong> assume they have equal variances. Hint: Use the <code>t.test</code> command.</p>
+<p>A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their growth (in cm) was measured. The resulting data is on the file <code>plant_height.csv</code>.</p>
+<p>Use the <code>boxplot</code> command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for <span class="math inline">\(\mu_{B} - \mu_{A}\)</span> for the plant height.</p>
 <div class="cell">
 <div>
 <div id="webr-5" class="exercise-cell">
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmVydGlsaXplcl9hIDwtIGMoNi41LCA3LjAsIDYuOCwgNy4yLCA2LjkpXG5mZXJ0aWxpemVyX2IgPC0gYyg4LjAsIDcuNSwgOC41LCA5LjAsIDcuOCkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaGVpZ2h0X2RmIDwtIHJlYWQuY3N2KFwicGxhbnRfaGVpZ2h0LmNzdlwiKVxuYm94cGxvdChfX19fLCBfX19fKSJ9
 </script>
 </div>
 </div>
@@ -224,7 +220,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZmVydGlsaXplcl9hIDwtIGMo
 
 </div>
 <script type="webr-6-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJmZXJ0aWxpemVyX2EgPC0gYyg2LjUsIDcuMCwgNi44LCA3LjIsIDYuOSlcbmZlcnRpbGl6ZXJfYiA8LSBjKDguMCwgNy41LCA4LjUsIDkuMCwgNy44KVxudC50ZXN0KGZlcnRpbGl6ZXJfYiwgZmVydGlsaXplcl9hLCB2YXIuZXF1YWwgPSBGQUxTRSwgY29uZi5sZXZlbCA9IDAuOTkpIn0=
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJcbiMgZXF1YWwgdmFyXG5oZWlnaHRfZGYgPC0gcmVhZC5jc3YoXCJwbGFudF9oZWlnaHQuY3N2XCIpXG5ib3hwbG90KGhlaWdodF9kZiRmZXJ0aWxpemVyX2EsIGhlaWdodF9kZiRmZXJ0aWxpemVyX2IpXG50LnRlc3QoaGVpZ2h0X2RmJGZlcnRpbGl6ZXJfYiwgaGVpZ2h0X2RmJGZlcnRpbGl6ZXJfYSwgdmFyLmVxdWFsID0gVFJVRSwgY29uZi5sZXZlbCA9IDAuOTkpIn0=
 </script>
 </div>
 </div>
@@ -334,7 +330,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <p>A company wants to test their new energy drink to see if it increases alertness. Five participants try the drink, and their reaction time (ms) is recorded as such:<br>
 <strong>Control (A):</strong> 250, 265, 270, 260, 255<br>
 <strong>After Consumption (B):</strong> 240, 255, 260, 250, 248</p>
-<p>Compute a one-sided 90% confidence interval for the mean decrease in reaction time <span class="math inline">\(\mu_{A} - \mu_{B} &gt; 0\)</span>.</p>
+<p>Compute a one-sided 90% confidence interval for the mean difference in reaction time <span class="math inline">\(\mu_{A} - \mu_{B}\)</span> using a paired t-test.</p>
 <div class="cell">
 <div>
 <div id="webr-15" class="exercise-cell">
@@ -351,7 +347,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 
 </div>
 <script type="webr-16-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMjUwLCAyNjUsIDI3MCwgMjYwLCAyNTUpICAjIENvbnRyb2xcbkIgPC0gYygyNDAsIDI1NSwgMjYwLCAyNTAsIDI0OCkgICMgQWZ0ZXIgY29uc3VtcHRpb25cbnQudGVzdChBLCBCLCBwYWlyZWQgPSBUUlVFLCBhbHRlcm5hdGl2ZSA9IFwiZ3JlYXRlclwiLCBjb25mLmxldmVsID0gMC45MCkifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMjUwLCAyNjUsIDI3MCwgMjYwLCAyNTUpIFxuQiA8LSBjKDI0MCwgMjU1LCAyNjAsIDI1MCwgMjQ4KVxudC50ZXN0KEEsIEIsIHBhaXJlZCA9IFRSVUUsIGNvbmYubGV2ZWwgPSAwLjkwKSJ9
 </script>
 </div>
 </div>
@@ -361,7 +357,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <p>A company wants to test their new energy drink to see if it increases alertness. Five participants try the drink, and their reaction time (ms) is recorded as such:<br>
 <strong>Control (A):</strong> 255, 260, 265, 258, 262<br>
 <strong>After Consumption (B):</strong> 248, 253, 260, 252, 257</p>
-<p>Compute a one-sided 85% confidence interval for the mean decrease in reaction time <span class="math inline">\(\mu_{A} - \mu_{B} &gt; 0\)</span>.</p>
+<p>Compute a one-sided 85% confidence interval for the mean difference in reaction time <span class="math inline">\(\mu_{A} - \mu_{B}\)</span> using a paired t-test.</p>
 <div class="cell">
 <div>
 <div id="webr-17" class="exercise-cell">
@@ -378,7 +374,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 
 </div>
 <script type="webr-18-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMjU1LCAyNjAsIDI2NSwgMjU4LCAyNjIpICBcbkIgPC0gYygyNDgsIDI1MywgMjYwLCAyNTIsIDI1NylcbnQudGVzdChBLCBCLCBwYWlyZWQgPSBUUlVFLCBhbHRlcm5hdGl2ZSA9IFwiZ3JlYXRlclwiLCBjb25mLmxldmVsID0gMC44NSkifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMjU1LCAyNjAsIDI2NSwgMjU4LCAyNjIpICBcbkIgPC0gYygyNDgsIDI1MywgMjYwLCAyNTIsIDI1NylcbnQudGVzdChBLCBCLCBwYWlyZWQgPSBUUlVFLCBjb25mLmxldmVsID0gMC44NSkifQ==
 </script>
 </div>
 </div>
@@ -388,14 +384,14 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxz
 <p>A fitness study wants to compare the resting blood pressure (in mmHg) between those who regularly exercise and those who do not.<br>
 <strong>No Exercise (A):</strong> 130, 135, 128, 132, 136<br>
 <strong>Exercise (B):</strong> 120, 125, 118, 122, 124</p>
-<p>Compute a one-sided 85% confidence interval for the mean difference in blood pressure (<span class="math inline">\(\mu_{B} - \mu_{A}\)</span>) to test if exercise lowers blood pressure. You may assume equal variances.</p>
+<p>Assume the population standard variances are known to be: <span class="math inline">\(\sigma_{A} = 4\)</span> mmHg and <span class="math inline">\(\sigma_{B} = 3\)</span> mmHg. Compute a 85% confidence interval for the mean difference in blood pressure (<span class="math inline">\(\mu_{B} - \mu_{A}\)</span>).</p>
 <div class="cell">
 <div>
 <div id="webr-19" class="exercise-cell">
 
 </div>
 <script type="webr-19-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiQSA8LSBjKDEzMCwgMTM1LCAxMjgsIDEzMiwgMTM2KVxuQiA8LSBjKDEyMCwgMTI1LCAxMTgsIDEyMiwgMTI0KSBcbnNkX0EgPC0gNFxuc2RfQiA8LSAzIn0=
 </script>
 </div>
 </div>
@@ -405,24 +401,24 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 
 </div>
 <script type="webr-20-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMTMwLCAxMzUsIDEyOCwgMTMyLCAxMzYpXG5CIDwtIGMoMTIwLCAxMjUsIDExOCwgMTIyLCAxMjQpIFxudC50ZXN0KEIsIEEsIHBhaXJlZCA9IEZBTFNFLCBhbHRlcm5hdGl2ZSA9IFwibGVzc1wiLCBjb25mLmxldmVsID0gMC44NSwgdmFyLmVxdWFsID0gVFJVRSkifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMTMwLCAxMzUsIDEyOCwgMTMyLCAxMzYpXG5CIDwtIGMoMTIwLCAxMjUsIDExOCwgMTIyLCAxMjQpIFxuc2RfQSA8LSA0XG5zZF9CIDwtIDNcbmRpZmZfbWVhbiA8LSBtZWFuKEIpIC0gbWVhbihBKVxuc2UgPC0gc3FydCgoc2RfQV4yIC8gNSkgKyAoc2RfQl4yIC8gNSkpXG5cbnogPC0gcW5vcm0oMC45MjUpXG5cbmxvd2VyIDwtIGRpZmZfbWVhbiAtIHogKiBzZVxudXBwZXIgPC0gZGlmZl9tZWFuICsgeiAqIHNlXG5cbmMobG93ZXIsIHVwcGVyKSJ9
 </script>
 </div>
 </div>
 </section>
 <section id="q5b" class="level2">
-<h2 class="anchored" data-anchor-id="q5b">Q5 — One-Sided CI</h2>
+<h2 class="anchored" data-anchor-id="q5b">Q5 — Two-Sided Z-test</h2>
 <p>A fitness study wants to compare the resting blood pressure (in mmHg) between those who regularly exercise and those who do not.<br>
 <strong>No Exercise (A):</strong> 130, 145, 128, 138, 142<br>
 <strong>Exercise (B):</strong> 118, 125, 120, 122, 127</p>
-<p>Compute a one-sided 90% confidence interval for the mean difference in blood pressure (<span class="math inline">\(\mu_{B} - \mu_{A}\)</span>) to test if exercise lowers blood pressure. You may <strong>not</strong> assume equal variances.</p>
+<p>Assume the population standard variances are known to be: <span class="math inline">\(\sigma_{A} = 7\)</span> mmHg and <span class="math inline">\(\sigma_{B} = 5\)</span> mmHg. Compute a 90% confidence interval for the mean difference in blood pressure (<span class="math inline">\(\mu_{B} - \mu_{A}\)</span>).</p>
 <div class="cell">
 <div>
 <div id="webr-21" class="exercise-cell">
 
 </div>
 <script type="webr-21-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiQSA8LSBjKDEzMCwgMTQ1LCAxMjgsIDEzOCwgMTQyKVxuQiA8LSBjKDExOCwgMTI1LCAxMjAsIDEyMiwgMTI3KSBcbnNkX0EgPC0gN1xuc2RfQiA8LSA1In0=
 </script>
 </div>
 </div>
@@ -432,7 +428,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIn0=
 
 </div>
 <script type="webr-22-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMTMwLCAxNDUsIDEyOCwgMTM4LCAxNDIpXG5CIDwtIGMoMTE4LCAxMjUsIDEyMCwgMTIyLCAxMjcpIFxudC50ZXN0KEIsIEEsIHBhaXJlZCA9IEZBTFNFLCBhbHRlcm5hdGl2ZSA9IFwibGVzc1wiLCBjb25mLmxldmVsID0gMC45MCwgdmFyLmVxdWFsID0gRkFMU0UpIn0=
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJBIDwtIGMoMTMwLCAxNDUsIDEyOCwgMTM4LCAxNDIpXG5CIDwtIGMoMTE4LCAxMjUsIDEyMCwgMTIyLCAxMjcpIFxuc2RfQSA8LSA3XG5zZF9CIDwtIDVcbmRpZmZfbWVhbiA8LSBtZWFuKEIpIC0gbWVhbihBKVxuc2UgPC0gc3FydCgoc2RfQV4yIC8gNSkgKyAoc2RfQl4yIC8gNSkpXG5cbnogPC0gcW5vcm0oMC44NSlcblxubG93ZXIgPC0gZGlmZl9tZWFuIC0geiAqIHNlXG51cHBlciA8LSBkaWZmX21lYW4gKyB6ICogc2VcblxuYyhsb3dlciwgdXBwZXIpIn0=
 </script>
 </div>
 </div>
@@ -453,7 +449,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0yMiIsImlubGluZSI6ZmFsc2UsIm1l
 </div>
 </div>
 <script type="vfs-file">
-WyJjYXJzX3NhZmV0eS5jc3YiLCJzbmFja3MuY3N2IiwiYnJha2luZ19kaXN0LmNzdiIsImVmZmljaWVuY3kuY3N2Il0=
+WyJjYXJzX3NhZmV0eS5jc3YiLCJzbmFja3MuY3N2IiwiYnJha2luZ19kaXN0LmNzdiIsImVmZmljaWVuY3kuY3N2IiwicGxhbnRfeWllbGQuY3N2IiwicGxhbnRfaGVpZ2h0LmNzdiJd
 </script>
 </section>
 
