@@ -237,8 +237,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="solution" class="level1">
 <h1>Solution</h1>
 <p>The solutions are displayed on the same qmd file underneath where students enter their code, with <code>#| echo: false</code>. This command (<code>#| echo: false</code>) can be used for other code blocks to prevent the output from being shown.</p>
+</section>
+<section id="errors" class="level1">
+<h1>Errors</h1>
+<section id="notreadableerror" class="level3">
+<h3 class="anchored" data-anchor-id="notreadableerror">NotReadableError</h3>
+<p>Sometimes, the following error may show up:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>NotReadableError: Failed to execute 'readAsArrayBuffer' on 'FileReaderSync': The </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>requested file could not be read, typically due to permission problems that have </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>occurred after a reference to a file was acquired</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Typically, the error disappears after refreshing the page. If the error still persists, run the command <code>quarto add coatless/quarto-webr</code> in terminal. Then, run <code>quarto clean</code> and then <code>quarto render</code> to reload all the files.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

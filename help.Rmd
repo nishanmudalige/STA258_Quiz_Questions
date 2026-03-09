@@ -124,4 +124,14 @@ invisible(capture.output({
 The solutions are displayed on the same qmd file underneath where students enter their code, with `#| echo: false`.
 This command (`#| echo: false`) can be used for other code blocks to prevent the output from being shown.
 
+# Errors
 
+### NotReadableError
+Sometimes, the following error may show up: 
+```html
+NotReadableError: Failed to execute 'readAsArrayBuffer' on 'FileReaderSync': The 
+requested file could not be read, typically due to permission problems that have 
+occurred after a reference to a file was acquired
+```
+Typically, the error disappears after refreshing the page. If the error still persists, run the command `quarto add coatless/quarto-webr` in terminal.
+Then, run `quarto clean` and then `quarto render` to reload all the files.
