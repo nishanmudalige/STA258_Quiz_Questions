@@ -1,0 +1,193 @@
+---
+title: "quiz9"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+    - health_metrics.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+## Q1 — One feature {#q1a}
+Using the dataset `health_metrics.csv`, fit a linear regression model to predict systolic blood pressure, `sbp` using `age` as the only predictor. 
+
+Compute the estimated intercept $\beta_{0}$.
+
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ age, data = df)
+coef(model)
+# 64.295328
+```
+
+## Q1 — One feature {#q1b}
+Using the dataset `health_metrics.csv`, fit a linear regression model to predict systolic blood pressure,`sbp` using `sodium` as the only predictor. 
+
+Compute the estimated slope $\beta_{1}$.
+
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ sodium, data = df)
+coef(model)
+# 0.04144923 
+```
+
+## Q2 — Predict {#q2a}
+Using the dataset `health_metrics.csv`, predict the systolic blood pressure for when $\text{sodium} = 2000$. 
+
+Hint: use `predict` or use $\beta_{0}$ and $\beta_{1}$ to calculate it by hand.
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ sodium, data = df)
+predict(model, newdata = data.frame(sodium=2000))
+# 115.2822 
+```
+
+## Q2 — Predict {#q2b}
+Using the dataset `health_metrics.csv`, predict the diabetes progression for when $\text{bmi} = 23$. 
+
+Hint: use `predict` or use $\beta_{0}$ and $\beta_{1}$ to calculate it by hand.
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ bmi, data = df)
+predict(model, newdata = data.frame(bmi = 23))
+# 113.9065
+```
+
+## Q3 - Check normality {#q3a}
+Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `sodium`. 
+Produce a QQ plot of the residuals and determine whether the normality assumption holds.
+
+Hint: Use `qqnorm` and `qqline`.
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ sodium, data = df)
+qqnorm(resid(model))
+qqline(resid(model))
+
+# yes normality assumption holds!
+```
+
+## Q3 - Check normality {#q3b}
+Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `hr`. 
+Produce a QQ plot of the residuals and determine whether the normality assumption holds.
+
+Hint: Use `qqnorm` and `qqline`.
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ hr, data = df)
+qqnorm(resid(model))
+qqline(resid(model))
+
+# normality does not hold
+
+```
+
+## Q4 - Compare predictions {#q4a}
+Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `bmi`. 
+What is the difference in predicted `sbp` between a patient whose `bmi` is 25 and a patient with a `bmi` of 20?
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ bmi, data = df)
+bmi20 <- predict(model, newdata = data.frame(bmi = 20))
+bmi25 <- predict(model, newdata = data.frame(bmi = 25))
+bmi25 - bmi20
+
+# 24.61191
+```
+
+## Q4 - Compare predictions {#q4b}
+Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `age`. 
+What is the difference in predicted `sbp` between a patient whose aged 60 and a patient aged 40?
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+model <- lm(sbp ~ age, data = df)
+age40 <- predict(model, newdata = data.frame(age = 40))
+age60 <- predict(model, newdata = data.frame(age = 60))
+age60 - age40
+
+# 29.07604
+```
+

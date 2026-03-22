@@ -166,27 +166,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Each <code>.qmd</code> quiz file contains several components.</p>
 <p>The <code>.qmd</code> file includes the required dataset files and the JavaScript code used for the HTML implementation. For each question, the file contains a question description, a <code>webr</code> code chunk that students interact with, and another <code>webr</code> chunk that is hidden from students and contains the solution and the final answer.</p>
 </section>
-<section id="embedding-in-quercus" class="level1">
-<h1>Embedding in Quercus</h1>
-<p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe.</p>
-<p>Example HTML:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ot">title</span><span class="op">=</span><span class="st">"embedded content"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ot">src</span><span class="op">=</span><span class="st">"https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q4a"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ot">width</span><span class="op">=</span><span class="st">"100%"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ot">height</span><span class="op">=</span><span class="st">"650px"</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ot">loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This allows students to access the interactive quiz directly inside Quercus.</p>
-</section>
-<section id="displaying-a-specific-question" class="level1">
-<h1>Displaying a Specific Question</h1>
-<p>Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.</p>
-<p>Example URL:</p>
-<p>quiz6.html?q=q4a</p>
-<p>The <code>q</code> parameter indicates which question should be displayed.</p>
+<section id="adding-files" class="level1">
+<h1>Adding files</h1>
+<p>Files, such as csv files, are added on top of the qmd file, under <code>resouces</code>. For example, in <code>quiz3a.qmd</code>, we use two csv files, <code>task_times.csv</code> and <code>scores.csv</code>. We add these files under resources, as such:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title: "Quiz 6"</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>format: live-html</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>engine: knitr</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sidebar:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  style: docked</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>resources:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  - soccer_spi.csv</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  - music_tracks.csv</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  - game_publishers.csv</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  - training_scores.csv</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>---</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="javascript-for-question-display" class="level1">
 <h1>JavaScript for Question Display</h1>
@@ -211,32 +205,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This script reads the <code>q</code> parameter from the URL, displays only the requested question, and hides the page title and section titles.</p>
 </section>
-<section id="adding-files" class="level1">
-<h1>Adding files</h1>
-<p>Files, such as csv files, are added on top of the qmd file, under <code>resouces</code>. For example, in <code>quiz3a.qmd</code>, we use two csv files, <code>task_times.csv</code> and <code>scores.csv</code>. We add these files under resources, as such:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>title: "Quiz 3a"</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>format: live-html</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>engine: knitr</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sidebar:</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  style: docked</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>resources:</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  - scores.csv</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  - task_times.csv</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>---</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 <section id="supressing-library-import-output" class="level1">
 <h1>Supressing Library Import Output</h1>
 <p>To hide/supress library imports, nest the libarry calls inside <code>suppressMessages</code>. For example in a webR block,</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>invisible(capture.output({</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  suppressMessages(library(ggplot2))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  suppressMessages(library(skimr))</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>invisible(capture.output({</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  suppressMessages(library(ggplot2))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  suppressMessages(library(skimr))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="questions-and-student-code" class="level1">
+<h1>Questions and Student Code</h1>
+<p>The first few quizzes typically have two files, where they contain two versions of the quizzes. In later quizzes, each question has two versions on the same file. For example, for question 1, there would be Q1a and Q1b. Each of these questions have a <code>webr</code> block, where students can enter their R code.</p>
 </section>
 <section id="solution" class="level1">
 <h1>Solution</h1>
 <p>The solutions are displayed on the same qmd file underneath where students enter their code, with <code>#| echo: false</code>. This command (<code>#| echo: false</code>) can be used for other code blocks to prevent the output from being shown.</p>
+</section>
+<section id="embedding-in-quercus" class="level1">
+<h1>Embedding in Quercus</h1>
+<p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe.</p>
+<p>Example HTML:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ot">title</span><span class="op">=</span><span class="st">"embedded content"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">src</span><span class="op">=</span><span class="st">"https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q4a"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ot">width</span><span class="op">=</span><span class="st">"100%"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ot">height</span><span class="op">=</span><span class="st">"650px"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ot">loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This allows students to access the interactive quiz directly inside Quercus.</p>
+</section>
+<section id="displaying-a-specific-question" class="level1">
+<h1>Displaying a Specific Question</h1>
+<p>Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.</p>
+<p>Example URL:</p>
+<p>quiz6.html?q=q4a</p>
+<p>The <code>q</code> parameter indicates which question should be displayed.</p>
 </section>
 <section id="errors" class="level1">
 <h1>Errors</h1>
