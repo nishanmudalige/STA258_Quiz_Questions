@@ -33,6 +33,72 @@ Each `.qmd` quiz file contains several components.
 
 The `.qmd` file includes the required dataset files and the JavaScript code used for the HTML implementation. For each question, the file contains a question description, a `webr` code chunk that students interact with, and another `webr` chunk that is hidden from students and contains the solution and the final answer.
 
+# Adding files
+Files, such as csv files, are added on top of the qmd file, under `resouces`. For example, in `quiz3a.qmd`, we use two csv files, `task_times.csv` and `scores.csv`. We add these files under resources, as such:
+
+```html
+---
+title: "Quiz 6"
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - soccer_spi.csv
+  - music_tracks.csv
+  - game_publishers.csv
+  - training_scores.csv
+---
+```
+
+# JavaScript for Question Display
+
+The `.qmd` file includes a JavaScript script that reads the URL parameter and hides the other questions.
+
+```html
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+```
+
+This script reads the `q` parameter from the URL, displays only the requested question, and hides the page title and section titles.
+
+# Supressing Library Import Output
+
+To hide/supress library imports, nest the libarry calls inside `suppressMessages`. For example in a webR block,
+
+```html
+#| echo: false
+invisible(capture.output({
+  suppressMessages(library(ggplot2))
+  suppressMessages(library(skimr))
+}))
+```
+
+# Questions and Student Code
+
+The first few quizzes typically have two files, where they contain two versions of the quizzes. In later quizzes, each question has two versions on the same file. For example, for question 1, there would be Q1a and Q1b. 
+Each of these questions have a `webr` block, where students can enter their R code. 
+
+# Solution
+
+The solutions are displayed on the same qmd file underneath where students enter their code, with `#| echo: false`.
+This command (`#| echo: false`) can be used for other code blocks to prevent the output from being shown.
 
 # Embedding in Quercus
 
@@ -64,66 +130,6 @@ quiz6.html?q=q4a
 
 The `q` parameter indicates which question should be displayed.
 
-# JavaScript for Question Display
-
-The `.qmd` file includes a JavaScript script that reads the URL parameter and hides the other questions.
-
-```html
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const showQ = params.get("q");
-
-  if (showQ) {
-    document.querySelectorAll("section[id]").forEach(section => {
-      if (section.id !== showQ) section.style.display = "none";
-    });
-  }
-
-  document.querySelectorAll(".quarto-title-block")
-    .forEach(el => el.style.display = "none");
-
-  document.querySelectorAll("section[id] > h2")
-    .forEach(h => h.style.display = "none");
-});
-</script>
-```
-
-This script reads the `q` parameter from the URL, displays only the requested question, and hides the page title and section titles.
-
-# Adding files
-Files, such as csv files, are added on top of the qmd file, under `resouces`. For example, in `quiz3a.qmd`, we use two csv files, `task_times.csv` and `scores.csv`. We add these files under resources, as such:
-
-```html
----
-title: "Quiz 3a"
-format: live-html
-engine: knitr
-sidebar:
-  style: docked
-resources:
-  - scores.csv
-  - task_times.csv
----
-```
-
-# Supressing Library Import Output
-
-To hide/supress library imports, nest the libarry calls inside `suppressMessages`. For example in a webR block,
-
-```html
-#| echo: false
-invisible(capture.output({
-  suppressMessages(library(ggplot2))
-  suppressMessages(library(skimr))
-}))
-```
-
-# Solution
-
-The solutions are displayed on the same qmd file underneath where students enter their code, with `#| echo: false`.
-This command (`#| echo: false`) can be used for other code blocks to prevent the output from being shown.
-
 # Errors
 
 ### NotReadableError
@@ -135,3 +141,4 @@ occurred after a reference to a file was acquired
 ```
 Typically, the error disappears after refreshing the page. If the error still persists, run the command `quarto add coatless/quarto-webr` in terminal.
 Then, run `quarto clean` and then `quarto render` to reload all the files.
+
