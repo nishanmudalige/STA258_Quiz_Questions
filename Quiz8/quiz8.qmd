@@ -99,8 +99,9 @@ summary(fit)
 
 Using the `crop_fertilizer_A.csv` dataset, we test:
 
-H0: μA = μB = μC = μD  
-Ha: At least one population mean yield differs.
+$H_0: \mu_A = \mu_B = \mu_C = \mu_D$
+
+$H_a: \text{At least one population mean yield differs.}$
 
 Compute the p-value using the `aov()` function.
 
@@ -131,8 +132,9 @@ summary(fit)
 
 Using the `crop_fertilizer_B.csv` dataset, we test:
 
-H0: μA = μB = μC = μD  
-Ha: At least one population mean yield differs.
+$H_0: \mu_A = \mu_B = \mu_C = \mu_D$
+
+$H_a: \text{At least one population mean yield differs.}$
 
 Compute the p-value using the `aov()` function.
 
