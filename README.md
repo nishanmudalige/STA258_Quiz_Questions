@@ -1,3 +1,7 @@
+
+# STA258_Quiz_Questions
+Quiz Questions for STA258
+
 # Help file:
 
 Help file: [https://nishanmudalige.github.io/STA258_Quiz_Questions/help.html](https://nishanmudalige.github.io/STA258_Quiz_Questions/help.html)
@@ -6,9 +10,6 @@ Pre-requisites:
   - R Packages required
   - R version
   - LaTeX
-
-# STA258_Quiz_Questions
-Quiz Questions for STA258
 
 ## Documentation (Both)
 
@@ -53,3 +54,8 @@ Quiz Questions for STA258
   - Calculate power when $H_a: \mu > \mu_0$
   - Calculate power when $H_a: \mu < \mu_0$
   - Calculate P(Type II) = $\beta$
+
+
+## Add Names to Quizzes
+
+- In quiz builder tool, add your names
