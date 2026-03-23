@@ -38,16 +38,14 @@ Files, such as csv files, are added on top of the qmd file, under `resouces`. Fo
 
 ```html
 ---
-title: "Quiz 6"
+title: "Quiz 3a"
 format: live-html
 engine: knitr
 sidebar:
   style: docked
 resources:
-  - soccer_spi.csv
-  - music_tracks.csv
-  - game_publishers.csv
-  - training_scores.csv
+  - scores.csv
+  - task_times.csv
 ---
 ```
 
