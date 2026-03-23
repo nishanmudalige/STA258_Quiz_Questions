@@ -1,0 +1,223 @@
+---
+title: "quiz10"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  - study_hours_scores_A.csv
+  - study_hours_scores_B.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+## Q1 — Fit the Regression Model {#q1a}
+
+Using the `study_hours_scores_A.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Return the estimated slope.
+
+```{webr}
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+coef(model)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+coef(model)
+# 3.3124
+```
+
+## Q1 — Fit the Regression Model {#q1b}
+
+Using the `study_hours_scores_B.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Return the estimated slope.
+
+```{webr}
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+coef(model)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+coef(model)["study_hours"]
+# 2.9259
+```
+
+## Q2 — Compute R^2 {#q2a}
+
+Using the `study_hours_scores_A.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Return the model's $R^2.$
+
+```{webr}
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+___(model)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+summary(model)
+# 0.9716
+```
+
+
+## Q2 — Compute R^2 {#q2b}
+
+Using the `study_hours_scores_B.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Return the model's $R^2.$
+
+```{webr}
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+___(model)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+summary(model)
+# 0.9409
+```
+
+
+## Q3 — Compute the p-value for the slope {#q3a}
+
+Using the `study_hours_scores_A.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Compute the p-value for testing $H_0: \beta_1 = 0.$
+
+```{webr}
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+summary(model)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+summary(model)
+# 3.133e-12
+```
+
+## Q3 — Compute the p-value for the slope {#q3b}
+
+Using the `study_hours_scores_B.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Compute the p-value for testing $H_0: \beta_1 = 0.$
+
+```{webr}
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+summary(model)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+summary(model)
+# 2.997e-11
+```
+
+## Q4 — Predict the mean test score {#q4a}
+
+Using the `study_hours_scores_A.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Predict the mean test score when `study_hours = 8`.
+
+```{webr}
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+predict(___, newdata = data.frame(study_hours = ___))
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_A.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+predict(model, newdata = data.frame(study_hours = 8))
+# 69.2565
+```
+
+
+## Q4 — Predict the mean test score {#q4b}
+
+Using the `study_hours_scores_B.csv` dataset, fit a simple linear regression model with `test_score` as the response and `study_hours` as the predictor.
+
+Predict the mean test score when `study_hours = 8`.
+
+```{webr}
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(___ ~ ___, data = quiz)
+predict(___, newdata = data.frame(study_hours = ___))
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("study_hours_scores_B.csv")
+
+model <- lm(test_score ~ study_hours, data = quiz)
+predict(model, newdata = data.frame(study_hours = 8))
+# 69.6408
+```
