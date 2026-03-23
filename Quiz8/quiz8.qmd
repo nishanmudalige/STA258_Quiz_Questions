@@ -101,7 +101,7 @@ summary(fit)
 # F-statistic = 48.57
 ```
 
-## Q2 — One-way ANOVA (p-value and inference) {q2a}
+## Q2 — One-way ANOVA (p-value and inference) {#q2a}
 
 Using the `crop_fertilizer_A.csv` dataset, we test:
 
@@ -134,7 +134,7 @@ summary(fit)
 # We reject the null hypothesis at the 5% significance level.
 ```
 
-## Q2 — One-way ANOVA (p-value and inference) {q2b}
+## Q2 — One-way ANOVA (p-value and inference) {#q2b}
 
 Using the `crop_fertilizer_B.csv` dataset, we test:
 
