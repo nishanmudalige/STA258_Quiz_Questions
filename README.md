@@ -3,7 +3,7 @@ Quiz Questions for STA258
 
 ## Quiz 9: Things to do
 
-- Qustion to plot y vs x, examine whether there is a linear trend
+- Qustion to plot $y$ vs. $x$, examine whether there is a linear trend
 - Question to numerically estimate $\hat{\beta}_0$ [AND]
 - Question to numerically estimate $\hat{\beta}_1$
 - Question to interpret the intercept of a regression model (MCQ)
