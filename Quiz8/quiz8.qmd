@@ -6,8 +6,8 @@ engine: knitr
 sidebar:
   style: docked
 resources:
-  - crop_fertilizer_A.csv
-  - crop_fertilizer_B.csv
+  - crop_fertilizer_1.csv
+  - crop_fertilizer_2.csv
 ---
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}}
@@ -35,9 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+```{webr}
+#| echo: false
+#| output: false
+options(digits = 8)
+```
+
 ## Q1 — One-way ANOVA (extract key statistics) {#q1a}
 
-Using the `crop_fertilizer_A.csv` dataset, fit a one-way ANOVA model using `aov()`.
+Using the `crop_fertilizer_1.csv` dataset, fit a one-way ANOVA model using `aov()`.
 
 From the ANOVA output, select one value each for:
 
@@ -46,7 +52,7 @@ From the ANOVA output, select one value each for:
 - F-statistic
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 fit <- aov(___ ~ ___, data = ___)
 
@@ -57,7 +63,7 @@ summary(___)
 # Solution
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 fit <- aov(yield ~ fertilizer, data = crop)
 
@@ -65,12 +71,12 @@ summary(fit)
 
 # df1 = 3
 # df2 = 16
-# F-statistic = 72.5
+# F-statistic = 277.23
 ```
 
 ## Q1 — One-way ANOVA (extract key statistics) {#q1b}
 
-Using the `crop_fertilizer_B.csv` dataset, fit a one-way ANOVA model using `aov()`.
+Using the `crop_fertilizer_2.csv` dataset, fit a one-way ANOVA model using `aov()`.
 
 From the ANOVA output, select one value each for:
 
@@ -79,7 +85,7 @@ From the ANOVA output, select one value each for:
 - F-statistic
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 fit <- aov(___ ~ ___, data = ___)
 
@@ -90,7 +96,7 @@ summary(___)
 # Solution
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 fit <- aov(yield ~ fertilizer, data = crop)
 
@@ -98,12 +104,12 @@ summary(fit)
 
 # df1 = 3
 # df2 = 16
-# F-statistic = 48.57
+# F-statistic = 48.567 
 ```
 
 ## Q2 — One-way ANOVA (p-value and inference) {#q2a}
 
-Using the `crop_fertilizer_A.csv` dataset, we test:
+Using the `crop_fertilizer_1.csv` dataset, we test:
 
 $H_0: \mu_A = \mu_B = \mu_C = \mu_D$
 
@@ -114,7 +120,7 @@ Compute the p-value using the `aov()` function.
 Based on the ANOVA output, select all correct statements about the p-value and hypothesis test.
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 fit = aov(___ ~ ___, data = ___)
 
@@ -125,18 +131,18 @@ summary(___)
 #| echo: false
 #| output: false
 
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 fit = aov(yield ~ fertilizer, data = crop)
 
 summary(fit)
-# p-value = 1.57e-09
+# p-value = 5.332e-14
 # We reject the null hypothesis at the 5% significance level.
 ```
 
 ## Q2 — One-way ANOVA (p-value and inference) {#q2b}
 
-Using the `crop_fertilizer_B.csv` dataset, we test:
+Using the `crop_fertilizer_2.csv` dataset, we test:
 
 $H_0: \mu_A = \mu_B = \mu_C = \mu_D$
 
@@ -146,7 +152,7 @@ Compute the p-value using the `aov()` function.
 
 Based on the ANOVA output, select all correct statements about the p-value and hypothesis test.
 ```{webr}
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 fit = aov(___ ~ ___, data = ___)
 
@@ -157,7 +163,7 @@ summary(___)
 #| echo: false
 #| output: false
 
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 fit = aov(yield ~ fertilizer, data = crop)
 
@@ -168,41 +174,43 @@ summary(fit)
 
 ## Q3 — Fisher's LSD {#q3a}
 
-Using the `crop_fertilizer_A.csv` dataset, perform pairwise comparisons using the Fisher's LSD method.
+Using the `crop_fertilizer_1.csv` dataset, perform pairwise comparisons using the Fisher's LSD method.
 
 Compute the p-value for the comparison between fertilizers **B** and **D**.
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
-pairwise.t.test(___, ___, p.adjust.method = ___)
+pairwise.t.test(___,____, p.adjust.method = ___)
+
 ```
 
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
-# 0.0085  
+
+# 0.0112
 ```
 
 ## Q3 — Fisher's LSD {#q3b}
 
-Using the `crop_fertilizer_B.csv` dataset, perform pairwise comparisons using the Fisher's LSD method.
+Using the `crop_fertilizer_2.csv` dataset, perform pairwise comparisons using the Fisher's LSD method.
 
 Compute the p-value for the comparison between fertilizers **B** and **D**.
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
-pairwise.t.test(___, ___, p.adjust.method = ___)
+pairwise.t.test(____, ____, p.adjust.method = ____")
 ```
 
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
 # 0.0202
@@ -210,12 +218,12 @@ pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
 
 ## Q4 — Fisher's LSD (number of significant pairs) {#q4a}
 
-Using the `crop_fertilizer_A.csv` dataset, perform pairwise comparisons using Fisher's LSD method.
+Using the `crop_fertilizer_1.csv` dataset, perform pairwise comparisons using Fisher's LSD method.
 
 At the 5% significance level, how many pairs of fertilizers are significantly different?
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(___, ___, p.adjust.method = ___)
 ```
@@ -223,19 +231,19 @@ pairwise.t.test(___, ___, p.adjust.method = ___)
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
 # 6  
 ```
 ## Q4 — Fisher's LSD (number of significant pairs) {#q4b}
 
-Using the `crop_fertilizer_B.csv` dataset, perform pairwise comparisons using Fisher's LSD method.
+Using the `crop_fertilizer_2.csv` dataset, perform pairwise comparisons using Fisher's LSD method.
 
 At the 5% significance level, how many pairs of fertilizers are significantly different?
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(___, ___, p.adjust.method = ___)
 ```
@@ -243,7 +251,7 @@ pairwise.t.test(___, ___, p.adjust.method = ___)
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
 # 6
@@ -251,12 +259,12 @@ pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "none")
 
 ## Q5 — Bonferroni Adjustment {#q5a}
 
-Using the `crop_fertilizer_A.csv` dataset, perform pairwise comparisons using the Bonferroni method.
+Using the `crop_fertilizer_1.csv` dataset, perform pairwise comparisons using the Bonferroni method.
 
 Compute the p-value for the comparison between fertilizers **B** and **D**.
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(___, ___, p.adjust.method = ___)
 ```
@@ -264,21 +272,21 @@ pairwise.t.test(___, ___, p.adjust.method = ___)
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
-# 0.0509
+# 0.0670
 ```
 
 
 ## Q5 — Bonferroni Adjustment {#q5b}
 
-Using the `crop_fertilizer_B.csv` dataset, perform pairwise comparisons using the Bonferroni method.
+Using the `crop_fertilizer_2.csv` dataset, perform pairwise comparisons using the Bonferroni method.
 
 Compute the p-value for the comparison between fertilizers **B** and **D**.
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(___, ___, p.adjust.method = ___)
 ```
@@ -286,7 +294,7 @@ pairwise.t.test(___, ___, p.adjust.method = ___)
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
 # 0.1212
@@ -294,12 +302,12 @@ pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
 
 ## Q6 — Bonferroni Adjustment {#q6a}
 
-Using the `crop_fertilizer_A.csv` dataset, perform pairwise comparisons using the Bonferroni method.
+Using the `crop_fertilizer_1.csv` dataset, perform pairwise comparisons using the Bonferroni method.
 
 At the 5% significance level, how many pairs of fertilizers are significantly different?
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(___, ___, p.adjust.method = ___)
 ```
@@ -307,21 +315,21 @@ pairwise.t.test(___, ___, p.adjust.method = ___)
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_A.csv")
+crop <- read.csv("crop_fertilizer_1.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
-# 4
+# 5
 ```
 
 
 ## Q6 — Bonferroni Adjustment {#q6b}
 
-Using the `crop_fertilizer_B.csv` dataset, perform pairwise comparisons using the Bonferroni method.
+Using the `crop_fertilizer_2.csv` dataset, perform pairwise comparisons using the Bonferroni method.
 
 At the 5% significance level, how many pairs of fertilizers are significantly different?
 
 ```{webr}
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(___, ___, p.adjust.method = ___)
 ```
@@ -329,7 +337,7 @@ pairwise.t.test(___, ___, p.adjust.method = ___)
 ```{webr}
 #| echo: false
 #| output: false
-crop <- read.csv("crop_fertilizer_B.csv")
+crop <- read.csv("crop_fertilizer_2.csv")
 
 pairwise.t.test(crop$yield, crop$fertilizer, p.adjust.method = "bonferroni")
 # 4
