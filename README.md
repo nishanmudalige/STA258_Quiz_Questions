@@ -1,3 +1,7 @@
+# Help file:
+
+Help file: [nishanmudalige.github.io/STA258_Quiz_Questions/help.html](nishanmudalige.github.io/STA258_Quiz_Questions/help.html)
+
 # STA258_Quiz_Questions
 Quiz Questions for STA258
 
