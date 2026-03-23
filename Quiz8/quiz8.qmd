@@ -40,9 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
 Using the `crop_fertilizer_A.csv` dataset, fit a one-way ANOVA model using `aov()`.
 
 From the ANOVA output, select one value each for:
-- the numerator degrees of freedom (df1)
-- the denominator degrees of freedom (df2)
-- the F-statistic
+
+- $\text{df}_1$ (numerator degrees of freedom)
+- $\text{df}_2$ (denominator degrees of freedom)
+- F-statistic
 
 ```{webr}
 crop <- read.csv("crop_fertilizer_A.csv")
@@ -54,6 +55,8 @@ summary(___)
 
 ```{webr}
 # Solution
+#| echo: false
+#| output: false
 crop <- read.csv("crop_fertilizer_A.csv")
 
 fit <- aov(yield ~ fertilizer, data = crop)
@@ -70,9 +73,10 @@ summary(fit)
 Using the `crop_fertilizer_B.csv` dataset, fit a one-way ANOVA model using `aov()`.
 
 From the ANOVA output, select one value each for:
-- the numerator degrees of freedom (df1)
-- the denominator degrees of freedom (df2)
-- the F-statistic
+
+- $\text{df}_1$ (numerator degrees of freedom)
+- $\text{df}_2$ (denominator degrees of freedom)
+- F-statistic
 
 ```{webr}
 crop <- read.csv("crop_fertilizer_B.csv")
@@ -84,6 +88,8 @@ summary(___)
 
 ```{webr}
 # Solution
+#| echo: false
+#| output: false
 crop <- read.csv("crop_fertilizer_B.csv")
 
 fit <- aov(yield ~ fertilizer, data = crop)
