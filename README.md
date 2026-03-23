@@ -26,3 +26,14 @@ Quiz Questions for STA258
   - Follow-up: Whether extrapolation prediction is reliable (MCQ)
 - Include question on residual plot (Multi-select)
   - Select all features present in the plot which suggest good/bad model
+
+
+## Additional Quiz:
+
+- Quiz on statistical power (approx 5 questions, $\sigma$ known)
+  - Question on definitions of Type I and Type II errors (1 or 2 questions, MCQ)
+  - Question on definition of statistical power (i.e. probability to detect a specific alternative) (MCQ)
+  - Question on features which affect statistical power (Multi-select)
+  - Calculate power when $H_a: \mu > \mu_0$
+  - Calculate power when $H_a: \mu < \mu_0$
+  - Calculate P(Type II) = $\beta$
