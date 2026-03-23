@@ -1,6 +1,13 @@
 # STA258_Quiz_Questions
 Quiz Questions for STA258
 
+## Documentation (Both)
+
+- Complete the documentation
+- Add information on `quarto clean`
+- Make the documentation consistent
+  - Two examples: One simple quiz, one more advanced quiz  
+
 ## Quiz 9: Things to do (Rithika)
 
 - Qustion to plot $y$ vs. $x$, examine whether there is a linear trend
