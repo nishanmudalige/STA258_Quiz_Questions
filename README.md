@@ -24,5 +24,5 @@ Quiz Questions for STA258
   - Follow-up: Whether interpolation prediction is reliable (MCQ)
 - After inference on slope, have an extrapolation prediction
   - Follow-up: Whether extrapolation prediction is reliable (MCQ)
-- Inclide question on residual plot (Multi-select)
+- Include question on residual plot (Multi-select)
   - Select all features present in the plot which suggest good/bad model
