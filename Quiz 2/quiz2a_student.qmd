@@ -42,8 +42,6 @@ study_data <- read.csv("study_hours_by_month.csv")
 ```
 ## Q1 — Five-number Summary {#q1}
 
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
-
 Using the dataset `study_hours_by_month.csv`, obtain the five-number summary of the variable `study_hours` using the `summary()` function.
 What is the median value of `study_hours`?
 
@@ -60,7 +58,6 @@ study_data <- read.csv("study_hours_by_month.csv")
 
 ## Q2 — Interquartile Range {#q2}
 
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 Using the dataset `study_hours_by_month.csv`, compute the interquartile range (IQR) of the variable `study_hours`.
 
 ```{webr}
@@ -75,7 +72,6 @@ Using the dataset `study_hours_by_month.csv`, compute the interquartile range (I
 
 ## Q3 - Sample Standard Deviation {#q3}
 
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 Using the dataset `study_hours_by_month.csv`, compute the sample standard deviation of the variable `study_hours`.
 
 ```{webr}
@@ -89,8 +85,6 @@ Using the dataset `study_hours_by_month.csv`, compute the sample standard deviat
 ```
 
 ## Q4 - Grouped Summary by Month {#q4}
-
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, compute the mean study hours for each month.
 What is the mean study hours in April?
@@ -107,8 +101,6 @@ Hint: You may find the `tapply()` function helpful.
 ```
 
 ## Q5 - Boxplot ordered by median {#q5}
-
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by month, with the months reordered by the median study hours.
 After reordering months by their median study hours, what is the median study hours corresponding to the 3rd smallest median? *(Answers within ±0.1 will be considered correct.)*
@@ -135,8 +127,6 @@ ggplot(___, aes(x = reorder(___, ___, FUN = ___), y = ___)
 
 ## Q6 - Boxplot and Outliers {#q6}
 
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
-
 Using the dataset `study_hours_by_month.csv`, create a boxplot of `study_hours` grouped by `month`.
 Which month has the lowest observed hours of study?
 ```{webr}
@@ -159,8 +149,6 @@ labs(x = "Month", y = "Study Hours")
 
 ## Q7 - Histogram and Distribution Shape {#q7}
 
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
-
 Using the dataset `study_hours_by_month.csv`, create a histogram of `study_hours` with approximately 12 bins.
 Based on the histogram of `study_hours`, which best describes the shape of the distribution?
 
@@ -175,8 +163,6 @@ ggplot(___, aes(___)) + geom_histogram(___)
 ```
 
 ## Q8 - Mosaic Statistics {#q8}
-
-The `study_hours_by_month.csv` dataset consists of recorded study hours from individual study sessions across different months of the year.
 
 Using the dataset `study_hours_by_month.csv`, and the mosaic library, find the standard deviation of `study_hours` and sample size. 
 

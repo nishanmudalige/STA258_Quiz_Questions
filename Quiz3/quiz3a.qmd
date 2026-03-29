@@ -41,9 +41,8 @@ invisible(capture.output({
 }))
 ```
 ## Q1 — Standard Normal One-sided Probabilities {#q1a}
-The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
 
-Compute the probability that a random student scored below 70 in Calculus. 
+Using the dataset `scores.csv`, compute the probability that a random student scored below 70 in Calculus. 
 Hint: Use `mean()` and `sd()` to find the mean and standard deviation, and then use `pnorm`. 
 
 ```{webr}
@@ -62,9 +61,8 @@ Hint: Use `mean()` and `sd()` to find the mean and standard deviation, and then 
 ```
 
 ## Q1 — Standard Normal One-sided Probabilities {#q1b}
-The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
 
-Compute the probability that a random student scored above 80 in English. 
+Using the dataset `scores.csv`, compute the probability that a random student scored above 80 in English. 
 Hint: Use `mean()` and `sd()` to find the mean and standard deviation, and then use `pnorm`. Also recall that `pnorm` gives the area to the left; what do we need to do to get the area to the right?
 
 ```{webr}
@@ -83,9 +81,8 @@ Hint: Use `mean()` and `sd()` to find the mean and standard deviation, and then 
 ```
 
 ## Q2: Using skimr package {#q2a}
-The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
 
-Make a skim summary of the scores. Which subject has the highest mean and the lowest mean? Report your answer in the format: *highest_mean_subject, lowest_mean_subject*
+Using the dataset `scores.csv`, make a skim summary of the scores. Which subject has the highest mean and the lowest mean? Report your answer in the format: *highest_mean_subject, lowest_mean_subject*
 ```{webr}
 
 
@@ -100,9 +97,8 @@ Make a skim summary of the scores. Which subject has the highest mean and the lo
 
 
 ## Q2: Using skimr package {#q2b}
-The dataset `scores.csv` contains the Calculus, Biology, and English scores of students with columns `id`,  `calculus`, `biology`, and `english`. 
 
-Make a skim summary of the scores. Which subject has the highest standard deviation and the lowest standard deviation? Report your answer in the format: *highest_sd_subject, lowest_sd_subject*
+Using the dataset `scores.csv`, make a skim summary of the scores. Which subject has the highest standard deviation and the lowest standard deviation? Report your answer in the format: *highest_sd_subject, lowest_sd_subject*
 ```{webr}
 
 
@@ -116,7 +112,6 @@ Make a skim summary of the scores. Which subject has the highest standard deviat
 ```
 
 ## Q3 - T-distributions {#q3a}
-The dataset `task_times.csv` contains the completion times (in minutes) for two tasks performed by 25 participants, with columns `id`, `task1`, and `task2`. 
 
 Calculate the probability that the average time for task1 is less than 42 minutes using the T-distribution.
 Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviation. Use `pt` after calculating the t-statistic. 
@@ -139,7 +134,6 @@ Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviat
 ```
 
 ## Q3 - T-distribution {#q3b}
-The dataset `task_times.csv` contains the completion times (in minutes) for two tasks performed by 25 participants, with columns `id`, `task1`, and `task2`. 
 
 Calculate the probability that the average time for task2 is less than 49.5 minutes using the T-distribution.
 Hint: Use `mean()` and `sd()` to find the sample mean and sample standard deviation. Use `pt` after calculating the t-statistic. 

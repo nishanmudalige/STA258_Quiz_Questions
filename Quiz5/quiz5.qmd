@@ -45,9 +45,8 @@ invisible(capture.output({
 }))
 ```
 ## Q1 — Two-sided Confidence Interval {#q1a}
-A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their yield was measured. The resulting data is on the file `plant_yield.csv`.
 
-Use the `boxplot` command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for $\mu_{A} - \mu_{B}$ for the yield. 
+Using the dataset `plant_yield.csv`, use the `boxplot` command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for $\mu_{A} - \mu_{B}$ for the yield. 
 ```{webr}
 yield_df <- read.csv("plant_yield.csv")
 boxplot(____, ____)
@@ -64,9 +63,8 @@ t.test(yield_df$fertilizer_a, yield_df$fertilizer_b, var.equal = FALSE, conf.lev
 ```
 
 ## Q1 — Two-sided Confidence Interval {#q1b}
-A researcher is studying the effects of two types of fertilizers for plant growth. Five plants were randomly assigned to each fertilizer, and their growth (in cm) was measured. The resulting data is on the file `plant_height.csv`.
 
-Use the `boxplot` command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for $\mu_{B} - \mu_{A}$ for the plant height.
+Using the dataset `plant_height.csv`, use the `boxplot` command to determine whether we can assume equal variances, and compute a 99% two-sided confidence interval for $\mu_{B} - \mu_{A}$ for the plant height.
 ```{webr}
 height_df <- read.csv("plant_height.csv")
 boxplot(____, ____)
@@ -83,9 +81,7 @@ t.test(height_df$fertilizer_b, height_df$fertilizer_a, var.equal = TRUE, conf.le
 ```
 
 ## Q2 — Proportions {#q2a}
-The dataset `snacks.csv` contains customer responses to two new snacks, A and B. For each snack, customers recorded whether they liked it (Yes) or not (No).
-
-Using this dataset, compute a 85% two-sided confidence interval for $p_{B} - p_{A}$.
+Using dataset `snacks.csv`, compute a 85% two-sided confidence interval for $p_{B} - p_{A}$.
 ```{webr}
 snacks_df <- read.csv('snacks.csv')
 x1 <- sum(snacks_df$snack == ___ , snacks_df$results == ___)
@@ -107,9 +103,8 @@ prop.test(x = c(x1, x2), n = c(n1, n2), conf.level = 0.85, correct = FALSE)
 ```
 
 ## Q2 — Proportions {#q2b}
-The dataset `cars_safety.csv` contains the results of safety tests for two car models, X and Y. Each test either passed (True) or failed (False).
 
-Using this dataset, compute a 80% two-sided confidence interval for $p_{X} - p_{Y}$.
+Using the dataset `cars_safety.csv`, compute a 80% two-sided confidence interval for $p_{X} - p_{Y}$.
 ```{webr}
 safety_df <- read.csv('cars_safety.csv')
 x1 <- sum(safety_df$model == ___ , safety_df$passed == ___)
@@ -131,9 +126,7 @@ prop.test(x = c(x1, x2), n = c(n1, n2), conf.level = 0.80, correct = FALSE)
 ```
 
 ## Q3 — Ratio of Variances {#q3a}
-The dataset `braking_dist.csv` contains the distances of two car models, X and Y, for their braking distances (in metres). 
-
-Using this dataset, compute a 90% confidence interval for the ratio of variances $\sigma_{X} / \sigma_{Y}$.
+Using the dataset `braking_dist.csv`, compute a 90% confidence interval for the ratio of variances $\sigma_{X} / \sigma_{Y}$.
 ```{webr}
 brake_df <- read.csv('braking_dist.csv')
 x <- brake_df$___[brake_df$___ == "X"]
@@ -151,9 +144,8 @@ var.test(x, y, conf.level = 0.90)
 ```
 
 ## Q3 — Ratio of Variances {#q3b}
-The dataset `efficiency.csv` contains the results of two car models, A and B, that are tested for their fuel efficiency (in km/litre). 
 
-Using this dataset, compute a 90% confidence interval for the ratio of variances $\sigma_{A} / \sigma_{B}$.
+Using the dataset `efficiency.csv`, compute a 90% confidence interval for the ratio of variances $\sigma_{A} / \sigma_{B}$.
 ```{webr}
 efficiency_df <- read.csv('efficiency.csv')
 a <- efficiency_df$___[efficiency_df$___ == "A"]
