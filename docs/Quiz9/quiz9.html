@@ -153,9 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <section id="q1a" class="level2">
-<h2 class="anchored" data-anchor-id="q1a">Q1 — One feature</h2>
-<p>Using the dataset <code>health_metrics.csv</code>, fit a linear regression model to predict systolic blood pressure, <code>sbp</code> using <code>age</code> as the only predictor.</p>
-<p>Compute the estimated intercept <span class="math inline">\(\beta_{0}\)</span>.</p>
+<h2 class="anchored" data-anchor-id="q1a">Q1 — Linear trend</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, plot <code>sbp</code> vs <code>sodium</code> to determine whether there exists a linear trend.</p>
 <div class="cell">
 <div>
 <div id="webr-2" class="exercise-cell">
@@ -172,15 +171,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYWdlLCBkYXRhID0gZGYpXG5jb2VmKG1vZGVsKVxuIyA2NC4yOTUzMjgifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxucGxvdChkZiRzb2RpdW0sIGRmJHNicClcblxuIyB5ZXMgdGhlcmUncyBhIGxpbmVhciB0cmVuZCJ9
 </script>
 </div>
 </div>
 </section>
 <section id="q1b" class="level2">
-<h2 class="anchored" data-anchor-id="q1b">Q1 — One feature</h2>
-<p>Using the dataset <code>health_metrics.csv</code>, fit a linear regression model to predict systolic blood pressure,<code>sbp</code> using <code>sodium</code> as the only predictor.</p>
-<p>Compute the estimated slope <span class="math inline">\(\beta_{1}\)</span>.</p>
+<h2 class="anchored" data-anchor-id="q1b">Q1 — Linear trend</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, plot <code>sbp</code> vs <code>hr</code> to determine whether there exists a linear trend.</p>
 <div class="cell">
 <div>
 <div id="webr-4" class="exercise-cell">
@@ -197,15 +195,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gc29kaXVtLCBkYXRhID0gZGYpXG5jb2VmKG1vZGVsKVxuIyAwLjA0MTQ0OTIzICJ9
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxucGxvdChkZiRociwgZGYkc2JwKVxuXG4jIG5vIGxpbmVhciB0cmVuZCJ9
 </script>
 </div>
 </div>
 </section>
 <section id="q2a" class="level2">
-<h2 class="anchored" data-anchor-id="q2a">Q2 — Predict</h2>
-<p>Using the dataset <code>health_metrics.csv</code>, predict the systolic blood pressure for when <span class="math inline">\(\text{sodium} = 2000\)</span>.</p>
-<p>Hint: use <code>predict</code> or use <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> to calculate it by hand.</p>
+<h2 class="anchored" data-anchor-id="q2a">Q2 — One feature</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, fit a linear regression model to predict systolic blood pressure, <code>sbp</code> using <code>age</code> as the only predictor.</p>
+<p>Compute the estimated intercept <span class="math inline">\(\beta_{0}\)</span>.</p>
 <div class="cell">
 <div>
 <div id="webr-6" class="exercise-cell">
@@ -222,15 +220,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-7-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gc29kaXVtLCBkYXRhID0gZGYpXG5wcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShzb2RpdW09MjAwMCkpXG4jIDExNS4yODIyICJ9
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYWdlLCBkYXRhID0gZGYpXG5jb2VmKG1vZGVsKVxuIyA2NC4yOTUzMjgifQ==
 </script>
 </div>
 </div>
 </section>
 <section id="q2b" class="level2">
-<h2 class="anchored" data-anchor-id="q2b">Q2 — Predict</h2>
-<p>Using the dataset <code>health_metrics.csv</code>, predict the diabetes progression for when <span class="math inline">\(\text{bmi} = 23\)</span>.</p>
-<p>Hint: use <code>predict</code> or use <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> to calculate it by hand.</p>
+<h2 class="anchored" data-anchor-id="q2b">Q2 — One feature</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, fit a linear regression model to predict systolic blood pressure,<code>sbp</code> using <code>sodium</code> as the only predictor.</p>
+<p>Compute the estimated slope <span class="math inline">\(\beta_{1}\)</span>.</p>
 <div class="cell">
 <div>
 <div id="webr-8" class="exercise-cell">
@@ -247,15 +245,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-9-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYm1pLCBkYXRhID0gZGYpXG5wcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShibWkgPSAyMykpXG4jIDExMy45MDY1In0=
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gc29kaXVtLCBkYXRhID0gZGYpXG5jb2VmKG1vZGVsKVxuIyAwLjA0MTQ0OTIzICJ9
 </script>
 </div>
 </div>
 </section>
 <section id="q3a" class="level2">
-<h2 class="anchored" data-anchor-id="q3a">Q3 - Check normality</h2>
-<p>Using <code>health_metrics.csv</code>, fit a linear regression model predicting <code>sbp</code> from <code>sodium</code>. Produce a QQ plot of the residuals and determine whether the normality assumption holds.</p>
-<p>Hint: Use <code>qqnorm</code> and <code>qqline</code>.</p>
+<h2 class="anchored" data-anchor-id="q3a">Q3 — Predict</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, predict the systolic blood pressure for when <span class="math inline">\(\text{sodium} = 2000\)</span>.</p>
+<p>Hint: use <code>predict</code> or use <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> to calculate it by hand.</p>
 <div class="cell">
 <div>
 <div id="webr-10" class="exercise-cell">
@@ -272,15 +270,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gc29kaXVtLCBkYXRhID0gZGYpXG5xcW5vcm0ocmVzaWQobW9kZWwpKVxucXFsaW5lKHJlc2lkKG1vZGVsKSlcblxuIyB5ZXMgbm9ybWFsaXR5IGFzc3VtcHRpb24gaG9sZHMhIn0=
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gc29kaXVtLCBkYXRhID0gZGYpXG5wcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShzb2RpdW09MjAwMCkpXG4jIDExNS4yODIyICJ9
 </script>
 </div>
 </div>
 </section>
 <section id="q3b" class="level2">
-<h2 class="anchored" data-anchor-id="q3b">Q3 - Check normality</h2>
-<p>Using <code>health_metrics.csv</code>, fit a linear regression model predicting <code>sbp</code> from <code>hr</code>. Produce a QQ plot of the residuals and determine whether the normality assumption holds.</p>
-<p>Hint: Use <code>qqnorm</code> and <code>qqline</code>.</p>
+<h2 class="anchored" data-anchor-id="q3b">Q3 — Predict</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, predict the diabetes progression for when <span class="math inline">\(\text{bmi} = 23\)</span>.</p>
+<p>Hint: use <code>predict</code> or use <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> to calculate it by hand.</p>
 <div class="cell">
 <div>
 <div id="webr-12" class="exercise-cell">
@@ -297,14 +295,30 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-13-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gaHIsIGRhdGEgPSBkZilcbnFxbm9ybShyZXNpZChtb2RlbCkpXG5xcWxpbmUocmVzaWQobW9kZWwpKVxuXG4jIG5vcm1hbGl0eSBkb2VzIG5vdCBob2xkIn0=
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYm1pLCBkYXRhID0gZGYpXG5wcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShibWkgPSAyMykpXG4jIDExMy45MDY1In0=
 </script>
 </div>
 </div>
 </section>
 <section id="q4a" class="level2">
-<h2 class="anchored" data-anchor-id="q4a">Q4 - Compare predictions</h2>
-<p>Using <code>health_metrics.csv</code>, fit a linear regression model predicting <code>sbp</code> from <code>bmi</code>. What is the difference in predicted <code>sbp</code> between a patient whose <code>bmi</code> is 25 and a patient with a <code>bmi</code> of 20?</p>
+<h2 class="anchored" data-anchor-id="q4a">Q4 - Interpret Intercept</h2>
+<p>Suppose we have the regression equation <span class="math inline">\(\hat{y} = 2x+5\)</span>, where <span class="math inline">\(x\)</span> represents the number of days and <span class="math inline">\(y\)</span> represents plant height. What does the intercept represent? This model is hypothetical and unrelated to the <code>health_metrics.csv</code> dataset.</p>
+</section>
+<section id="q4b" class="level2">
+<h2 class="anchored" data-anchor-id="q4b">Q4 - Interpret Intercept</h2>
+<p>Suppose we have the regression equation <span class="math inline">\(\hat{y} = 4x-10\)</span>, where <span class="math inline">\(x\)</span> represents the number of weeks of training and <span class="math inline">\(y\)</span> represents fitness score. What does the intercept represent? This model is hypothetical and unrelated to the <code>health_metrics.csv</code> dataset.</p>
+</section>
+<section id="q5a" class="level2">
+<h2 class="anchored" data-anchor-id="q5a">Q5 - Interpret Slope</h2>
+<p>Suppose we have the regression equation <span class="math inline">\(\hat{y} = 3x+40\)</span>, where <span class="math inline">\(x\)</span> represents hours studied and <span class="math inline">\(y\)</span> represents the exam score. What does the slope represent? This model is hypothetical and unrelated to the <code>health_metrics.csv</code> dataset.</p>
+</section>
+<section id="q5b" class="level2">
+<h2 class="anchored" data-anchor-id="q5b">Q5 - Interpret Slope</h2>
+<p>Suppose we have the regression equation <span class="math inline">\(\hat{y} = 80-2x\)</span>, where <span class="math inline">\(x\)</span> represents hours of screen time and <span class="math inline">\(y\)</span> represents sleep quality. What does the slope represent?This model is hypothetical and unrelated to the <code>health_metrics.csv</code> dataset.</p>
+</section>
+<section id="q6a" class="level2">
+<h2 class="anchored" data-anchor-id="q6a">Q6 - Residual</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, fit a linear regression model predicting <code>sbp</code> from <code>bmi</code>. For the third observation in the dataset, calculate the residual. Hint: recall the formula for residual, <code>residual = actual − predicted</code></p>
 <div class="cell">
 <div>
 <div id="webr-14" class="exercise-cell">
@@ -321,14 +335,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-15-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYm1pLCBkYXRhID0gZGYpXG5ibWkyMCA8LSBwcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShibWkgPSAyMCkpXG5ibWkyNSA8LSBwcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShibWkgPSAyNSkpXG5ibWkyNSAtIGJtaTIwXG5cbiMgMjQuNjExOTEifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYm1pLCBkYXRhID0gZGYpXG5hY3R1YWwgPC0gZGYkc2JwWzNdXG5wcmVkIDwtIHByZWRpY3QobW9kZWwsIG5ld2RhdGEgPSBkZlszLCBdKVxuYWN0dWFsIC0gcHJlZFxuXG4jIDIuMDc3OTg2In0=
 </script>
 </div>
 </div>
 </section>
-<section id="q4b" class="level2">
-<h2 class="anchored" data-anchor-id="q4b">Q4 - Compare predictions</h2>
-<p>Using <code>health_metrics.csv</code>, fit a linear regression model predicting <code>sbp</code> from <code>age</code>. What is the difference in predicted <code>sbp</code> between a patient whose aged 60 and a patient aged 40?</p>
+<section id="q6b" class="level2">
+<h2 class="anchored" data-anchor-id="q6b">Q6 - Residual</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, fit a linear regression model predicting <code>sbp</code> from <code>sodium</code>. For the fourth observation in the dataset, calculate the residual. Hint: recall the formula for residual, <code>residual = actual − predicted</code></p>
 <div class="cell">
 <div>
 <div id="webr-16" class="exercise-cell">
@@ -345,10 +359,18 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGYgPC0gcmVhZC5jc3YoXCJo
 
 </div>
 <script type="webr-17-contents">
-eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gYWdlLCBkYXRhID0gZGYpXG5hZ2U0MCA8LSBwcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShhZ2UgPSA0MCkpXG5hZ2U2MCA8LSBwcmVkaWN0KG1vZGVsLCBuZXdkYXRhID0gZGF0YS5mcmFtZShhZ2UgPSA2MCkpXG5hZ2U2MCAtIGFnZTQwXG5cbiMgMjkuMDc2MDQifQ==
+eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwib3V0cHV0IjpmYWxzZX0sImNvZGUiOiJkZiA8LSByZWFkLmNzdihcImhlYWx0aF9tZXRyaWNzLmNzdlwiKVxubW9kZWwgPC0gbG0oc2JwIH4gc29kaXVtLCBkYXRhID0gZGYpXG5hY3R1YWwgPC0gZGYkc2JwWzRdXG5wcmVkIDwtIHByZWRpY3QobW9kZWwsIG5ld2RhdGEgPSBkZls0LCBdKVxuYWN0dWFsIC0gcHJlZFxuXG4jIC0xLjM2OTEyMiJ9
 </script>
 </div>
 </div>
+</section>
+<section id="q7a" class="level2">
+<h2 class="anchored" data-anchor-id="q7a">Q7 - Residual Meaning</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, a regression model is used to predict systolic blood pressure (<code>sbp</code>) from sodium intake. Suppose that for a particular patient, the residual is +8. Interpret the meaning of this residual.</p>
+</section>
+<section id="q7b" class="level2">
+<h2 class="anchored" data-anchor-id="q7b">Q7 - Interpret Slope</h2>
+<p>Using the dataset <code>health_metrics.csv</code>, a regression model is used to predict systolic blood pressure (<code>sbp</code>) from sodium intake. Suppose that for a particular patient, the residual is -7. Interpret the meaning of this residual.</p>
 
 
 <script type="webr-data">

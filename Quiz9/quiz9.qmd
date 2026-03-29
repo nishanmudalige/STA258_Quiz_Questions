@@ -34,7 +34,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-## Q1 — One feature {#q1a}
+## Q1 — Linear trend {#q1a}
+Using the dataset `health_metrics.csv`, plot `sbp` vs `sodium` to determine whether there exists a linear trend. 
+
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+plot(df$sodium, df$sbp)
+
+# yes there's a linear trend
+```
+
+## Q1 — Linear trend {#q1b}
+Using the dataset `health_metrics.csv`, plot `sbp` vs `hr` to determine whether there exists a linear trend. 
+
+```{webr}
+df <- read.csv("health_metrics.csv")
+
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("health_metrics.csv")
+plot(df$hr, df$sbp)
+
+# no linear trend
+```
+
+## Q2 — One feature {#q2a}
 Using the dataset `health_metrics.csv`, fit a linear regression model to predict systolic blood pressure, `sbp` using `age` as the only predictor. 
 
 Compute the estimated intercept $\beta_{0}$.
@@ -53,7 +87,7 @@ coef(model)
 # 64.295328
 ```
 
-## Q1 — One feature {#q1b}
+## Q2 — One feature {#q2b}
 Using the dataset `health_metrics.csv`, fit a linear regression model to predict systolic blood pressure,`sbp` using `sodium` as the only predictor. 
 
 Compute the estimated slope $\beta_{1}$.
@@ -72,7 +106,7 @@ coef(model)
 # 0.04144923 
 ```
 
-## Q2 — Predict {#q2a}
+## Q3 — Predict {#q3a}
 Using the dataset `health_metrics.csv`, predict the systolic blood pressure for when $\text{sodium} = 2000$. 
 
 Hint: use `predict` or use $\beta_{0}$ and $\beta_{1}$ to calculate it by hand.
@@ -90,7 +124,7 @@ predict(model, newdata = data.frame(sodium=2000))
 # 115.2822 
 ```
 
-## Q2 — Predict {#q2b}
+## Q3 — Predict {#q3b}
 Using the dataset `health_metrics.csv`, predict the diabetes progression for when $\text{bmi} = 23$. 
 
 Hint: use `predict` or use $\beta_{0}$ and $\beta_{1}$ to calculate it by hand.
@@ -108,52 +142,26 @@ predict(model, newdata = data.frame(bmi = 23))
 # 113.9065
 ```
 
-## Q3 - Check normality {#q3a}
-Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `sodium`. 
-Produce a QQ plot of the residuals and determine whether the normality assumption holds.
+## Q4 - Interpret Intercept {#q4a}
+Suppose we have the regression equation $\hat{y} = 2x+5$, where $x$ represents the number of days and $y$ represents plant height. 
+What does the intercept represent? This model is hypothetical and unrelated to the `health_metrics.csv` dataset. 
 
-Hint: Use `qqnorm` and `qqline`.
-```{webr}
-df <- read.csv("health_metrics.csv")
+## Q4 - Interpret Intercept {#q4b}
+Suppose we have the regression equation $\hat{y} = 4x-10$, where $x$ represents the number of weeks of training and $y$ represents fitness score. 
+What does the intercept represent? This model is hypothetical and unrelated to the `health_metrics.csv` dataset. 
 
-```
+## Q5 - Interpret Slope {#q5a}
+Suppose we have the regression equation $\hat{y} = 3x+40$, where $x$ represents hours studied and $y$ represents the exam score. 
+What does the slope represent? This model is hypothetical and unrelated to the `health_metrics.csv` dataset. 
 
-```{webr}
-#| echo: false
-#| output: false
-df <- read.csv("health_metrics.csv")
-model <- lm(sbp ~ sodium, data = df)
-qqnorm(resid(model))
-qqline(resid(model))
+## Q5 - Interpret Slope {#q5b}
+Suppose we have the regression equation $\hat{y} = 80-2x$, where $x$ represents hours of screen time and $y$ represents sleep quality. 
+What does the slope represent?This model is hypothetical and unrelated to the `health_metrics.csv` dataset. 
 
-# yes normality assumption holds!
-```
-
-## Q3 - Check normality {#q3b}
-Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `hr`. 
-Produce a QQ plot of the residuals and determine whether the normality assumption holds.
-
-Hint: Use `qqnorm` and `qqline`.
-```{webr}
-df <- read.csv("health_metrics.csv")
-
-```
-
-```{webr}
-#| echo: false
-#| output: false
-df <- read.csv("health_metrics.csv")
-model <- lm(sbp ~ hr, data = df)
-qqnorm(resid(model))
-qqline(resid(model))
-
-# normality does not hold
-
-```
-
-## Q4 - Compare predictions {#q4a}
-Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `bmi`. 
-What is the difference in predicted `sbp` between a patient whose `bmi` is 25 and a patient with a `bmi` of 20?
+## Q6 - Residual {#q6a}
+Using the dataset `health_metrics.csv`, fit a linear regression model predicting `sbp` from `bmi`. 
+For the third observation in the dataset, calculate the residual.
+Hint: recall the formula for residual, `residual = actual − predicted`
 ```{webr}
 df <- read.csv("health_metrics.csv")
 
@@ -164,16 +172,17 @@ df <- read.csv("health_metrics.csv")
 #| output: false
 df <- read.csv("health_metrics.csv")
 model <- lm(sbp ~ bmi, data = df)
-bmi20 <- predict(model, newdata = data.frame(bmi = 20))
-bmi25 <- predict(model, newdata = data.frame(bmi = 25))
-bmi25 - bmi20
+actual <- df$sbp[3]
+pred <- predict(model, newdata = df[3, ])
+actual - pred
 
-# 24.61191
+# 2.077986
 ```
 
-## Q4 - Compare predictions {#q4b}
-Using `health_metrics.csv`, fit a linear regression model predicting `sbp` from `age`. 
-What is the difference in predicted `sbp` between a patient whose aged 60 and a patient aged 40?
+## Q6 - Residual {#q6b}
+Using the dataset `health_metrics.csv`, fit a linear regression model predicting `sbp` from `sodium`. 
+For the fourth observation in the dataset, calculate the residual.
+Hint: recall the formula for residual, `residual = actual − predicted`
 ```{webr}
 df <- read.csv("health_metrics.csv")
 
@@ -183,11 +192,16 @@ df <- read.csv("health_metrics.csv")
 #| echo: false
 #| output: false
 df <- read.csv("health_metrics.csv")
-model <- lm(sbp ~ age, data = df)
-age40 <- predict(model, newdata = data.frame(age = 40))
-age60 <- predict(model, newdata = data.frame(age = 60))
-age60 - age40
+model <- lm(sbp ~ sodium, data = df)
+actual <- df$sbp[4]
+pred <- predict(model, newdata = df[4, ])
+actual - pred
 
-# 29.07604
+# -1.369122
 ```
 
+## Q7 - Residual Meaning {#q7a}
+Using the dataset `health_metrics.csv`, a regression model is used to predict systolic blood pressure (`sbp`) from sodium intake. Suppose that for a particular patient, the residual is +8. Interpret the meaning of this residual.
+
+## Q7 - Interpret Slope {#q7b}
+Using the dataset `health_metrics.csv`, a regression model is used to predict systolic blood pressure (`sbp`) from sodium intake. Suppose that for a particular patient, the residual is -7. Interpret the meaning of this residual.
