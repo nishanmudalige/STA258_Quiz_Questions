@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,12 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
-<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -106,8 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 </head>
@@ -149,9 +145,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="pre-requisites" class="level1">
+<h1>Pre-requisites</h1>
+<ul>
+<li>R packages</li>
+<li>R version</li>
+<li>LaTeX</li>
+<li>Quarto</li>
+</ul>
+</section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>We use <code>.qmd</code> files to create the quizzes. Each quiz is written in a Quarto (<code>.qmd</code>) file that contains the quiz questions, code chunks, and required datasets. The <code>.qmd</code> file is then rendered into an HTML page. The generated HTML file is embedded into Quercus using an iframe so students can access the quiz directly from the course page.</p>
+<p>Hello! Here you will find documentation for the quizzes, including how to add/delete/edit questions, adding files, navigating errors, and more. We use <code>.qmd</code> files to create the quizzes. Each quiz is written in a Quarto (<code>.qmd</code>) file that contains the quiz questions, code chunks, and required datasets. The <code>.qmd</code> file is then rendered into an HTML page. The generated HTML file is embedded into Quercus using an iframe so students can access the quiz directly from the course page.</p>
 </section>
 <section id="folder-structure" class="level1">
 <h1>Folder Structure</h1>
@@ -209,29 +214,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="supressing-library-import-output" class="level1">
 <h1>Supressing Library Import Output</h1>
-<p>To hide/supress library imports, nest the libarry calls inside <code>suppressMessages</code>. For example in a webR block,</p>
+<p>To hide/supress library imports, nest the library calls inside <code>suppressMessages</code>. For example in a webR block,</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>invisible(capture.output({</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  suppressMessages(library(ggplot2))</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  suppressMessages(library(skimr))</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This code block supresses messages while importing the libraries ggplot2 and skimr.</p>
 </section>
 <section id="questions-and-student-code" class="level1">
 <h1>Questions and Student Code</h1>
-<p>The first few quizzes typically have two files, where they contain two versions of the quizzes. In later quizzes, each question has two versions on the same file. For example, for question 1, there would be Q1a and Q1b. Each of these questions have a <code>webr</code> block, where students can enter their R code.</p>
-</section>
-<section id="solution" class="level1">
-<h1>Solution</h1>
-<p>The solutions are displayed on the same qmd file underneath where students enter their code, with <code>#| echo: false</code>. This command (<code>#| echo: false</code>) can be used for other code blocks to prevent the output from being shown.</p>
+<p>The first few quizzes typically have two files, where they contain two versions of the quizzes. In later quizzes, each question has two versions on the same file. For example, for question 2, there would be Q2a and Q2b. Each of these questions have a <code>webr</code> block, where students can enter their R code.</p>
+<p>The solutions are displayed on the same qmd file underneath where students enter their code, with <code>#| echo: false</code>. This command (<code>#| echo: false</code>) prevents the webr block from being shown. Some files may also have <code>#| output: false</code> in the solution block, which prevents the output from being displayed. <img src="help_images/quiz3-q2-example.png" class="img-fluid" alt="Quiz 3 Question 2"></p>
 </section>
 <section id="embedding-in-quercus" class="level1">
 <h1>Embedding in Quercus</h1>
-<p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe.</p>
+<p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the <code>&lt;/&gt;</code> symbol to embed a quiz question into Quescus. <img src="help_images/quercus-embedding.png" class="img-fluid" alt="Quercus Embedding"></p>
+<p>Click on the same button again to view the embedded question.</p>
 <p>Example HTML:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ot">title</span><span class="op">=</span><span class="st">"embedded content"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">src</span><span class="op">=</span><span class="st">"https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q4a"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">src</span><span class="op">=</span><span class="st">"https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a"</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ot">width</span><span class="op">=</span><span class="st">"100%"</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ot">height</span><span class="op">=</span><span class="st">"650px"</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ot">loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;</span></span>
@@ -242,9 +246,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="displaying-a-specific-question" class="level1">
 <h1>Displaying a Specific Question</h1>
 <p>Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.</p>
-<p>Example URL:</p>
-<p>quiz6.html?q=q4a</p>
-<p>The <code>q</code> parameter indicates which question should be displayed.</p>
+<p>Example URL, located in <code>src</code> of the embedded HTML:</p>
+<p>https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a</p>
+<p><code>https://nishanmudalige.github.io/STA258_Quiz_Questions</code> is the website where all the quizzes are located. <code>Quiz6</code> is the folder at which the specific quiz is. <code>quiz6.html</code> is the quiz file, and <code>q=q2a</code> displays the specific question, question 2 version A. The <code>q</code> parameter indicates which question should be displayed.</p>
 </section>
 <section id="errors" class="level1">
 <h1>Errors</h1>
@@ -255,37 +259,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>requested file could not be read, typically due to permission problems that have </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>occurred after a reference to a file was acquired</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Typically, the error disappears after refreshing the page. If the error still persists, run the command <code>quarto add coatless/quarto-webr</code> in terminal. Then, run <code>quarto clean</code> and then <code>quarto render</code> to reload all the files.</p>
+</section>
+</section>
+<section id="common-commands" class="level1">
+<h1>Common Commands</h1>
+<section id="quarto-clean" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-clean">quarto clean</h3>
+<p><code>quarto clean</code> is used to tidy up all the extra files that Quarto creates when you render a document.</p>
+<p>To clean all output formats, run <code>quarto clean --all</code>.</p>
+</section>
+<section id="quarto-preview" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-preview">quarto preview</h3>
+<p><code>quarto preveiw</code> lets you render your .qmd document on the fly without creating final output files in your project folder or having to push your code. It automatically refreshes in the browser when you save changes, and is great for checking formatting, plots, and code outputs before doing a full render.</p>
 
 
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
-</script>
-<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
-<div id="exercise-loading-status" class="d-flex gap-2">
-
-</div>
-<div class="spinner-grow spinner-grow-sm">
-
-</div>
-</div>
-<script type="vfs-file">
-W10=
-</script>
 </section>
 </section>
 
 </main> <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../..";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
