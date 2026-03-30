@@ -11,6 +11,16 @@ Pre-requisites:
   - R version
   - LaTeX
 
+--
+
+## Quiz 10: Things to Do (Giodanno)
+
+- Change question with $R^2$ into numeric box to enter answer
+- Include question on interpretting $R^2$
+- 
+
+--
+
 ## Documentation (Both)
 
 - Complete the documentation
