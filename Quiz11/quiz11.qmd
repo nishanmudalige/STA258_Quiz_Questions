@@ -32,3 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach(h => h.style.display = "none");
 });
 </script>
+
+<!-- questions 1 to 4 are on quercus directly. theyre related to healthcare and user engagement on websites -->
