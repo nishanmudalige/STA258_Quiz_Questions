@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- questions 1 to 4 are on quercus directly. theyre related to healthcare and user engagement on websites -->
 
-## Q5 — Power (Right-tailed) {q5a}
+## Q5 — Power (Right-tailed) {#q5a}
 
 A company wants to test whether a new training program increases the average productivity score.
 
@@ -89,7 +89,7 @@ z <- (cutoff - mu_true) / (sigma / sqrt(n))
 # 0.8038
 ```
 
-## Q5 — Power (Right-tailed) {q5b}
+## Q5 — Power (Right-tailed) {#q5b}
 
 A company wants to test whether a new training program increases the average productivity score.
 
@@ -143,7 +143,7 @@ z <- (cutoff - mu_true) / (sigma / sqrt(n))
 # 0.8526
 ```
 
-## Q6 — Power (Left-tailed) {q6a}
+## Q6 — Power (Left-tailed) {#q6a}
 
 A manufacturer wants to test whether a new process decreases the average number of defects.
 
@@ -196,7 +196,7 @@ z <- (cutoff - mu_true) / (sigma / sqrt(n))
 pnorm(z)
 # 0.6388
 ```
-## Q6 — Power (Left-tailed) {q6b}
+## Q6 — Power (Left-tailed) {#q6b}
 
 A manufacturer wants to test whether a new process decreases the average number of defects.
 
@@ -249,7 +249,7 @@ z <- (cutoff - mu_true) / (sigma / sqrt(n))
 pnorm(z)
 # 0.7749
 ```
-## Q7 — Type II Error ($\beta$) {q7a}
+## Q7 — Type II Error ($\beta$) {#q7a}
 
 A school tests whether a new tutoring method increases average exam scores.
 
@@ -303,7 +303,7 @@ pnorm(z)
 # 0.3612
 ```
 
-## Q7 — Type II Error ($\beta$) {q7b}
+## Q7 — Type II Error ($\beta$) {#q7b}
 
 A school tests whether a new tutoring method increases average exam scores.
 
