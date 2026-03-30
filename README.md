@@ -22,6 +22,11 @@ Pre-requisites:
 - Include question on interpretting $R^2$
 - Include a question on calculating the correlation coefficient ($R$). Use both the term "correlation coefficient" and symbol $R$ in the question
 - Include a question on interetting $R$ (Strong/moderate/weak +ve/-ve correlation)
+- For questions on interpolation/extrapolation change the questions to be more descriptive and give reasons. For example:
+  - Yes, the prediction is reliable becase we are conducting interpolation 
+  - Yes, the prediction is reliable becase we are conducting extrapolation
+  - No, the prediction is reliable becase we are conducting interpolation 
+  - No, the prediction is reliable becase we are conducting extrapolation  
 
 ---
 
