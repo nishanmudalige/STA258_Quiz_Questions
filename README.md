@@ -15,11 +15,13 @@ Pre-requisites:
 
 ## Quiz 10: Things to Do (Giodanno)
 
+- Change the numbers in the data set so the $p-$value is something reasonable to under up to 4 decimal places
+- Change the questions on prediction to allow numeric answers with decimals to be entered.
 - Change question with $R^2$ to read as "Calculate the coefficient of determination ($R^2$)"
 - Change question with $R^2$ into numeric box to enter answer
 - Include question on interpretting $R^2$
-- Include a question on calculating the correlation coefficient (R). Use both the term "correlation coefficient" and symbol $R$ in the question
-- Include a question on interetting R (Strong/moderate/weak +ve/-ve correlation)
+- Include a question on calculating the correlation coefficient ($R$). Use both the term "correlation coefficient" and symbol $R$ in the question
+- Include a question on interetting $R$ (Strong/moderate/weak +ve/-ve correlation)
 
 ---
 
