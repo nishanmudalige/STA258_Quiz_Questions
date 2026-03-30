@@ -49,7 +49,7 @@ $$
 
 at significance level $\alpha = 0.05$.
 
-Assume the true mean is $\mu = 75$.
+Assume the true mean is 75.
 
 What is the power of the test?
 Round your answer to 4 decimal places.
@@ -103,7 +103,7 @@ $$
 
 at significance level $\alpha = 0.05$.
 
-Assume the true mean is $\mu = 73$.
+Assume the true mean is 73.
 
 What is the power of the test?
 Round your answer to 4 decimal places.
@@ -147,7 +147,7 @@ z <- (cutoff - mu_true) / (sigma / sqrt(n))
 
 A manufacturer wants to test whether a new process decreases the average number of defects.
 
-Suppose the population standard deviation is $\\sigma = 8$ and the sample size is $n = 16$.
+Suppose the population standard deviation is $\sigma = 8$ and the sample size is $n = 16$.
 
 We test:
 
@@ -155,9 +155,9 @@ $$
 H_0: \mu = 50 \quad \text{vs.} \quad H_a: \mu < 50
 $$
 
-at significance level $\\alpha = 0.05$.
+at significance level $\alpha = 0.05$.
 
-Assume the true mean is $\\mu = 46$.
+Assume the true mean is 46.
 
 What is the power of the test?
 Round your answer to 4 decimal places.
@@ -208,9 +208,9 @@ $$
 H_0: \mu = 54 \quad \text{vs.} \quad H_a: \mu < 54
 $$
 
-at significance level $\\alpha = 0.05$.
+at significance level $\alpha = 0.05$.
 
-Assume the true mean is $\\mu = 50$.
+Assume the true mean is 50.
 
 What is the power of the test?
 Round your answer to 4 decimal places.
@@ -253,7 +253,7 @@ pnorm(z)
 
 A school tests whether a new tutoring method increases average exam scores.
 
-Suppose the population standard deviation is $\\sigma = 12$ and the sample size is $n = 36$.
+Suppose the population standard deviation is $\sigma = 12$ and the sample size is $n = 36$.
 
 We test:
 
@@ -261,11 +261,11 @@ $$
 H_0: \mu = 75 \quad \text{vs.} \quad H_a: \mu > 75
 $$
 
-at significance level $\\alpha = 0.05$.
+at significance level $\alpha = 0.05$.
 
-Assume the true mean is $\\mu = 79$.
+Assume the true mean is 79.
 
-What is the probability of a Type II error ($\\beta$)?
+What is the probability of a Type II error ($\beta$)?
 Round your answer to 4 decimal places.
 
 ```{webr}
@@ -317,7 +317,7 @@ $$
 
 at significance level $\alpha = 0.05$.
 
-Assume the true mean is $\mu = 76$.
+Assume the true mean is 76.
 
 What is the probability of a Type II error ($\beta$)?
 Round your answer to 4 decimal places.
