@@ -19,6 +19,11 @@ Pre-requisites:
 - Before the data sets, give a small description of the quiz. For example
   - This quiz will cover [list of topics]
   
+---
+## Help file: Both
+
+- Add table of contents
+- Include section on Quercus question banks
 
 ---
 
