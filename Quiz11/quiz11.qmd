@@ -34,3 +34,325 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <!-- questions 1 to 4 are on quercus directly. theyre related to healthcare and user engagement on websites -->
+
+## Q5 — Power (Right-tailed) {q5a}
+
+A company wants to test whether a new training program increases the average productivity score.
+
+Suppose the population standard deviation is $\sigma = 10$ and the sample size is $n = 25$.
+
+We test:
+
+$$
+H_0: \mu = 70 \quad \text{vs.} \quad H_a: \mu > 70
+$$
+
+at significance level $\alpha = 0.05$.
+
+Assume the true mean is $\mu = 75$.
+
+What is the power of the test?
+Round your answer to 4 decimal places.
+
+```{webr}
+mu0 <- ___
+mu_true <- ___
+sigma <- ___
+n <- ___
+alpha <- ___
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- ___ + z_alpha * ___ / ___
+
+z <- (cutoff - ___) / (___ / ___)
+
+1 - pnorm(z)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+mu0 <- 70
+mu_true <- 75
+sigma <- 10
+n <- 25
+alpha <- 0.05
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- mu0 + z_alpha * sigma / sqrt(n)
+
+z <- (cutoff - mu_true) / (sigma / sqrt(n))
+
+1 - pnorm(z)
+# 0.8038
+```
+
+## Q5 — Power (Right-tailed) {q5b}
+
+A company wants to test whether a new training program increases the average productivity score.
+
+Suppose the population standard deviation is $\sigma = 13$ and the sample size is $n = 49$.
+
+We test:
+
+$$
+H_0: \mu = 68 \quad \text{vs.} \quad H_a: \mu > 68
+$$
+
+at significance level $\alpha = 0.05$.
+
+Assume the true mean is $\mu = 73$.
+
+What is the power of the test?
+Round your answer to 4 decimal places.
+
+```{webr}
+mu0 <- ___
+mu_true <- ___
+sigma <- ___
+n <- ___
+alpha <- ___
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- ___ + z_alpha * ___ / ___
+
+z <- (cutoff - ___) / (___ / ___)
+
+1 - pnorm(z)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+mu0 <- 68
+mu_true <- 73
+sigma <- 13
+n <- 49
+alpha <- 0.05
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- mu0 + z_alpha * sigma / sqrt(n)
+
+z <- (cutoff - mu_true) / (sigma / sqrt(n))
+
+1 - pnorm(z)
+# 0.8526
+```
+
+## Q6 — Power (Left-tailed) {q6a}
+
+A manufacturer wants to test whether a new process decreases the average number of defects.
+
+Suppose the population standard deviation is $\\sigma = 8$ and the sample size is $n = 16$.
+
+We test:
+
+$$
+H_0: \mu = 50 \quad \text{vs.} \quad H_a: \mu < 50
+$$
+
+at significance level $\\alpha = 0.05$.
+
+Assume the true mean is $\\mu = 46$.
+
+What is the power of the test?
+Round your answer to 4 decimal places.
+
+```{webr}
+mu0 <- ___
+mu_true <- ___
+sigma <- ___
+n <- ___
+alpha <- ___
+
+z_alpha <- qnorm(alpha)
+
+cutoff <- ___ + z_alpha * ___ / ___
+
+z <- (cutoff - ___) / (___ / ___)
+
+pnorm(z)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+mu0 <- 50
+mu_true <- 46
+sigma <- 8
+n <- 16
+alpha <- 0.05
+
+z_alpha <- qnorm(alpha)
+
+cutoff <- mu0 + z_alpha * sigma / sqrt(n)
+
+z <- (cutoff - mu_true) / (sigma / sqrt(n))
+
+pnorm(z)
+# 0.6388
+```
+## Q6 — Power (Left-tailed) {q6b}
+
+A manufacturer wants to test whether a new process decreases the average number of defects.
+
+Suppose the population standard deviation is $\sigma = 10$ and the sample size is $n = 36$.
+
+We test:
+
+$$
+H_0: \mu = 54 \quad \text{vs.} \quad H_a: \mu < 54
+$$
+
+at significance level $\\alpha = 0.05$.
+
+Assume the true mean is $\\mu = 50$.
+
+What is the power of the test?
+Round your answer to 4 decimal places.
+
+```{webr}
+mu0 <- ___
+mu_true <- ___
+sigma <- ___
+n <- ___
+alpha <- ___
+
+z_alpha <- qnorm(alpha)
+
+cutoff <- ___ + z_alpha * ___ / ___
+
+z <- (cutoff - ___) / (___ / ___)
+
+pnorm(z)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+mu0 <- 54
+mu_true <- 50
+sigma <- 10
+n <- 36
+alpha <- 0.05
+
+z_alpha <- qnorm(alpha)
+
+cutoff <- mu0 + z_alpha * sigma / sqrt(n)
+
+z <- (cutoff - mu_true) / (sigma / sqrt(n))
+
+pnorm(z)
+# 0.7749
+```
+## Q7 — Type II Error ($\beta$) {q7a}
+
+A school tests whether a new tutoring method increases average exam scores.
+
+Suppose the population standard deviation is $\\sigma = 12$ and the sample size is $n = 36$.
+
+We test:
+
+$$
+H_0: \mu = 75 \quad \text{vs.} \quad H_a: \mu > 75
+$$
+
+at significance level $\\alpha = 0.05$.
+
+Assume the true mean is $\\mu = 79$.
+
+What is the probability of a Type II error ($\\beta$)?
+Round your answer to 4 decimal places.
+
+```{webr}
+mu0 <- ___
+mu_true <- ___
+sigma <- ___
+n <- ___
+alpha <- ___
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- ___ + z_alpha * ___ / ___
+
+z <- (cutoff - ___) / (___ / ___)
+
+pnorm(z)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+mu0 <- 75
+mu_true <- 79
+sigma <- 12
+n <- 36
+alpha <- 0.05
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- mu0 + z_alpha * sigma / sqrt(n)
+
+z <- (cutoff - mu_true) / (sigma / sqrt(n))
+
+pnorm(z)
+# 0.3612
+```
+
+## Q7 — Type II Error ($\beta$) {q7b}
+
+A school tests whether a new tutoring method increases average exam scores.
+
+Suppose the population standard deviation is $\sigma = 14$ and the sample size is $n = 49$.
+
+We test:
+
+$$
+H_0: \mu = 71 \quad \text{vs.} \quad H_a: \mu > 71
+$$
+
+at significance level $\alpha = 0.05$.
+
+Assume the true mean is $\mu = 76$.
+
+What is the probability of a Type II error ($\beta$)?
+Round your answer to 4 decimal places.
+
+```{webr}
+mu0 <- ___
+mu_true <- ___
+sigma <- ___
+n <- ___
+alpha <- ___
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- ___ + z_alpha * ___ / ___
+
+z <- (cutoff - ___) / (___ / ___)
+
+pnorm(z)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+mu0 <- 71
+mu_true <- 76
+sigma <- 14
+n <- 49
+alpha <- 0.05
+
+z_alpha <- qnorm(1 - alpha)
+
+cutoff <- mu0 + z_alpha * sigma / sqrt(n)
+
+z <- (cutoff - mu_true) / (sigma / sqrt(n))
+
+pnorm(z)
+# 0.1962
+```
