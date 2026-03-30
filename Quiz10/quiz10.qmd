@@ -286,8 +286,8 @@ predict(___, newdata = data.frame(ad_spend = ___))
 quiz <- read.csv("marketing_A.csv")
 
 model <- lm(sales ~ ad_spend, data = quiz)
-predict(model, newdata = data.frame(ad_spend = 6000))
-#20901
+predict(model, newdata = data.frame(ad_spend = 20000))
+#56469
 ```
 
 ## Q7 — Prediction (Extrapolation) {#q7b}
@@ -309,8 +309,8 @@ predict(___, newdata = data.frame(ad_spend = ___))
 quiz <- read.csv("marketing_B.csv")
 
 model <- lm(sales ~ ad_spend, data = quiz)
-predict(model, newdata = data.frame(ad_spend = 6000))
-#19101
+predict(model, newdata = data.frame(ad_spend = 20000))
+#50469
 ```
 
 
