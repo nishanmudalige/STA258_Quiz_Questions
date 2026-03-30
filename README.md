@@ -18,7 +18,7 @@ Pre-requisites:
 - Change question with $R^2$ to read as "Calculate the coefficient of determination ($R^2$)"
 - Change question with $R^2$ into numeric box to enter answer
 - Include question on interpretting $R^2$
-- Include a question on calculating the correlation coefficint (R). Use both the term "correlation coefficient" and symobl $R$ in the question
+- Include a question on calculating the correlation coefficint (R). Use both the term "correlation coefficient" and symbol $R$ in the question
 - Include a question on interetting R (Strong/moderate/wak +ve/-ve correlation)
 
 ---
