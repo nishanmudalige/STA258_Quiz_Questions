@@ -242,7 +242,7 @@ round(predict(model, newdata = data.frame(ad_spend = 6000)))
 
 ##  Q6 — Interpolation Reliability {#q6a}
 
-For the prediction at `ad_spend` = 6000:
+For the prediction at `ad_spend = 6000`, based on the observed data:
 
 Is this prediction reliable?
 
@@ -256,7 +256,7 @@ Is this prediction reliable?
 
 ##  Q6 — Interpolation Reliability {#q6b}
 
-For the prediction at `ad_spend` = 6000:
+For the prediction at `ad_spend = 6000`, based on the observed data:
 
 Is this prediction reliable?
 
@@ -316,7 +316,7 @@ predict(model, newdata = data.frame(ad_spend = 20000))
 
 ## Q8 — Extrapolation Reliability {#q8a}
 
-For the prediction at `ad_spend` = 20000:
+For the prediction at `ad_spend = 20000`, based on the observed data:
 
 Is this prediction reliable?
 
@@ -330,7 +330,7 @@ Is this prediction reliable?
 
 ## Q8 — Extrapolation Reliability {#q8b}
 
-For the prediction at `ad_spend` = 20000:
+For the prediction at `ad_spend = 20000`, based on the observed data:
 
 Is this prediction reliable?
 
