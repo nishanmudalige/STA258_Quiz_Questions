@@ -12,6 +12,15 @@ Pre-requisites:
   - LaTeX
 
 ---
+## All Quizzes: Both
+
+- Write down your names in the quiz description
+- Add a title to the Quiz and provide your names
+- Before the data sets, give a small description of the quiz. For example
+  - This quiz will cover [list of topics]
+  
+
+---
 
 ## Quiz 10: Things to Do (Giodanno)
 
