@@ -156,6 +156,6 @@ Then, run `quarto clean` and then `quarto render` to reload all the files.
 To clean all output formats, run `quarto clean --all`.
 
 ### quarto preview
-`quarto preveiw` lets you render your .qmd document on the fly without creating final output files in your project folder or having to push your code.
+`quarto preview` lets you render your .qmd document on the fly without creating final output files in your project folder or having to push your code.
 It automatically refreshes in the browser when you save changes, and is great for checking formatting, plots, and code outputs before doing a full render.
 
