@@ -145,8 +145,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="pre-requisites" class="level1">
-<h1>Pre-requisites</h1>
+<section id="table-of-contents" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<p><a href="#pre-requisites">Pre-requisites</a><br>
+<a href="#introduction">Introduction</a><br>
+<a href="#folder-structure">Folder Structure</a><br>
+<a href="#quiz-file-structure">Quiz File Structure</a><br>
+<a href="#adding-files">Adding files</a><br>
+<a href="#javascript-for-question-display">JavaScript for Question Display</a><br>
+<a href="#supressing-library-import-output">Supressing Library Import Output</a><br>
+<a href="#questions-and-student-code">Questions and Student Code</a><br>
+<a href="#adding-questions-and-question-bank">Adding Questions and Question Bank</a><br>
+<a href="#embedding-in-quercus">Embedding in Quercus</a><br>
+<a href="#displaying-a-specific-question">Displaying a Specific Question</a><br>
+<a href="#errors">Errors</a><br>
+<a href="#common-commands">Common Commands</a><br>
+</p>
+</section>
+<section id="pre-requisites" class="level2">
+<h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
 <ul>
 <li>R packages</li>
 <li>R version</li>
@@ -154,12 +171,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Quarto</li>
 </ul>
 </section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Hello! Here you will find documentation for the quizzes, including how to add/delete/edit questions, adding files, navigating errors, and more. We use <code>.qmd</code> files to create the quizzes. Each quiz is written in a Quarto (<code>.qmd</code>) file that contains the quiz questions, code chunks, and required datasets. The <code>.qmd</code> file is then rendered into an HTML page. The generated HTML file is embedded into Quercus using an iframe so students can access the quiz directly from the course page.</p>
 </section>
-<section id="folder-structure" class="level1">
-<h1>Folder Structure</h1>
+<section id="folder-structure" class="level2">
+<h2 class="anchored" data-anchor-id="folder-structure">Folder Structure</h2>
 <p>Each quiz is stored in its own folder. The folder contains the <code>.qmd</code> file and the dataset CSV files used in the quiz.</p>
 <p>Example structure:</p>
 <pre class="text"><code>Quiz6/
@@ -170,13 +187,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   training_scores.csv</code></pre>
 <p>This structure keeps the quiz file and its datasets organized in one location.</p>
 </section>
-<section id="quiz-file-structure" class="level1">
-<h1>Quiz File Structure</h1>
+<section id="quiz-file-structure" class="level2">
+<h2 class="anchored" data-anchor-id="quiz-file-structure">Quiz File Structure</h2>
 <p>Each <code>.qmd</code> quiz file contains several components.</p>
 <p>The <code>.qmd</code> file includes the required dataset files and the JavaScript code used for the HTML implementation. For each question, the file contains a question description, a <code>webr</code> code chunk that students interact with, and another <code>webr</code> chunk that is hidden from students and contains the solution and the final answer.</p>
 </section>
-<section id="adding-files" class="level1">
-<h1>Adding files</h1>
+<section id="adding-files" class="level2">
+<h2 class="anchored" data-anchor-id="adding-files">Adding files</h2>
 <p>Files, such as csv files, are added on top of the qmd file, under <code>resouces</code>. For example, in <code>quiz3a.qmd</code>, we use two csv files, <code>task_times.csv</code> and <code>scores.csv</code>. We add these files under resources, as such:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title: "Quiz 3a"</span>
@@ -189,8 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  - task_times.csv</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>---</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="javascript-for-question-display" class="level1">
-<h1>JavaScript for Question Display</h1>
+<section id="javascript-for-question-display" class="level2">
+<h2 class="anchored" data-anchor-id="javascript-for-question-display">JavaScript for Question Display</h2>
 <p>The <code>.qmd</code> file includes a JavaScript script that reads the URL parameter and hides the other questions.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"DOMContentLoaded"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
@@ -212,8 +229,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This script reads the <code>q</code> parameter from the URL, displays only the requested question, and hides the page title and section titles.</p>
 </section>
-<section id="supressing-library-import-output" class="level1">
-<h1>Supressing Library Import Output</h1>
+<section id="supressing-library-import-output" class="level2">
+<h2 class="anchored" data-anchor-id="supressing-library-import-output">Supressing Library Import Output</h2>
 <p>To hide/supress library imports, nest the library calls inside <code>suppressMessages</code>. For example in a webR block,</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>#| echo: false</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>invisible(capture.output({</span>
@@ -222,13 +239,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This code block supresses messages while importing the libraries ggplot2 and skimr.</p>
 </section>
-<section id="questions-and-student-code" class="level1">
-<h1>Questions and Student Code</h1>
+<section id="questions-and-student-code" class="level2">
+<h2 class="anchored" data-anchor-id="questions-and-student-code">Questions and Student Code</h2>
 <p>The first few quizzes typically have two files, where they contain two versions of the quizzes. In later quizzes, each question has two versions on the same file. For example, for question 2, there would be Q2a and Q2b. Each of these questions have a <code>webr</code> block, where students can enter their R code.</p>
 <p>The solutions are displayed on the same qmd file underneath where students enter their code, with <code>#| echo: false</code>. This command (<code>#| echo: false</code>) prevents the webr block from being shown. Some files may also have <code>#| output: false</code> in the solution block, which prevents the output from being displayed. <img src="help_images/quiz3-q2-example.png" class="img-fluid" alt="Quiz 3 Question 2"></p>
 </section>
-<section id="embedding-in-quercus" class="level1">
-<h1>Embedding in Quercus</h1>
+<section id="adding-questions-and-question-bank" class="level2">
+<h2 class="anchored" data-anchor-id="adding-questions-and-question-bank">Adding Questions and Question Bank</h2>
+<p>To create a question, go to “Questions” in the quiz creation tool and click on “New Question”. To create questions that belong to a question bank (e.g.&nbsp;create two versions of one question) click on “New Question Group”. Then, after naming the Question Bank, click on “Create Group”. Click on the “+” sign to add a question. <img src="help_images/quercus-quiz-creation.png" class="img-fluid" alt="Quercus Question Group Creation"></p>
+<p>The question types can be selected at the top of the Question box. Choose “Numerical Answers” for numerical-based answers. An error margin can be chosen here as well. For text-based or interpretation questions, “Multiple Choice” or “Multiple Answers” is typically sufficient.</p>
+<p>For confidence interval related questions, where we want the student to enter multiple numeric answers, select “Fill In Multiple Blanks”. Use <code>[]</code> to enter variable names (i.e.&nbsp;<code>lower bound is [lower_bound]</code>) and enter the correct answer below in “Answers”. Change the variable by clicking on the drop down menu next to “Show Possible Answers for”.</p>
+</section>
+<section id="embedding-in-quercus" class="level2">
+<h2 class="anchored" data-anchor-id="embedding-in-quercus">Embedding in Quercus</h2>
 <p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the <code>&lt;/&gt;</code> symbol to embed a quiz question into Quescus. <img src="help_images/quercus-embedding.png" class="img-fluid" alt="Quercus Embedding"></p>
 <p>Click on the same button again to view the embedded question.</p>
 <p>Example HTML:</p>
@@ -243,15 +266,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This allows students to access the interactive quiz directly inside Quercus.</p>
 </section>
-<section id="displaying-a-specific-question" class="level1">
-<h1>Displaying a Specific Question</h1>
+<section id="displaying-a-specific-question" class="level2">
+<h2 class="anchored" data-anchor-id="displaying-a-specific-question">Displaying a Specific Question</h2>
 <p>Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.</p>
 <p>Example URL, located in <code>src</code> of the embedded HTML:</p>
 <p>https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a</p>
 <p><code>https://nishanmudalige.github.io/STA258_Quiz_Questions</code> is the website where all the quizzes are located. <code>Quiz6</code> is the folder at which the specific quiz is. <code>quiz6.html</code> is the quiz file, and <code>q=q2a</code> displays the specific question, question 2 version A. The <code>q</code> parameter indicates which question should be displayed.</p>
 </section>
-<section id="errors" class="level1">
-<h1>Errors</h1>
+<section id="errors" class="level2">
+<h2 class="anchored" data-anchor-id="errors">Errors</h2>
 <section id="notreadableerror" class="level3">
 <h3 class="anchored" data-anchor-id="notreadableerror">NotReadableError</h3>
 <p>Sometimes, the following error may show up:</p>
@@ -261,8 +284,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Typically, the error disappears after refreshing the page. If the error still persists, run the command <code>quarto add coatless/quarto-webr</code> in terminal. Then, run <code>quarto clean</code> and then <code>quarto render</code> to reload all the files.</p>
 </section>
 </section>
-<section id="common-commands" class="level1">
-<h1>Common Commands</h1>
+<section id="common-commands" class="level2">
+<h2 class="anchored" data-anchor-id="common-commands">Common Commands</h2>
 <section id="quarto-clean" class="level3">
 <h3 class="anchored" data-anchor-id="quarto-clean">quarto clean</h3>
 <p><code>quarto clean</code> is used to tidy up all the extra files that Quarto creates when you render a document.</p>
@@ -270,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="quarto-preview" class="level3">
 <h3 class="anchored" data-anchor-id="quarto-preview">quarto preview</h3>
-<p><code>quarto preveiw</code> lets you render your .qmd document on the fly without creating final output files in your project folder or having to push your code. It automatically refreshes in the browser when you save changes, and is great for checking formatting, plots, and code outputs before doing a full render.</p>
+<p><code>quarto preview</code> lets you render your .qmd document on the fly without creating final output files in your project folder or having to push your code. It automatically refreshes in the browser when you save changes, and is great for checking formatting, plots, and code outputs before doing a full render.</p>
 
 
 </section>

@@ -1,15 +1,5 @@
----
-title: "Documentation"
-format: html
-author:
-  - Giodanno Limin
-  - Rithika Yerra
-output:
-  html_document:
-    toc: true
-    toc_depth: 2
-    theme: united
----
+# Documentation
+*Authors: Giodanno Limin and Rithika Yerra*
 
 ## Table of Contents
 [Pre-requisites](#pre-requisites)\
