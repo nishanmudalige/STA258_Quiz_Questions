@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 Using `soccer_spi.csv`, test whether the average SPI equals 70.
 
 - $H_0: \mu = 70$  
-- $H_1: \mu \ne 70$
+- $H_a: \mu \ne 70$
 
 Assume the population standard deviation is known: $\sigma = 12$.  
 Use a **two-sided z-test**.
@@ -81,7 +81,7 @@ z
 Using `soccer_spi.csv`, test whether the average SPI equals 72.
 
 - $H_0: \mu = 72$  
-- $H_1: \mu \ne 72$
+- $H_a: \mu \ne 72$
 
 Assume the population standard deviation is known: $\sigma = 12$.  
 Use a **two-sided z-test**.
@@ -120,7 +120,7 @@ z
 Using `soccer_spi.csv`, test whether the average SPI equals 70.
 
 - $H_0: \mu = 70$  
-- $H_1: \mu \ne 70$
+- $H_a: \mu \ne 70$
 
 Assume the population standard deviation is known: $\sigma = 12$.  
 Use `z.test()` with a two-sided alternative.
@@ -156,7 +156,7 @@ z.test(x,
 Using `soccer_spi.csv`, test whether the average SPI equals 72.
 
 - $H_0: \mu = 72$  
-- $H_1: \mu \ne 72$
+- $H_a: \mu \ne 72$
 
 Assume the population standard deviation is known: $\sigma = 12$.  
 Use `z.test()` with a two-sided alternative.
@@ -193,7 +193,7 @@ z.test(x,
 Using `training_scores.csv`, test whether the average training performance score equals 75.
 
 - $H_0: \mu = 75$  
-- $H_1: \mu \ne 75$
+- $H_a: \mu \ne 75$
 
 The population standard deviation is unknown. Use the sample standard deviation and perform a **two-sided one-sample t-test**.
 
@@ -231,7 +231,7 @@ t_stat
 Using `training_scores.csv`, test whether the average training performance score equals 72.
 
 - $H_0: \mu = 72$  
-- $H_1: \mu \ne 72$
+- $H_a: \mu \ne 72$
 
 The population standard deviation is unknown. Use the sample standard deviation and perform a **two-sided one-sample t-test**.
 
@@ -269,7 +269,7 @@ t_stat
 Using `music_tracks.csv`, test whether the average track score equals 45.
 
 - $H_0: \mu = 45$  
-- $H_1: \mu \ne 45$
+- $H_a: \mu \ne 45$
 
 Assume **σ is unknown**. Use `t.test()` with a two-sided alternative.
 
@@ -300,7 +300,7 @@ t.test(x,
 Using `music_tracks.csv`, test whether the average track score equals 47.
 
 - $H_0: \mu = 47$  
-- $H_1: \mu \ne 47$
+- $H_a: \mu \ne 47$
 
 Assume **σ is unknown**. Use `t.test()` with a two-sided alternative.
 
@@ -331,7 +331,7 @@ t.test(x,
 Using `game_publishers.csv`, test whether the proportion of games published by Nintendo equals 0.023.
 
 - $H_0: p = 0.023$  
-- $H_1: p \ne 0.023$
+- $H_a: p \ne 0.023$
 
 Use a two-sided `prop.test()`.
 
@@ -380,7 +380,7 @@ z
 Using `game_publishers.csv`, test whether the proportion of games published by Nintendo equals 0.061.
 
 - $H_0: p = 0.061$  
-- $H_1: p \ne 0.061$
+- $H_a: p \ne 0.061$
 
 Use a two-sided `prop.test()`.
 
