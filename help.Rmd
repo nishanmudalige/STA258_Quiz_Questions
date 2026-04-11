@@ -5,13 +5,13 @@ author:
 - Rithika Yerra
 format: html
 output:
-  pdf_document:
-    toc: true
-    toc_depth: '2'
   html_document:
     toc: true
     toc_depth: 2
     theme: united
+  pdf_document:
+    toc: true
+    toc_depth: '2'
 ---
 
 
@@ -32,8 +32,8 @@ output:
 
 
 ## Pre-requisites
+- R (version 4.3+ recommended)
 - R packages
-- R version
 - LaTeX
 - Quarto
 
@@ -111,11 +111,60 @@ resources:
 ---
 ```
 
-## JavaScript for Question Display
+## Required Extensions and Question Display
 
-The `.qmd` file includes a JavaScript script that reads the URL parameter and hides the other questions.
+Each quiz `.qmd` file should include the following line near the top of the file, after the YAML header:
+
+`{{< include /_extensions/r-wasm/live/_knitr.qmd >}}`
+
+Purpose:
+- `_knitr.qmd` enables execution of R code blocks in the browser using WebR
+
+### Optional Extension
+
+The following extension is included in some quizzes:
+
+`{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}`
+
+- `_gradethis.qmd` enables automatic grading and feedback for student answers
+- This is optional and may not be used in all quizzes
+
+### Defining Question IDs
+
+Each question must have a unique section ID. For example:
+
+`## Q1 — Visualize the Relationship {#q1a}`
+
+The ID (`q1a`) is used by the JavaScript to determine which question to display.
+
+This ID must match the `q` parameter in the URL. For example:
+
+`quiz10.html?q=q1a`
+
+This will display only the section with ID `q1a`.
+
+### JavaScript for Question Display
+
+Each `.qmd` file includes a JavaScript script placed below the YAML header and below the include lines.
+
+Example structure:
 
 ```html
+---
+title: "quiz10"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  -  marketing_A.csv
+  -  marketing_B.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
@@ -136,7 +185,14 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 ```
 
-This script reads the `q` parameter from the URL, displays only the requested question, and hides the page title and section titles.
+How it works:
+
+- The script reads the `q` parameter from the URL
+- It displays only the matching question section
+- All other question sections are hidden
+- The page title and section titles are also hidden for a cleaner embedded view in Quercus
+
+This allows a single `.qmd` file to contain multiple questions while displaying only one question at a time inside an iframe.
 
 ## Supressing Library Import Output
 

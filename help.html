@@ -373,8 +373,8 @@ Structure</a></li>
 <li><a href="#quiz-file-structure" id="toc-quiz-file-structure">Quiz
 File Structure</a></li>
 <li><a href="#adding-files" id="toc-adding-files">Adding files</a></li>
-<li><a href="#javascript-for-question-display" id="toc-javascript-for-question-display">JavaScript for Question
-Display</a></li>
+<li><a href="#required-extensions-and-question-display" id="toc-required-extensions-and-question-display">Required Extensions
+and Question Display</a></li>
 <li><a href="#supressing-library-import-output" id="toc-supressing-library-import-output">Supressing Library Import
 Output</a></li>
 <li><a href="#questions-and-student-code" id="toc-questions-and-student-code">Questions and Student Code</a></li>
@@ -410,8 +410,8 @@ Commands</a></li>
 <div id="pre-requisites" class="section level2">
 <h2>Pre-requisites</h2>
 <ul>
+<li>R (version 4.3+ recommended)</li>
 <li>R packages</li>
-<li>R version</li>
 <li>LaTeX</li>
 <li>Quarto</li>
 </ul>
@@ -506,11 +506,55 @@ resources:
   - task_times.csv
 ---</code></pre>
 </div>
-<div id="javascript-for-question-display" class="section level2">
-<h2>JavaScript for Question Display</h2>
-<p>The <code>.qmd</code> file includes a JavaScript script that reads
-the URL parameter and hides the other questions.</p>
-<pre class="html"><code>&lt;script&gt;
+<div id="required-extensions-and-question-display" class="section level2">
+<h2>Required Extensions and Question Display</h2>
+<p>Each quiz <code>.qmd</code> file should include the following line
+near the top of the file, after the YAML header:</p>
+<p><code>{{&lt; include /_extensions/r-wasm/live/_knitr.qmd &gt;}}</code></p>
+<p>Purpose: - <code>_knitr.qmd</code> enables execution of R code blocks
+in the browser using WebR</p>
+<div id="optional-extension" class="section level3">
+<h3>Optional Extension</h3>
+<p>The following extension is included in some quizzes:</p>
+<p><code>{{&lt; include /_extensions/r-wasm/live/_gradethis.qmd &gt;}}</code></p>
+<ul>
+<li><code>_gradethis.qmd</code> enables automatic grading and feedback
+for student answers</li>
+<li>This is optional and may not be used in all quizzes</li>
+</ul>
+</div>
+<div id="defining-question-ids" class="section level3">
+<h3>Defining Question IDs</h3>
+<p>Each question must have a unique section ID. For example:</p>
+<p><code>## Q1 — Visualize the Relationship {#q1a}</code></p>
+<p>The ID (<code>q1a</code>) is used by the JavaScript to determine
+which question to display.</p>
+<p>This ID must match the <code>q</code> parameter in the URL. For
+example:</p>
+<p><code>quiz10.html?q=q1a</code></p>
+<p>This will display only the section with ID <code>q1a</code>.</p>
+</div>
+<div id="javascript-for-question-display" class="section level3">
+<h3>JavaScript for Question Display</h3>
+<p>Each <code>.qmd</code> file includes a JavaScript script placed below
+the YAML header and below the include lines.</p>
+<p>Example structure:</p>
+<pre class="html"><code>---
+title: &quot;quiz10&quot;
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  -  marketing_A.csv
+  -  marketing_B.csv
+---
+
+{{&lt; include /_extensions/r-wasm/live/_knitr.qmd &gt;}}
+{{&lt; include /_extensions/r-wasm/live/_gradethis.qmd &gt;}}
+
+&lt;script&gt;
 document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
   const params = new URLSearchParams(window.location.search);
   const showQ = params.get(&quot;q&quot;);
@@ -528,9 +572,18 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
     .forEach(h =&gt; h.style.display = &quot;none&quot;);
 });
 &lt;/script&gt;</code></pre>
-<p>This script reads the <code>q</code> parameter from the URL, displays
-only the requested question, and hides the page title and section
-titles.</p>
+<p>How it works:</p>
+<ul>
+<li>The script reads the <code>q</code> parameter from the URL</li>
+<li>It displays only the matching question section</li>
+<li>All other question sections are hidden</li>
+<li>The page title and section titles are also hidden for a cleaner
+embedded view in Quercus</li>
+</ul>
+<p>This allows a single <code>.qmd</code> file to contain multiple
+questions while displaying only one question at a time inside an
+iframe.</p>
+</div>
 </div>
 <div id="supressing-library-import-output" class="section level2">
 <h2>Supressing Library Import Output</h2>

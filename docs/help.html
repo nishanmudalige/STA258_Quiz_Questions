@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Giodanno Limin">
-<meta name="author" content="Rithika Yerra">
 
-<title>Documentation</title>
+<title>help</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-54b560df82c95bacbc668b301994f5f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,93 +106,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="quarto-light">
+<body class="fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#quercus-constraints-randomization-independence" id="toc-quercus-constraints-randomization-independence" class="nav-link" data-scroll-target="#quercus-constraints-randomization-independence">Quercus Constraints (Randomization &amp; Independence)</a></li>
-  <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link" data-scroll-target="#folder-structure">Folder Structure</a></li>
-  <li><a href="#quiz-file-structure" id="toc-quiz-file-structure" class="nav-link" data-scroll-target="#quiz-file-structure">Quiz File Structure</a></li>
-  <li><a href="#adding-files" id="toc-adding-files" class="nav-link" data-scroll-target="#adding-files">Adding files</a></li>
-  <li><a href="#javascript-for-question-display" id="toc-javascript-for-question-display" class="nav-link" data-scroll-target="#javascript-for-question-display">JavaScript for Question Display</a></li>
-  <li><a href="#supressing-library-import-output" id="toc-supressing-library-import-output" class="nav-link" data-scroll-target="#supressing-library-import-output">Supressing Library Import Output</a></li>
-  <li><a href="#questions-and-student-code" id="toc-questions-and-student-code" class="nav-link" data-scroll-target="#questions-and-student-code">Questions and Student Code</a></li>
-  <li><a href="#adding-questions-and-question-bank" id="toc-adding-questions-and-question-bank" class="nav-link" data-scroll-target="#adding-questions-and-question-bank">Adding Questions and Question Bank</a></li>
-  <li><a href="#embedding-in-quercus" id="toc-embedding-in-quercus" class="nav-link" data-scroll-target="#embedding-in-quercus">Embedding in Quercus</a></li>
-  <li><a href="#displaying-a-specific-question" id="toc-displaying-a-specific-question" class="nav-link" data-scroll-target="#displaying-a-specific-question">Displaying a Specific Question</a></li>
-  <li><a href="#question-randomization-methods" id="toc-question-randomization-methods" class="nav-link" data-scroll-target="#question-randomization-methods">Question Randomization Methods</a>
-  <ul class="collapse">
-  <li><a href="#question-groups-inside-quiz" id="toc-question-groups-inside-quiz" class="nav-link" data-scroll-target="#question-groups-inside-quiz">1. Question Groups (Inside Quiz)</a></li>
-  <li><a href="#question-banks-external" id="toc-question-banks-external" class="nav-link" data-scroll-target="#question-banks-external">2. Question Banks (External)</a></li>
-  </ul></li>
-  <li><a href="#creating-and-using-question-banks-in-quercus" id="toc-creating-and-using-question-banks-in-quercus" class="nav-link" data-scroll-target="#creating-and-using-question-banks-in-quercus">Creating and Using Question Banks in Quercus</a>
-  <ul class="collapse">
-  <li><a href="#step-1-create-a-question-bank" id="toc-step-1-create-a-question-bank" class="nav-link" data-scroll-target="#step-1-create-a-question-bank">Step 1 — Create a Question Bank</a></li>
-  <li><a href="#step-2-add-questions-to-the-bank" id="toc-step-2-add-questions-to-the-bank" class="nav-link" data-scroll-target="#step-2-add-questions-to-the-bank">Step 2 — Add Questions to the Bank</a></li>
-  <li><a href="#step-3-link-the-bank-to-a-quiz" id="toc-step-3-link-the-bank-to-a-quiz" class="nav-link" data-scroll-target="#step-3-link-the-bank-to-a-quiz">Step 3 — Link the Bank to a Quiz</a></li>
-  <li><a href="#notreadableerror" id="toc-notreadableerror" class="nav-link" data-scroll-target="#notreadableerror">NotReadableError</a></li>
-  </ul></li>
-  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands">Common Commands</a>
-  <ul class="collapse">
-  <li><a href="#quarto-clean" id="toc-quarto-clean" class="nav-link" data-scroll-target="#quarto-clean">quarto clean</a></li>
-  <li><a href="#quarto-preview" id="toc-quarto-preview" class="nav-link" data-scroll-target="#quarto-preview">quarto preview</a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="help.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Documentation</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Giodanno Limin </p>
-             <p>Rithika Yerra </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!-- ## Table of Contents -->
-<!-- [Pre-requisites](#pre-requisites)\ -->
-<!-- [Introduction](#introduction)\ -->
-<!-- [Folder Structure](#folder-structure)\ -->
-<!-- [Quiz File Structure](#quiz-file-structure)\ -->
-<!-- [Adding files](#adding-files)\ -->
-<!-- [JavaScript for Question Display](#javascript-for-question-display)\ -->
-<!-- [Supressing Library Import Output](#supressing-library-import-output)\ -->
-<!-- [Questions and Student Code](#questions-and-student-code)\ -->
-<!-- [Adding Questions and Question Bank](#adding-questions-and-question-bank)\ -->
-<!-- [Embedding in Quercus](#embedding-in-quercus)\ -->
-<!-- [Displaying a Specific Question](#displaying-a-specific-question)\ -->
-<!-- [Errors](#errors)\ -->
-<!-- [Common Commands](#common-commands)\ -->
+<section id="documentation" class="level1">
+<h1>Documentation</h1>
+<p><em>Authors: Giodanno Limin and Rithika Yerra</em></p>
+<section id="table-of-contents" class="level2">
+<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<p><a href="#pre-requisites">Pre-requisites</a><br>
+<a href="#introduction">Introduction</a><br>
+<a href="#folder-structure">Folder Structure</a><br>
+<a href="#quiz-file-structure">Quiz File Structure</a><br>
+<a href="#adding-files">Adding files</a><br>
+<a href="#javascript-for-question-display">JavaScript for Question Display</a><br>
+<a href="#supressing-library-import-output">Supressing Library Import Output</a><br>
+<a href="#questions-and-student-code">Questions and Student Code</a><br>
+<a href="#adding-questions-and-question-bank">Adding Questions and Question Bank</a><br>
+<a href="#embedding-in-quercus">Embedding in Quercus</a><br>
+<a href="#displaying-a-specific-question">Displaying a Specific Question</a><br>
+<a href="#errors">Errors</a><br>
+<a href="#common-commands">Common Commands</a><br>
+</p>
+</section>
 <section id="pre-requisites" class="level2">
 <h2 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h2>
 <ul>
@@ -207,37 +152,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Hello! Here you will find documentation for the quizzes, including how to add/delete/edit questions, adding files, navigating errors, and more. We use <code>.qmd</code> files to create the quizzes. Each quiz is written in a Quarto (<code>.qmd</code>) file that contains the quiz questions, code chunks, and required datasets. The <code>.qmd</code> file is then rendered into an HTML page. The generated HTML file is embedded into Quercus using an iframe so students can access the quiz directly from the course page.</p>
-</section>
-<section id="quercus-constraints-randomization-independence" class="level2">
-<h2 class="anchored" data-anchor-id="quercus-constraints-randomization-independence">Quercus Constraints (Randomization &amp; Independence)</h2>
-<p>In Quercus, randomization occurs at the question level, not at the quiz level.</p>
-<p>This means:</p>
-<ul>
-<li>Each question is selected independently from the question bank</li>
-<li>Students may receive different versions of each question (e.g., Version A or Version B)</li>
-</ul>
-<p>As a result, it is not possible to assign a student a single consistent version of the entire quiz (e.g., all Version A or all Version B questions).</p>
-<p>For example:</p>
-<ul>
-<li>A student may receive Q1 Version A, Q2 Version B, Q3 Version A, etc.</li>
-<li>The versions are mixed across the quiz</li>
-</ul>
-<p>Because of this:</p>
-<ul>
-<li>Questions must be fully independent</li>
-<li>You cannot design questions that depend on a shared dataset or results from a previous question</li>
-<li>You cannot create “Quiz Version A” and “Quiz Version B” as complete sets</li>
-</ul>
-<p>Additionally, each question is rendered inside an iframe, so:</p>
-<ul>
-<li>R code is executed separately for each question</li>
-<li>Variables are not shared across questions</li>
-</ul>
-<p>To handle this limitation:</p>
-<ul>
-<li>Each question version (A or B) must be self-contained</li>
-<li>Any required data, code, or calculations must be included within that question</li>
-</ul>
 </section>
 <section id="folder-structure" class="level2">
 <h2 class="anchored" data-anchor-id="folder-structure">Folder Structure</h2>
@@ -316,17 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="embedding-in-quercus" class="level2">
 <h2 class="anchored" data-anchor-id="embedding-in-quercus">Embedding in Quercus</h2>
-<p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the <code>&lt;/&gt;</code> symbol to embed a quiz question into Quescus.</p>
-<div id="fig-quercus-embedding" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-quercus-embedding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="help_images/quercus-embedding.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-quercus-embedding-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
-</figure>
-</div>
+<p>After rendering the <code>.qmd</code> file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the <code>&lt;/&gt;</code> symbol to embed a quiz question into Quescus. <img src="help_images/quercus-embedding.png" class="img-fluid" alt="Quercus Embedding"></p>
 <p>Click on the same button again to view the embedded question.</p>
 <p>Example HTML:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
@@ -347,108 +251,8 @@ Figure&nbsp;1
 <p>https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a</p>
 <p><code>https://nishanmudalige.github.io/STA258_Quiz_Questions</code> is the website where all the quizzes are located. <code>Quiz6</code> is the folder at which the specific quiz is. <code>quiz6.html</code> is the quiz file, and <code>q=q2a</code> displays the specific question, question 2 version A. The <code>q</code> parameter indicates which question should be displayed.</p>
 </section>
-<section id="question-randomization-methods" class="level2">
-<h2 class="anchored" data-anchor-id="question-randomization-methods">Question Randomization Methods</h2>
-<p>In this project, there are two approaches to implement multiple versions of questions in Quercus:</p>
-<section id="question-groups-inside-quiz" class="level3">
-<h3 class="anchored" data-anchor-id="question-groups-inside-quiz">1. Question Groups (Inside Quiz)</h3>
-<ul>
-<li>Questions are created directly within the quiz</li>
-<li>Randomization is handled within each Question Group</li>
-<li>Simpler to set up, but less reusable across quizzes</li>
-</ul>
-</section>
-<section id="question-banks-external" class="level3">
-<h3 class="anchored" data-anchor-id="question-banks-external">2. Question Banks (External)</h3>
-<ul>
-<li>Questions are created in external Question Banks</li>
-<li>Linked into the quiz using Question Groups</li>
-<li>Each Question Group pulls from one Question Bank</li>
-</ul>
-<p>Workflow:</p>
-<ol type="1">
-<li>Create questions in a Question Bank<br>
-</li>
-<li>In the quiz, create a Question Group<br>
-</li>
-<li>Click “Link to a Question Bank”<br>
-</li>
-<li>Select the appropriate bank</li>
-</ol>
-<p>Advantages:</p>
-<ul>
-<li>Reusable across multiple quizzes<br>
-</li>
-<li>Cleaner organization</li>
-</ul>
-<p>Limitations:</p>
-<ul>
-<li>Slower to implement, since each question requires its own Question Bank with multiple versions (e.g., A and B)<br>
-</li>
-<li>Harder to preview all questions at once, since each Question Bank must be opened separately</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="creating-and-using-question-banks-in-quercus" class="level2">
-<h2 class="anchored" data-anchor-id="creating-and-using-question-banks-in-quercus">Creating and Using Question Banks in Quercus</h2>
-<p>To create and use Question Banks for randomization:</p>
-<section id="step-1-create-a-question-bank" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-create-a-question-bank">Step 1 — Create a Question Bank</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="help_images/manage-question-banks.png" class="img-fluid figure-img"></p>
-<figcaption>Accessing Question Banks</figcaption>
-</figure>
-</div>
-<ol type="1">
-<li>Go to the <strong>Quizzes</strong> page<br>
-</li>
-<li>Click the three dots menu next to <strong>+ Quiz</strong><br>
-</li>
-<li>Select <strong>Manage Question Banks</strong><br>
-</li>
-<li>Click <strong>Add Question Bank</strong><br>
-</li>
-<li>Enter a name for the bank and press Enter</li>
-</ol>
-</section>
-<section id="step-2-add-questions-to-the-bank" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-add-questions-to-the-bank">Step 2 — Add Questions to the Bank</h3>
-<ol type="1">
-<li>Click the created Question Bank<br>
-</li>
-<li>Click <strong>Add Question</strong><br>
-</li>
-<li>Add different versions of the same question (e.g., Version A and Version B)</li>
-</ol>
-</section>
-<section id="step-3-link-the-bank-to-a-quiz" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-link-the-bank-to-a-quiz">Step 3 — Link the Bank to a Quiz</h3>
-<ol type="1">
-<li>Go to the quiz and open the <strong>Questions</strong> tab<br>
-</li>
-<li>Click <strong>New Question Group</strong><br>
-</li>
-<li>Enter a group name<br>
-</li>
-<li>Click <strong>Link to a Question Bank</strong><br>
-</li>
-<li>Select the appropriate Question Bank<br>
-</li>
-<li>Click <strong>Create Group</strong></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="help_images/link-question-bank.png" class="img-fluid figure-img"></p>
-<figcaption>Linking a Question Bank to a Question Group</figcaption>
-</figure>
-</div>
-<p>Each Question Group should be linked to one Question Bank, so each quiz question is mapped to exactly one bank.</p>
-<p>Important: - Randomization occurs at the question level, not the quiz level<br>
-- Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a full Version A or Version B quiz<br>
-## Errors</p>
-</section>
+<section id="errors" class="level2">
+<h2 class="anchored" data-anchor-id="errors">Errors</h2>
 <section id="notreadableerror" class="level3">
 <h3 class="anchored" data-anchor-id="notreadableerror">NotReadableError</h3>
 <p>Sometimes, the following error may show up:</p>
@@ -470,6 +274,7 @@ Figure&nbsp;1
 <p><code>quarto preview</code> lets you render your .qmd document on the fly without creating final output files in your project folder or having to push your code. It automatically refreshes in the browser when you save changes, and is great for checking formatting, plots, and code outputs before doing a full render.</p>
 
 
+</section>
 </section>
 </section>
 
