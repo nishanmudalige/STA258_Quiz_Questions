@@ -1,10 +1,10 @@
-# set.seed(123)
+# set.seed(456)
 # 
 # n <- 30
 # 
 # ad_spend <- round(runif(n, 1000, 10000) / 100) * 100
 # 
-# sales <- 4000 + 2.5 * ad_spend + rnorm(n, 0, 2500)
+# sales <- 5000 + 3.5 * ad_spend + rnorm(n, 0, 14000)
 # 
 # data <- data.frame(
 #   ad_spend = ad_spend,

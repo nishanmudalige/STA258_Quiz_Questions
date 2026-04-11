@@ -91,7 +91,7 @@ coef(model)
 quiz <- read.csv("marketing_A.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 coef(model)
-# 2.5406
+# 2.1472
 ```
 
 ## Q2 — Fit the Regression Model {#q2b}
@@ -114,13 +114,13 @@ coef(model)
 quiz <- read.csv("marketing_B.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 coef(model)
-# 2.2406
+# 3.45878
 ```
 ## Q3 — Compute R² {#q3a}
 
 Using the `marketing_A.csv` dataset:
 
-Return the model’s $R^2$.
+Calculate the coefficient of determination $R^2$.
 ```{webr}
 quiz <- read.csv("marketing_A.csv")
 model <- lm(___ ~ ___, data = quiz)
@@ -133,13 +133,13 @@ summary(model)
 quiz <- read.csv("marketing_A.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 summary(model)
-# 0.8827 
+# 0.1463 
 ```
 ## Q3 — Compute R² {#q3b}
 
 Using the `marketing_B.csv` dataset:
 
-Return the model’s $R^2$.
+Calculate the coefficient of determination $R^2$.
 ```{webr}
 quiz <- read.csv("marketing_B.csv")
 model <- lm(___ ~ ___, data = quiz)
@@ -152,7 +152,7 @@ summary(model)
 quiz <- read.csv("marketing_B.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 summary(model)
-# 0.8540
+# 0.2339
 ```
 ## Q4 — Compute the p-value for the slope {#q4a}
 
@@ -172,7 +172,7 @@ summary(model)
 quiz <- read.csv("marketing_A.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 summary(model)
-# 1.484e-14
+# 0.0370
 ```
 
 ## Q4 — Compute the p-value for the slope {#q4b}
@@ -193,16 +193,103 @@ summary(model)
 quiz <- read.csv("marketing_B.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 summary(model)
-# 3.204e-13
+# 0.0068
 ```
 
-## Q5 — Prediction (Interpolation) {#q5a}
+## Q5 - Interpret R-squared {#q5a}
+
+Using the `marketing_A.csv` dataset:
+
+Which of the following best interprets the coefficient of determination (R-squared) from the fitted regression model?
+
+```{webr}
+#| echo: false
+#| output: false
+# A. About R-squared% of the variation in ad spend is explained by sales
+# B. About R-squared% of the variation in sales is explained by ad spend
+# C. About R-squared% of the variation in sales is caused by ad spend
+# D. About R-squared% of the variation in ad spend is caused by sales
+
+# Answer: B. About R-squared% of the variation in sales is explained by ad spend
+```
+
+## Q5 - Interpret R-squared {#q5b}
+
+Using the `marketing_B.csv` dataset:
+
+Which of the following best interprets the coefficient of determination (R-squared) from the fitted regression model?
+
+```{webr}
+#| echo: false
+#| output: false
+# A. About R-squared% of the variation in ad spend is explained by sales
+# B. About R-squared% of the variation in sales is explained by ad spend
+# C. About R-squared% of the variation in sales is caused by ad spend
+# D. About R-squared% of the variation in ad spend is caused by sales
+
+# Answer: B. About R-squared% of the variation in sales is explained by ad spend
+```
+
+## Q6 - Correlation Coefficient R {#q6a}
+
+Using the `marketing_A.csv` dataset:
+
+Calculate the correlation coefficient ($R$) between ad spend and sales.
+
+```{webr}
+quiz <- read.csv("marketing_A.csv")
+cor(___, ___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("marketing_A.csv")
+cor(quiz$ad_spend, quiz$sales)
+# 0.3825
+```
+
+## Q6 - Correlation Coefficient R {#q6b}
+
+Using the `marketing_B.csv` dataset:
+
+Calculate the correlation coefficient ($R$) between ad spend and sales.
+
+```{webr}
+quiz <- read.csv("marketing_B.csv")
+cor(___, ___)
+```
+
+```{webr}
+#| echo: false
+#| output: false
+quiz <- read.csv("marketing_B.csv")
+cor(quiz$ad_spend, quiz$sales)
+# 0.4836
+```
+
+## Q7 — Interpret the correlation coefficient {#q7}
+(On Quercus directly)
+Question:
+
+Using your answer from Q6, which of the following best describes the correlation coefficient (R) between ad spend and sales?
+
+Options:
+
+A. Strong positive correlation
+B. Weak positive correlation
+C. Strong negative correlation
+D. Weak negative correlation
+
+Answer: B. Weak positive correlation
+
+## Q8 — Prediction (Interpolation) {#q8a}
 
 Using the `marketing_A.csv` dataset:
 
 Predict the mean `sales` when `ad_spend` = 6000.
-Round to the nearest integer.
 
+(*Round your answers to 2 decimal places.*)
 ```{webr}
 quiz <- read.csv("marketing_A.csv")
 model <- lm(___ ~ ___, data = quiz)
@@ -214,17 +301,17 @@ predict(___, newdata = data.frame(ad_spend = ___))
 #| output: false
 quiz <- read.csv("marketing_A.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
-round(predict(model, newdata = data.frame(ad_spend = 6000)))
-# 20901 
+predict(model, newdata = data.frame(ad_spend = 6000))
+# 26963.53 
 ```
 
-## Q5 — Prediction (Interpolation) {#q5b}
+## Q8 — Prediction (Interpolation) {#q8b}
 
 Using the `marketing_B.csv` dataset:
 
 Predict the mean `sales` when `ad_spend` = 6000.
-Round to the nearest integer.
 
+(*Round your answers to 2 decimal places.*)
 ```{webr}
 quiz <- read.csv("marketing_B.csv")
 model <- lm(___ ~ ___, data = quiz)
@@ -236,43 +323,45 @@ predict(___, newdata = data.frame(ad_spend = ___))
 #| output: false
 quiz <- read.csv("marketing_B.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
-round(predict(model, newdata = data.frame(ad_spend = 6000)))
-# 19101
+predict(model, newdata = data.frame(ad_spend = 6000))
+# 28484.35
 ```
 
-##  Q6 — Interpolation Reliability {#q6a}
+##  Q9 — Interpolation Reliability {#q9a}
+For the prediction at `ad_spend = 6000`, which of the following is the best conclusion based on the observed data?
+```{webr}
+#| echo: false
+#| output: false
 
-For the prediction at `ad_spend = 6000`, based on the observed data:
+# A. Yes, the prediction is reliable because we are conducting interpolation.
+# B. Yes, the prediction is reliable because we are conducting extrapolation.
+# C. No, the prediction is not reliable because we are conducting interpolation.
+# D. No, the prediction is not reliable because we are conducting extrapolation.
 
-Is this prediction reliable?
+# Answer: A. Yes, the prediction is reliable because we are conducting interpolation.
+```
+
+##  Q9 — Interpolation Reliability {#q9b}
+For the prediction at `ad_spend = 6000`, which of the following is the best conclusion based on the observed data?
 
 ```{webr}
 #| echo: false
 #| output: false
 
-#Yes
+# A. Yes, the prediction is reliable because we are conducting interpolation.
+# B. Yes, the prediction is reliable because we are conducting extrapolation.
+# C. No, the prediction is not reliable because we are conducting interpolation.
+# D. No, the prediction is not reliable because we are conducting extrapolation.
 
+# Answer: A. Yes, the prediction is reliable because we are conducting interpolation.
 ```
-
-##  Q6 — Interpolation Reliability {#q6b}
-
-For the prediction at `ad_spend = 6000`, based on the observed data:
-
-Is this prediction reliable?
-
-```{webr}
-#| echo: false
-#| output: false
-
-#Yes
-
-```
-## Q7 — Prediction (Extrapolation) {#q7a}
+## Q10 — Prediction (Extrapolation) {#q10a}
 
 Using the `marketing_A.csv` dataset:
 
 Predict the mean `sales` when `ad_spend` = 20000.
-(*Round to the nearest integer*.)
+
+(*Round your answers to 2 decimal places.*)
 ```{webr}
 quiz <- read.csv("marketing_A.csv")
 model <- lm(___ ~ ___, data = quiz)
@@ -287,15 +376,16 @@ quiz <- read.csv("marketing_A.csv")
 
 model <- lm(sales ~ ad_spend, data = quiz)
 predict(model, newdata = data.frame(ad_spend = 20000))
-#56469
+#57024.26
 ```
 
-## Q7 — Prediction (Extrapolation) {#q7b}
+## Q10 — Prediction (Extrapolation) {#q10b}
 
 Using the `marketing_B.csv` dataset:
 
 Predict the mean `sales` when `ad_spend` = 20000.
-(*Round to the nearest integer*.)
+
+(*Round your answers to 2 decimal places.*)
 ```{webr}
 quiz <- read.csv("marketing_B.csv")
 model <- lm(___ ~ ___, data = quiz)
@@ -310,39 +400,46 @@ quiz <- read.csv("marketing_B.csv")
 
 model <- lm(sales ~ ad_spend, data = quiz)
 predict(model, newdata = data.frame(ad_spend = 20000))
-#50469
+#76907.01
 ```
 
 
-## Q8 — Extrapolation Reliability {#q8a}
+## Q11 — Extrapolation Reliability {#q11a}
 
-For the prediction at `ad_spend = 20000`, based on the observed data:
-
-Is this prediction reliable?
+For the prediction at `ad_spend = 20000`, which of the following is the best conclusion based on the observed data?
 
 ```{webr}
 #| echo: false
 #| output: false
 
-#No
+# A. Yes, the prediction is reliable because we are conducting interpolation.
+# B. Yes, the prediction is reliable because we are conducting extrapolation.
+# C. No, the prediction is not reliable because we are conducting interpolation.
+# D. No, the prediction is not reliable because we are conducting extrapolation.
+
+# Answer: D. No, the prediction is not reliable because we are conducting extrapolation.
 
 ```
 
-## Q8 — Extrapolation Reliability {#q8b}
+## Q11 — Extrapolation Reliability {#q11b}
 
-For the prediction at `ad_spend = 20000`, based on the observed data:
-
-Is this prediction reliable?
+For the prediction at `ad_spend = 20000`, which of the following is the best conclusion based on the observed data?
 
 ```{webr}
 #| echo: false
 #| output: false
 
-#No
+# A. Yes, the prediction is reliable because we are conducting interpolation.
+# B. Yes, the prediction is reliable because we are conducting extrapolation.
+# C. No, the prediction is not reliable because we are conducting interpolation.
+# D. No, the prediction is not reliable because we are conducting extrapolation.
+
+# Answer: D. No, the prediction is not reliable because we are conducting extrapolation.
+
 
 ```
 
-## Q9 — Residual Plot {#q9a}
+## Q12 — Residual Plot {#q12a}
 
 Using the `marketing_A.csv` dataset, fit a simple linear regression model with `sales` as the response and `ad_spend` as the predictor.
 
@@ -383,7 +480,7 @@ abline(h = 0)
 # correct answers: Random scatter around 0, and No clear pattern
 ```
 
-## Q9 — Residual Plot {#q9b}
+## Q12 — Residual Plot {#q12b}
 
 Using the `marketing_B.csv` dataset, fit a simple linear regression model with `sales` as the response and `ad_spend` as the predictor.
 
