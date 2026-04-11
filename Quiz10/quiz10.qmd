@@ -114,7 +114,7 @@ coef(model)
 quiz <- read.csv("marketing_B.csv")
 model <- lm(sales ~ ad_spend, data = quiz)
 coef(model)
-# 3.45878
+3.4588
 ```
 ## Q3 — Compute R² {#q3a}
 
