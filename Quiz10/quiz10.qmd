@@ -476,8 +476,8 @@ abline(h = 0)
 
 # Random scatter around 0 
 # No clear pattern
-# Points spread out more as values increase
-# Curved pattern
+# Clear increasing trend in residuals
+# Clear decreasing trend in residuals
 
 # correct answers: Random scatter around 0, and No clear pattern
 ```
@@ -517,8 +517,8 @@ abline(h = 0)
 
 # Random scatter around 0
 # No clear pattern
-# Points spread out more as values increase
-# Curved pattern
+# Clear increasing trend in residuals
+# Clear decreasing trend in residuals
 
 # correct answers: Random scatter around 0, and No clear pattern
 ```
