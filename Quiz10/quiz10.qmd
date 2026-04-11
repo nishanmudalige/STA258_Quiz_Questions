@@ -158,7 +158,9 @@ summary(model)
 
 Using the `marketing_A.csv` dataset:
 
-Compute the p-value for testing $H_0: \beta_1 = 0$.
+Compute the p-value for testing $H_0: \beta_1 = 0$, where $\beta_1$ is the slope coefficient for `ad_spend`.
+
+ is the slope coefficient for ad_spend.
 
 ```{webr}
 quiz <- read.csv("marketing_A.csv")
@@ -179,7 +181,7 @@ summary(model)
 
 Using the `marketing_B.csv` dataset:
 
-Compute the p-value for testing $H_0: \beta_1 = 0$.
+Compute the p-value for testing $H_0: \beta_1 = 0$, where $\beta_1$ is the slope coefficient for `ad_spend`.
 
 ```{webr}
 quiz <- read.csv("marketing_B.csv")
