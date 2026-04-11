@@ -172,7 +172,10 @@ For confidence interval related questions, where we want the student to enter mu
 ## Embedding in Quercus
 
 After rendering the `.qmd` file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the `</>` symbol to embed a quiz question into Quescus.
-![Quercus Embedding](help_images/quercus-embedding.png)
+
+::: {#fig-quercus-embedding}
+![](help_images/quercus-embedding.png){fig-align="center" width="80%"}
+:::
 
 Click on the same button again to view the embedded question.
 
@@ -202,6 +205,77 @@ https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a
 `https://nishanmudalige.github.io/STA258_Quiz_Questions` is the website where all the quizzes are located. `Quiz6` is the folder at which the specific quiz is. `quiz6.html` is the quiz file, and `q=q2a` displays the specific question, question 2 version A.
 The `q` parameter indicates which question should be displayed.
 
+## Question Randomization Methods
+
+In this project, there are two approaches to implement multiple versions of questions in Quercus:
+
+### 1. Question Groups (Inside Quiz)
+
+- Questions are created directly within the quiz
+- Randomization is handled within each Question Group
+- Simpler to set up, but less reusable across quizzes
+
+### 2. Question Banks (External)
+
+- Questions are created in external Question Banks
+- Linked into the quiz using Question Groups
+- Each Question Group pulls from one Question Bank
+
+Workflow:
+
+1. Create questions in a Question Bank  
+2. In the quiz, create a Question Group  
+3. Click "Link to a Question Bank"  
+4. Select the appropriate bank  
+
+Advantages:
+
+- Reusable across multiple quizzes  
+- Cleaner organization  
+
+Limitations:
+
+- Slower to implement, since each question requires its own Question Bank with multiple versions (e.g., A and B)  
+- Harder to preview all questions at once, since each Question Bank must be opened separately  
+
+---
+
+## Creating and Using Question Banks in Quercus
+
+To create and use Question Banks for randomization:
+
+### Step 1 — Create a Question Bank
+
+![Accessing Question Banks](help_images/manage-question-banks.png)
+
+1. Go to the **Quizzes** page  
+2. Click the three dots menu next to **+ Quiz**  
+3. Select **Manage Question Banks**  
+4. Click **Add Question Bank**  
+5. Enter a name for the bank and press Enter  
+
+### Step 2 — Add Questions to the Bank
+
+1. Click the created Question Bank  
+2. Click **Add Question**  
+3. Add different versions of the same question (e.g., Version A and Version B)  
+
+### Step 3 — Link the Bank to a Quiz
+
+1. Go to the quiz and open the **Questions** tab  
+2. Click **New Question Group**  
+3. Enter a group name  
+4. Click **Link to a Question Bank**  
+5. Select the appropriate Question Bank  
+6. Click **Create Group**
+
+![Linking a Question Bank to a Question Group](help_images/link-question-bank.png)
+
+Each Question Group should be linked to one Question Bank, so each quiz question is mapped to exactly one bank.
+
+Important:
+- Randomization occurs at the question level, not the quiz level  
+- Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a full Version A or Version B quiz  
 ## Errors
 
 ### NotReadableError
