@@ -97,7 +97,7 @@ xbar + z*sigma/sqrt(n)
 # 84.4591
 ```
 ## Q4 — t Critical Value {#q4}
-Using the dataset `Academic_Performance_A.csv` (n = 20), what is the 95% two-sided t* critical value?
+Using the dataset `Academic_Performance_B.csv` (n = 20), what is the 95% two-sided t* critical value?
 ```{webr}
 df <- read.csv("Academic_Performance_B.csv")
 n <- length(df$Final_Exam_Score)
