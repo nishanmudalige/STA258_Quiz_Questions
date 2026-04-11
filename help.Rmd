@@ -5,14 +5,15 @@ author:
 - Rithika Yerra
 format: html
 output:
+  pdf_document:
+    toc: true
+    toc_depth: '2'
   html_document:
     toc: true
     toc_depth: 2
     theme: united
-  pdf_document:
-    toc: true
-    toc_depth: '2'
 ---
+
 
 <!-- ## Table of Contents -->
 <!-- [Pre-requisites](#pre-requisites)\ -->
@@ -223,20 +224,20 @@ In this project, there are two approaches to implement multiple versions of ques
 
 Workflow:
 
-1. Create questions in a Question Bank  
-2. In the quiz, create a Question Group  
-3. Click "Link to a Question Bank"  
-4. Select the appropriate bank  
+1. Create questions in a Question Bank 
+2. In the quiz, create a Question Group
+3. Click "Link to a Question Bank"
+4. Select the appropriate bank
 
 Advantages:
 
-- Reusable across multiple quizzes  
-- Cleaner organization  
+- Reusable across multiple quizzes
+- Cleaner organization
 
 Limitations:
 
-- Slower to implement, since each question requires its own Question Bank with multiple versions (e.g., A and B)  
-- Harder to preview all questions at once, since each Question Bank must be opened separately  
+- Slower to implement, since each question requires its own Question Bank with multiple versions (e.g., A and B)
+- Harder to preview all questions at once, since each Question Bank must be opened separately
 
 ---
 
@@ -274,8 +275,10 @@ To create and use Question Banks for randomization:
 Each Question Group should be linked to one Question Bank, so each quiz question is mapped to exactly one bank.
 
 Important:
-- Randomization occurs at the question level, not the quiz level  
-- Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a full Version A or Version B quiz  
+
+- Randomization occurs at the question level, not the quiz level
+- Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a full Version A or Version B quiz
+
 ## Errors
 
 ### NotReadableError

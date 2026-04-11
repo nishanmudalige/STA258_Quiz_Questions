@@ -387,6 +387,7 @@ Question</a></li>
 Methods</a></li>
 <li><a href="#creating-and-using-question-banks-in-quercus" id="toc-creating-and-using-question-banks-in-quercus">Creating and Using
 Question Banks in Quercus</a></li>
+<li><a href="#errors" id="toc-errors">Errors</a></li>
 <li><a href="#common-commands" id="toc-common-commands">Common
 Commands</a></li>
 </ul>
@@ -630,25 +631,20 @@ versions of questions in Quercus:</p>
 </ul>
 <p>Workflow:</p>
 <ol style="list-style-type: decimal">
-<li>Create questions in a Question Bank<br />
-</li>
-<li>In the quiz, create a Question Group<br />
-</li>
-<li>Click “Link to a Question Bank”<br />
-</li>
+<li>Create questions in a Question Bank</li>
+<li>In the quiz, create a Question Group</li>
+<li>Click “Link to a Question Bank”</li>
 <li>Select the appropriate bank</li>
 </ol>
 <p>Advantages:</p>
 <ul>
-<li>Reusable across multiple quizzes<br />
-</li>
+<li>Reusable across multiple quizzes</li>
 <li>Cleaner organization</li>
 </ul>
 <p>Limitations:</p>
 <ul>
 <li>Slower to implement, since each question requires its own Question
-Bank with multiple versions (e.g., A and B)<br />
-</li>
+Bank with multiple versions (e.g., A and B)</li>
 <li>Harder to preview all questions at once, since each Question Bank
 must be opened separately</li>
 </ul>
@@ -709,12 +705,16 @@ Group</div>
 </div>
 <p>Each Question Group should be linked to one Question Bank, so each
 quiz question is mapped to exactly one bank.</p>
-<p>Important: - Randomization occurs at the question level, not the quiz
-level<br />
-- Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a full
-Version A or Version B quiz<br />
-## Errors</p>
+<p>Important:</p>
+<ul>
+<li>Randomization occurs at the question level, not the quiz level</li>
+<li>Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a
+full Version A or Version B quiz</li>
+</ul>
 </div>
+</div>
+<div id="errors" class="section level2">
+<h2>Errors</h2>
 <div id="notreadableerror" class="section level3">
 <h3>NotReadableError</h3>
 <p>Sometimes, the following error may show up:</p>

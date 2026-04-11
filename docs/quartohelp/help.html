@@ -60,23 +60,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-54b560df82c95bacbc668b301994f5f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-54b560df82c95bacbc668b301994f5f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,18 +108,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="quarto-light">
+<body class="floating quarto-light">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#quercus-constraints-randomization-independence" id="toc-quercus-constraints-randomization-independence" class="nav-link" data-scroll-target="#quercus-constraints-randomization-independence">Quercus Constraints (Randomization &amp; Independence)</a></li>
@@ -132,25 +131,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#adding-questions-and-question-bank" id="toc-adding-questions-and-question-bank" class="nav-link" data-scroll-target="#adding-questions-and-question-bank">Adding Questions and Question Bank</a></li>
   <li><a href="#embedding-in-quercus" id="toc-embedding-in-quercus" class="nav-link" data-scroll-target="#embedding-in-quercus">Embedding in Quercus</a></li>
   <li><a href="#displaying-a-specific-question" id="toc-displaying-a-specific-question" class="nav-link" data-scroll-target="#displaying-a-specific-question">Displaying a Specific Question</a></li>
-  <li><a href="#question-randomization-methods" id="toc-question-randomization-methods" class="nav-link" data-scroll-target="#question-randomization-methods">Question Randomization Methods</a>
-  <ul class="collapse">
-  <li><a href="#question-groups-inside-quiz" id="toc-question-groups-inside-quiz" class="nav-link" data-scroll-target="#question-groups-inside-quiz">1. Question Groups (Inside Quiz)</a></li>
-  <li><a href="#question-banks-external" id="toc-question-banks-external" class="nav-link" data-scroll-target="#question-banks-external">2. Question Banks (External)</a></li>
-  </ul></li>
-  <li><a href="#creating-and-using-question-banks-in-quercus" id="toc-creating-and-using-question-banks-in-quercus" class="nav-link" data-scroll-target="#creating-and-using-question-banks-in-quercus">Creating and Using Question Banks in Quercus</a>
-  <ul class="collapse">
-  <li><a href="#step-1-create-a-question-bank" id="toc-step-1-create-a-question-bank" class="nav-link" data-scroll-target="#step-1-create-a-question-bank">Step 1 — Create a Question Bank</a></li>
-  <li><a href="#step-2-add-questions-to-the-bank" id="toc-step-2-add-questions-to-the-bank" class="nav-link" data-scroll-target="#step-2-add-questions-to-the-bank">Step 2 — Add Questions to the Bank</a></li>
-  <li><a href="#step-3-link-the-bank-to-a-quiz" id="toc-step-3-link-the-bank-to-a-quiz" class="nav-link" data-scroll-target="#step-3-link-the-bank-to-a-quiz">Step 3 — Link the Bank to a Quiz</a></li>
-  <li><a href="#notreadableerror" id="toc-notreadableerror" class="nav-link" data-scroll-target="#notreadableerror">NotReadableError</a></li>
-  </ul></li>
-  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands">Common Commands</a>
-  <ul class="collapse">
-  <li><a href="#quarto-clean" id="toc-quarto-clean" class="nav-link" data-scroll-target="#quarto-clean">quarto clean</a></li>
-  <li><a href="#quarto-preview" id="toc-quarto-preview" class="nav-link" data-scroll-target="#quarto-preview">quarto preview</a></li>
-  </ul></li>
+  <li><a href="#question-randomization-methods" id="toc-question-randomization-methods" class="nav-link" data-scroll-target="#question-randomization-methods">Question Randomization Methods</a></li>
+  <li><a href="#creating-and-using-question-banks-in-quercus" id="toc-creating-and-using-question-banks-in-quercus" class="nav-link" data-scroll-target="#creating-and-using-question-banks-in-quercus">Creating and Using Question Banks in Quercus</a></li>
+  <li><a href="#common-commands" id="toc-common-commands" class="nav-link" data-scroll-target="#common-commands">Common Commands</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="help.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
