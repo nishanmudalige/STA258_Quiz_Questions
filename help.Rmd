@@ -1,30 +1,33 @@
 ---
 title: "Documentation"
-format: html
 author:
-  - Giodanno Limin
-  - Rithika Yerra
+- Giodanno Limin
+- Rithika Yerra
+format: html
 output:
   html_document:
     toc: true
     toc_depth: 2
     theme: united
+  pdf_document:
+    toc: true
+    toc_depth: '2'
 ---
 
-## Table of Contents
-[Pre-requisites](#pre-requisites)\
-[Introduction](#introduction)\
-[Folder Structure](#folder-structure)\
-[Quiz File Structure](#quiz-file-structure)\
-[Adding files](#adding-files)\
-[JavaScript for Question Display](#javascript-for-question-display)\
-[Supressing Library Import Output](#supressing-library-import-output)\
-[Questions and Student Code](#questions-and-student-code)\
-[Adding Questions and Question Bank](#adding-questions-and-question-bank)\
-[Embedding in Quercus](#embedding-in-quercus)\
-[Displaying a Specific Question](#displaying-a-specific-question)\
-[Errors](#errors)\
-[Common Commands](#common-commands)\
+<!-- ## Table of Contents -->
+<!-- [Pre-requisites](#pre-requisites)\ -->
+<!-- [Introduction](#introduction)\ -->
+<!-- [Folder Structure](#folder-structure)\ -->
+<!-- [Quiz File Structure](#quiz-file-structure)\ -->
+<!-- [Adding files](#adding-files)\ -->
+<!-- [JavaScript for Question Display](#javascript-for-question-display)\ -->
+<!-- [Supressing Library Import Output](#supressing-library-import-output)\ -->
+<!-- [Questions and Student Code](#questions-and-student-code)\ -->
+<!-- [Adding Questions and Question Bank](#adding-questions-and-question-bank)\ -->
+<!-- [Embedding in Quercus](#embedding-in-quercus)\ -->
+<!-- [Displaying a Specific Question](#displaying-a-specific-question)\ -->
+<!-- [Errors](#errors)\ -->
+<!-- [Common Commands](#common-commands)\ -->
 
 
 ## Pre-requisites
@@ -36,6 +39,37 @@ output:
 ## Introduction
 Hello! Here you will find documentation for the quizzes, including how to add/delete/edit questions, adding files, navigating errors, and more.
 We use `.qmd` files to create the quizzes. Each quiz is written in a Quarto (`.qmd`) file that contains the quiz questions, code chunks, and required datasets. The `.qmd` file is then rendered into an HTML page. The generated HTML file is embedded into Quercus using an iframe so students can access the quiz directly from the course page.
+
+## Quercus Constraints (Randomization & Independence)
+In Quercus, randomization occurs at the question level, not at the quiz level.
+
+This means:
+
+- Each question is selected independently from the question bank
+- Students may receive different versions of each question (e.g., Version A or Version B)
+
+As a result, it is not possible to assign a student a single consistent version of the entire quiz (e.g., all Version A or all Version B questions).
+
+For example:
+
+- A student may receive Q1 Version A, Q2 Version B, Q3 Version A, etc.
+- The versions are mixed across the quiz
+
+Because of this:
+
+- Questions must be fully independent
+- You cannot design questions that depend on a shared dataset or results from a previous question
+- You cannot create “Quiz Version A” and “Quiz Version B” as complete sets
+
+Additionally, each question is rendered inside an iframe, so:
+
+- R code is executed separately for each question
+- Variables are not shared across questions
+
+To handle this limitation:
+
+- Each question version (A or B) must be self-contained
+- Any required data, code, or calculations must be included within that question
 
 ## Folder Structure
 
