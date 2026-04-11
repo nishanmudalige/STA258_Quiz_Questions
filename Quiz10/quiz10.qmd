@@ -445,7 +445,7 @@ Using the `marketing_A.csv` dataset, fit a simple linear regression model with `
 
 Construct a residual plot of the fitted values versus residuals.
 
-Select ALL features that indicate a good linear regression model:
+Select ALL correct statements about the residual plot.
 
 ```{webr}
 quiz <- read.csv("marketing_A.csv")
@@ -486,7 +486,7 @@ Using the `marketing_B.csv` dataset, fit a simple linear regression model with `
 
 Construct a residual plot of the fitted values versus residuals.
 
-Select ALL features that indicate a good linear regression model:
+Select ALL correct statements about the residual plot.
 
 ```{webr}
 quiz <- read.csv("marketing_B.csv")
