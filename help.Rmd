@@ -5,31 +5,33 @@ author:
 - Rithika Yerra
 format: html
 output:
+  pdf_document:
+    toc: true
+    toc_depth: '2'
   html_document:
     toc: true
     toc_depth: 2
     theme: united
-  pdf_document:
-    toc: true
-    toc_depth: '2'
 ---
 
-
 <!-- ## Table of Contents -->
-<!-- [Pre-requisites](#pre-requisites)\ -->
-<!-- [Introduction](#introduction)\ -->
-<!-- [Folder Structure](#folder-structure)\ -->
-<!-- [Quiz File Structure](#quiz-file-structure)\ -->
-<!-- [Adding files](#adding-files)\ -->
-<!-- [JavaScript for Question Display](#javascript-for-question-display)\ -->
-<!-- [Supressing Library Import Output](#supressing-library-import-output)\ -->
-<!-- [Questions and Student Code](#questions-and-student-code)\ -->
-<!-- [Adding Questions and Question Bank](#adding-questions-and-question-bank)\ -->
-<!-- [Embedding in Quercus](#embedding-in-quercus)\ -->
-<!-- [Displaying a Specific Question](#displaying-a-specific-question)\ -->
-<!-- [Errors](#errors)\ -->
-<!-- [Common Commands](#common-commands)\ -->
-
+<!-- - [Pre-requisites](#pre-requisites) -->
+<!-- - [Introduction](#introduction) -->
+<!-- - [Quercus Constraints (Randomization & Independence)](#quercus-constraints-randomization--independence) -->
+<!-- - [Folder Structure](#folder-structure) -->
+<!-- - [Quiz File Structure](#quiz-file-structure) -->
+<!-- - [Adding files](#adding-files) -->
+<!-- - [Required Extensions and Question Display](#required-extensions-and-question-display) -->
+<!-- - [JavaScript for Question Display](#javascript-for-question-display) -->
+<!-- - [Supressing Library Import Output](#supressing-library-import-output) -->
+<!-- - [Questions and Student Code](#questions-and-student-code) -->
+<!-- - [Adding Questions and Question Bank](#adding-questions-and-question-bank) -->
+<!-- - [Question Randomization Methods](#question-randomization-methods) -->
+<!-- - [Creating and Using Question Banks in Quercus](#creating-and-using-question-banks-in-quercus) -->
+<!-- - [Embedding in Quercus](#embedding-in-quercus) -->
+<!-- - [Displaying a Specific Question](#displaying-a-specific-question) -->
+<!-- - [Errors](#errors) -->
+<!-- - [Common Commands](#common-commands) -->
 
 ## Pre-requisites
 - R (version 4.3+ recommended)
@@ -227,6 +229,7 @@ The question types can be selected at the top of the Question box. A more detail
  Choose "Numerical Answers" for numerical-based answers. An error margin can be chosen here as well. For text-based or interpretation questions, "Multiple Choice" or "Multiple Answers" is typically sufficient.
 
 For confidence interval related questions, where we want the student to enter multiple numeric answers, select "Fill In Multiple Blanks". Use `[]` to enter variable names (i.e. `lower bound is [lower_bound]`) and enter the correct answer below in "Answers". Change the variable by clicking on the drop down menu next to "Show Possible Answers for". Note that this is a text box, not a numeric box, so students that enter "1" instead of "1.0000" would be marked incorrect. For such situations, it's recommended to have many answers (i.e. if the answer is 1, have solutions "1", "1.0000"). 
+
 ## Question Randomization Methods
 
 In this project, there are two approaches to implement multiple versions of questions in Quercus:

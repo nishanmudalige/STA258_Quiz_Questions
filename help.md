@@ -2,19 +2,24 @@
 *Authors: Giodanno Limin and Rithika Yerra*
 
 ## Table of Contents
-[Pre-requisites](#pre-requisites)\
-[Introduction](#introduction)\
-[Folder Structure](#folder-structure)\
-[Quiz File Structure](#quiz-file-structure)\
-[Adding files](#adding-files)\
-[JavaScript for Question Display](#javascript-for-question-display)\
-[Supressing Library Import Output](#supressing-library-import-output)\
-[Questions and Student Code](#questions-and-student-code)\
-[Adding Questions and Question Bank](#adding-questions-and-question-bank)\
-[Embedding in Quercus](#embedding-in-quercus)\
-[Displaying a Specific Question](#displaying-a-specific-question)\
-[Errors](#errors)\
-[Common Commands](#common-commands)\
+
+- [Pre-requisites](#pre-requisites)
+- [Introduction](#introduction)
+- [Quercus Constraints (Randomization & Independence)](#quercus-constraints-randomization--independence)
+- [Folder Structure](#folder-structure)
+- [Quiz File Structure](#quiz-file-structure)
+- [Adding files](#adding-files)
+- [Required Extensions and Question Display](#required-extensions-and-question-display)
+- [JavaScript for Question Display](#javascript-for-question-display)
+- [Supressing Library Import Output](#supressing-library-import-output)
+- [Questions and Student Code](#questions-and-student-code)
+- [Adding Questions and Question Bank](#adding-questions-and-question-bank)
+- [Question Randomization Methods](#question-randomization-methods)
+- [Creating and Using Question Banks in Quercus](#creating-and-using-question-banks-in-quercus)
+- [Embedding in Quercus](#embedding-in-quercus)
+- [Displaying a Specific Question](#displaying-a-specific-question)
+- [Errors](#errors)
+- [Common Commands](#common-commands)
 
 
 ## Pre-requisites
@@ -293,9 +298,7 @@ Important:
 
 After rendering the `.qmd` file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the `</>` symbol to embed a quiz question into Quescus.
 
-::: {#fig-quercus-embedding}
 ![](help_images/quercus-embedding.png){fig-align="center" width="80%"}
-:::
 
 Click on the same button again to view the embedded question.
 
