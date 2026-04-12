@@ -218,50 +218,15 @@ This command (`#| echo: false`) prevents the webr block from being shown. Some f
 
 ## Adding Questions and Question Bank
 To create a question, go to "Questions" in the quiz creation tool and click on "New Question". 
-To create questions that belong to a question bank (e.g. create two versions of one question) click on "New Question Group". 
+To create questions that belong to a question bank (e.g. create two versions of one question) one method is creating a group within the quiz.
+First, click on "New Question Group". 
 Then, after naming the Question Bank, click on "Create Group". Click on the "+" sign to add a question.
 ![Quercus Question Group Creation](help_images/quercus-quiz-creation.png) 
 
-The question types can be selected at the top of the Question box. Choose "Numerical Answers" for numerical-based answers. An error margin can be chosen here as well. For text-based or interpretation questions, "Multiple Choice" or "Multiple Answers" is typically sufficient.
+The question types can be selected at the top of the Question box. A more detailed explanation on how to create groups, for instance if you would like to create a question group that can be used across many quizzes, is located in the "Question Randomization Methods" section.
+ Choose "Numerical Answers" for numerical-based answers. An error margin can be chosen here as well. For text-based or interpretation questions, "Multiple Choice" or "Multiple Answers" is typically sufficient.
 
-For confidence interval related questions, where we want the student to enter multiple numeric answers, select "Fill In Multiple Blanks". Use `[]` to enter variable names (i.e. `lower bound is [lower_bound]`) and enter the correct answer below in "Answers". Change the variable by clicking on the drop down menu next to "Show Possible Answers for". 
-
-## Embedding in Quercus
-
-After rendering the `.qmd` file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the `</>` symbol to embed a quiz question into Quescus.
-
-::: {#fig-quercus-embedding}
-![](help_images/quercus-embedding.png){fig-align="center" width="80%"}
-:::
-
-Click on the same button again to view the embedded question.
-
-Example HTML:
-
-```html
-<p>
-<iframe
-title="embedded content"
-src="https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a"
-width="100%"
-height="650px"
-loading="lazy">
-</iframe>
-</p>
-```
-This allows students to access the interactive quiz directly inside Quercus.
-
-## Displaying a Specific Question
-
-Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.
-
-Example URL, located in `src` of the embedded HTML:
-
-https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a
-
-`https://nishanmudalige.github.io/STA258_Quiz_Questions` is the website where all the quizzes are located. `Quiz6` is the folder at which the specific quiz is. `quiz6.html` is the quiz file, and `q=q2a` displays the specific question, question 2 version A.
-The `q` parameter indicates which question should be displayed.
-
+For confidence interval related questions, where we want the student to enter multiple numeric answers, select "Fill In Multiple Blanks". Use `[]` to enter variable names (i.e. `lower bound is [lower_bound]`) and enter the correct answer below in "Answers". Change the variable by clicking on the drop down menu next to "Show Possible Answers for". Note that this is a text box, not a numeric box, so students that enter "1" instead of "1.0000" would be marked incorrect. For such situations, it's recommended to have many answers (i.e. if the answer is 1, have solutions "1", "1.0000"). 
 ## Question Randomization Methods
 
 In this project, there are two approaches to implement multiple versions of questions in Quercus:
@@ -334,6 +299,43 @@ Important:
 
 - Randomization occurs at the question level, not the quiz level
 - Students may receive mixed versions (e.g., Q1A, Q2B, Q3A), not a full Version A or Version B quiz
+
+
+## Embedding in Quercus
+
+After rendering the `.qmd` file into HTML, the quiz page is embedded into Quercus using an iframe. Click on the `</>` symbol to embed a quiz question into Quescus.
+
+::: {#fig-quercus-embedding}
+![](help_images/quercus-embedding.png){fig-align="center" width="80%"}
+:::
+
+Click on the same button again to view the embedded question.
+
+Example HTML:
+
+```html
+<p>
+<iframe
+title="embedded content"
+src="https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a"
+width="100%"
+height="650px"
+loading="lazy">
+</iframe>
+</p>
+```
+This allows students to access the interactive quiz directly inside Quercus.
+
+## Displaying a Specific Question
+
+Each quiz HTML page may contain multiple questions. A URL parameter is used to display a specific question.
+
+Example URL, located in `src` of the embedded HTML:
+
+https://nishanmudalige.github.io/STA258_Quiz_Questions/Quiz6/quiz6.html?q=q2a
+
+`https://nishanmudalige.github.io/STA258_Quiz_Questions` is the website where all the quizzes are located. `Quiz6` is the folder at which the specific quiz is. `quiz6.html` is the quiz file, and `q=q2a` displays the specific question, question 2 version A.
+The `q` parameter indicates which question should be displayed.
 
 ## Errors
 
