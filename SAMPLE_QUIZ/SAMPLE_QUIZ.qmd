@@ -1,0 +1,72 @@
+---
+title: "SAMPLE_QUIZ"
+title-block-style: none
+format: live-html
+engine: knitr
+sidebar:
+  style: docked
+resources:
+  -  ads_A.csv
+  -  ads_B.csv
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const showQ = params.get("q");
+
+  // Show only the requested section
+  if (showQ) {
+    document.querySelectorAll("section[id]").forEach(section => {
+      if (section.id !== showQ) section.style.display = "none";
+    });
+  }
+
+  // Hide page title
+  document.querySelectorAll(".quarto-title-block")
+    .forEach(el => el.style.display = "none");
+
+  // Hide ALL section titles (## ...)
+  document.querySelectorAll("section[id] > h2")
+    .forEach(h => h.style.display = "none");
+});
+</script>
+
+## Q1 — Visualize the Relationship {#q1a}
+Using the `ads_A.csv` dataset:
+
+Does the plot suggest a linear relationship?
+```{webr}
+quiz <- read.csv("ads_A.csv") 
+plot(quiz$ad_spend, quiz$views,
+     xlab = "Ad Spend ($)", ylab = "Views")
+abline(lm(views ~ ad_spend, data = quiz), col = "blue")
+```
+
+```{webr}
+#| echo: false
+#| output: false
+
+# Yes
+```
+
+## Q1 — Visualize the Relationship {#q1b}
+Using the `ads_B.csv` dataset:
+
+Does the plot suggest a linear relationship?
+```{webr}
+quiz <- read.csv("ads_B.csv") 
+plot(quiz$ad_spend, quiz$views,
+     xlab = "Ad Spend ($)", ylab = "Views")
+abline(lm(views ~ ad_spend, data = quiz), col = "blue")
+```
+
+```{webr}
+#| echo: false
+#| output: false
+
+# Yes
+```
