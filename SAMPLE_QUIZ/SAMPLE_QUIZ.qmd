@@ -138,5 +138,66 @@ s <- sd(x)
 
 t_stat <- (xbar - mu_0) / (s / sqrt(n))
 t_stat
-# 
+#
 ```
+
+
+## Q3 — Summary Statistics {#q3a}
+
+Using the `ads_A.csv` dataset:
+
+Compute the sample mean and sample standard deviation of `views`.
+
+```{webr}
+df <- read.csv("ads_A.csv")
+
+mean_views <- ___
+sd_views <- ___
+
+mean_views
+sd_views
+```
+
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("ads_A.csv")
+
+mean_views <- mean(df$views)
+sd_views <- sd(df$views)
+
+mean_views
+sd_views
+```
+
+
+## Q3 — Summary Statistics {#q3b}
+
+Using the `ads_B.csv` dataset:
+
+Compute the sample mean and sample standard deviation of `views`.
+
+```{webr}
+df <- read.csv("ads_B.csv")
+
+mean_views <- ___
+sd_views <- ___
+
+mean_views
+sd_views
+```
+
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("ads_B.csv")
+
+mean_views <- mean(df$views)
+sd_views <- sd(df$views)
+
+mean_views
+sd_views
+```
+
