@@ -70,3 +70,73 @@ abline(lm(views ~ ad_spend, data = quiz), col = "blue")
 
 # Yes
 ```
+
+## Q2 - Numerical Answer {#q2a}
+Using the `ads_A.csv` dataset:
+
+Conduct a two-sided one-sample t-test to determine whether the true mean number of views is significantly different from 20,000. Use a significance level of 0.05.
+
+```{webr}
+df <- read.csv("ads_A.csv")
+x <- df$views
+
+mu_0 <- ___
+n <- ___
+xbar <- ___
+s <- ___
+
+t_stat <- ___
+t_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("ads_A.csv")
+x <- df$views
+
+mu_0 <- 20000
+n <- length(x)
+xbar <- mean(x)
+s <- sd(x)
+
+t_stat <- (xbar - mu_0) / (s / sqrt(n))
+t_stat
+# 
+```
+
+
+
+## Q2 - Numerical Answer {#q2b}
+Using the `ads_B.csv` dataset:
+
+Conduct a two-sided one-sample t-test to determine whether the true mean number of views is significantly different from 30,000. Use a significance level of 0.05.
+
+```{webr}
+df <- read.csv("ads_B.csv")
+x <- df$views
+
+mu_0 <- ___
+n <- ___
+xbar <- ___
+s <- ___
+
+t_stat <- ___
+t_stat
+```
+
+```{webr}
+#| echo: false
+#| output: false
+df <- read.csv("ads_B.csv")
+x <- df$views
+
+mu_0 <- 30000
+n <- length(x)
+xbar <- mean(x)
+s <- sd(x)
+
+t_stat <- (xbar - mu_0) / (s / sqrt(n))
+t_stat
+# 
+```
